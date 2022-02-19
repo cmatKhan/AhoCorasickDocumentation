@@ -1,3 +1,0 @@
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir

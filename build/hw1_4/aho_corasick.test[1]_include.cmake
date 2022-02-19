@@ -1,5 +1,0 @@
-if(EXISTS "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/hw1_4/aho_corasick.test[1]_tests.cmake")
-  include("/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/hw1_4/aho_corasick.test[1]_tests.cmake")
-else()
-  add_test(aho_corasick.test_NOT_BUILT aho_corasick.test_NOT_BUILT)
-endif()
