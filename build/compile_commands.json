@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest  -g   -std=gnu++11 -o hw1_4/CMakeFiles/aho_corasick.test.dir/aho_corasick.test.cpp.o -c /home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.test.cpp",
+  "file": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.test.cpp"
+},
+
+{
+  "directory": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -isystem _deps/googletest-src/googlemock/include -isystem _deps/googletest-src/googlemock -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
+},
+
+{
+  "directory": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I_deps/googletest-src/googlemock/include -I_deps/googletest-src/googlemock -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
+},
+
+{
+  "directory": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googletest/src/gtest_main.cc"
+},
+
+{
+  "directory": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I_deps/googletest-src/googletest/include -I_deps/googletest-src/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/_deps/googletest-src/googletest/src/gtest-all.cc"
+}
+]

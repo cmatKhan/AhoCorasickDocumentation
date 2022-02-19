@@ -1,0 +1,105 @@
+\hypertarget{classAC_1_1Node}{}\doxysection{AC\+::Node Class Reference}
+\label{classAC_1_1Node}\index{AC::Node@{AC::Node}}
+
+
+A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}.  
+
+
+
+
+{\ttfamily \#include $<$aho\+\_\+corasick.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_ad7a34779cad45d997bfd6d3d8043c75f}\label{classAC_1_1Node_ad7a34779cad45d997bfd6d3d8043c75f}} 
+{\bfseries Node} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Node}{Node}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a220a8d64cb0df1cce083ed38c1260615}{get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent object. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAC_1_1Node_a68e7d40cc4949f9c92421084b2e20897}{get\+Left\+Child}} ()
+\begin{DoxyCompactList}\small\item\em Get the Left Child object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Node_a1343122fd9dbe016e343d59b454b0950}{set\+Left\+Child}} (char c)
+\begin{DoxyCompactList}\small\item\em Set the Left Child object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a005f9d4aa831215ec9ad259e347f0a19}\label{classAC_1_1Node_a005f9d4aa831215ec9ad259e347f0a19}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries parent}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_ae24ea5b2d5e8aba63b7a01aaf2ab8195}\label{classAC_1_1Node_ae24ea5b2d5e8aba63b7a01aaf2ab8195}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries failure\+\_\+link}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}\label{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries out\+\_\+link}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a12aa5a07f33b37cbd57782224c2a0bd8}\label{classAC_1_1Node_a12aa5a07f33b37cbd57782224c2a0bd8}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries left\+\_\+node}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a77ece50638f3e106d8fdb8b708c97b76}\label{classAC_1_1Node_a77ece50638f3e106d8fdb8b708c97b76}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries right\+\_\+node}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_ae9b5c16831dad477e0c29ed088c41000}\label{classAC_1_1Node_ae9b5c16831dad477e0c29ed088c41000}} 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ {\bfseries edges}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a80db962ac74bc9795e163c93a5b1eb9b}\label{classAC_1_1Node_a80db962ac74bc9795e163c93a5b1eb9b}} 
+int {\bfseries pattern\+\_\+indicator}
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}\label{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}} 
+int {\bfseries dist\+\_\+from\+\_\+root}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}. 
+
+This is intended to be used in the Aho\+Corasick Tri structure. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAC_1_1Node_a68e7d40cc4949f9c92421084b2e20897}\label{classAC_1_1Node_a68e7d40cc4949f9c92421084b2e20897}} 
+\index{AC::Node@{AC::Node}!getLeftChild@{getLeftChild}}
+\index{getLeftChild@{getLeftChild}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{getLeftChild()}{getLeftChild()}}
+{\footnotesize\ttfamily char AC\+::\+Node\+::get\+Left\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Left Child object. 
+
+\begin{DoxyReturn}{Returns}
+the character on (this, left\+\_\+node) edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a220a8d64cb0df1cce083ed38c1260615}\label{classAC_1_1Node_a220a8d64cb0df1cce083ed38c1260615}} 
+\index{AC::Node@{AC::Node}!getParent@{getParent}}
+\index{getParent@{getParent}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Parent object. 
+
+\begin{DoxyReturn}{Returns}
+Node$\ast$ reference to parent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a1343122fd9dbe016e343d59b454b0950}\label{classAC_1_1Node_a1343122fd9dbe016e343d59b454b0950}} 
+\index{AC::Node@{AC::Node}!setLeftChild@{setLeftChild}}
+\index{setLeftChild@{setLeftChild}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{setLeftChild()}{setLeftChild()}}
+{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Left\+Child (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Set the Left Child object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a character to set on the edge between (this, left\+\_\+node) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+h\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+cpp\end{DoxyCompactItemize}

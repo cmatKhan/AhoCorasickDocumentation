@@ -1,0 +1,5 @@
+if(EXISTS "/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/hw1_4/hello_test[1]_tests.cmake")
+  include("/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/build/hw1_4/hello_test[1]_tests.cmake")
+else()
+  add_test(hello_test_NOT_BUILT hello_test_NOT_BUILT)
+endif()
