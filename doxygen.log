@@ -1,13 +1,5 @@
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:27: warning: Member parent (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:28: warning: Member failure_link (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:29: warning: Member out_link (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:30: warning: Member left_node (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:69: warning: Member next (variable) of class AC::Edge is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:31: warning: Member right_node (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:70: warning: Member label (variable) of class AC::Edge is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:32: warning: Member edges (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:33: warning: Member pattern_indicator (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:33: warning: Member dist_from_root (variable) of class AC::Node is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:107: warning: Member root (variable) of class AC::AhoCorasickTri is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.cpp:6: warning: argument 'c' from the argument list of AC::Edge::Edge has multiple @param documentation sections
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:92: warning: documented empty return type of AC::Edge::findEdge
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:117: warning: Member trieNode() (function) of class AC::Edge is not documented.
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:133: warning: argument 'l' of command @param is not found in the argument list of AC::Edge::search(char c)
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'l' of command @param is not found in the argument list of AC::Edge::setNextEdge(Edge *e)
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'n' of command @param is not found in the argument list of AC::Edge::setNextEdge(Edge *e)
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'e' from the argument list of AC::Edge::setNextEdge has multiple @param documentation sections

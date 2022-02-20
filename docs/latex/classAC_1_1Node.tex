@@ -1,0 +1,230 @@
+\hypertarget{classAC_1_1Node}{}\doxysection{AC\+::Node Class Reference}
+\label{classAC_1_1Node}\index{AC::Node@{AC::Node}}
+
+
+A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}.  
+
+
+
+
+{\ttfamily \#include $<$aho\+\_\+corasick.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Node_ac160eedfc8c488d0af253db0e3673f89}{Node}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new null \mbox{\hyperlink{classAC_1_1Node}{Node}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node_ae75632ef27a410b82a7e26a8d918d147}{Node}} (int p, int d)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Node}{Node}} with pattern and dist\+\_\+from\+\_\+root set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failure\+Link}} ()
+\begin{DoxyCompactList}\small\item\em get pointer to node at which search() should resume at mismatch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}{set\+Dist\+From\+Root}} (int d)
+\begin{DoxyCompactList}\small\item\em Set the Dist From Root object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}{dist\+From\+Root}} ()
+\begin{DoxyCompactList}\small\item\em getter for dist\+\_\+from\+\_\+root. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}{set\+Pattern\+Indicator}} (int p)
+\begin{DoxyCompactList}\small\item\em Set the pattern\+\_\+indicator attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{pattern\+Indicator}} ()
+\begin{DoxyCompactList}\small\item\em Get the pattern\+\_\+indicator attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Node_ab7249cee93f754f8f2030560c834ac5c}{set\+Out\+Link}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Set the out\+\_\+link attribute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{out\+Link}} ()
+\begin{DoxyCompactList}\small\item\em get attribute out\+\_\+link \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\+\_\+link}}
+\begin{DoxyCompactList}\small\item\em pointer to the node reachable by the fewest failure links, if one exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_ae9b5c16831dad477e0c29ed088c41000}{edges}}
+\begin{DoxyCompactList}\small\item\em pointer to first edge object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}}
+\begin{DoxyCompactList}\small\item\em an int representing one of the input patterns in the Trie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\+\_\+from\+\_\+root}}
+\begin{DoxyCompactList}\small\item\em distance from the root node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}. 
+
+This is intended to be used in the Aho\+Corasick Tri structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAC_1_1Node_ac160eedfc8c488d0af253db0e3673f89}\label{classAC_1_1Node_ac160eedfc8c488d0af253db0e3673f89}} 
+\index{AC::Node@{AC::Node}!Node@{Node}}
+\index{Node@{Node}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily AC\+::\+Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new null \mbox{\hyperlink{classAC_1_1Node}{Node}} object. 
+
+pattern and dist\+\_\+from\+\_\+root are initialized to 0. \mbox{\Hypertarget{classAC_1_1Node_ae75632ef27a410b82a7e26a8d918d147}\label{classAC_1_1Node_ae75632ef27a410b82a7e26a8d918d147}} 
+\index{AC::Node@{AC::Node}!Node@{Node}}
+\index{Node@{Node}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily AC\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classAC_1_1Node}{Node}} with pattern and dist\+\_\+from\+\_\+root set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & an int, numeric pattern identifier \\
+\hline
+{\em d} & an int, the number of nodes from root. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}\label{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}} 
+\index{AC::Node@{AC::Node}!distFromRoot@{distFromRoot}}
+\index{distFromRoot@{distFromRoot}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{distFromRoot()}{distFromRoot()}}
+{\footnotesize\ttfamily int AC\+::\+Node\+::dist\+From\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+getter for dist\+\_\+from\+\_\+root. 
+
+\begin{DoxyReturn}{Returns}
+an integer representing the number of nodes from root. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}\label{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}} 
+\index{AC::Node@{AC::Node}!failureLink@{failureLink}}
+\index{failureLink@{failureLink}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{failureLink()}{failureLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Node\+::failure\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get pointer to node at which search() should resume at mismatch. 
+
+The final edge object in edges will point to the node at which search() should resume. The default value of next is nullptr, which should be used to signify search() should resume at root.
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classAC_1_1Node}{Node}} pointer found in the final edge object in edges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}\label{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}} 
+\index{AC::Node@{AC::Node}!outLink@{outLink}}
+\index{outLink@{outLink}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{outLink()}{outLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Node\+::out\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get attribute out\+\_\+link 
+
+\begin{DoxyReturn}{Returns}
+pointer to the out\+\_\+link node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}\label{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}} 
+\index{AC::Node@{AC::Node}!patternIndicator@{patternIndicator}}
+\index{patternIndicator@{patternIndicator}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{patternIndicator()}{patternIndicator()}}
+{\footnotesize\ttfamily int AC\+::\+Node\+::pattern\+Indicator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pattern\+\_\+indicator attribute. 
+
+\begin{DoxyReturn}{Returns}
+an int signifying the index of the pattern 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}\label{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}} 
+\index{AC::Node@{AC::Node}!setDistFromRoot@{setDistFromRoot}}
+\index{setDistFromRoot@{setDistFromRoot}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{setDistFromRoot()}{setDistFromRoot()}}
+{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Dist\+From\+Root (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Dist From Root object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & an integer representing the number of nodes from root. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1Node_ab7249cee93f754f8f2030560c834ac5c}\label{classAC_1_1Node_ab7249cee93f754f8f2030560c834ac5c}} 
+\index{AC::Node@{AC::Node}!setOutLink@{setOutLink}}
+\index{setOutLink@{setOutLink}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{setOutLink()}{setOutLink()}}
+{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Out\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the out\+\_\+link attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & a pointer to a \mbox{\hyperlink{classAC_1_1Node}{Node}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}\label{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}} 
+\index{AC::Node@{AC::Node}!setPatternIndicator@{setPatternIndicator}}
+\index{setPatternIndicator@{setPatternIndicator}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{setPatternIndicator()}{setPatternIndicator()}}
+{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Pattern\+Indicator (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the pattern\+\_\+indicator attribute. 
+
+pattern\+\_\+indicator is default 0, indicating no pattern.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the integer used to refer to a given pattern \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}\label{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}} 
+\index{AC::Node@{AC::Node}!dist\_from\_root@{dist\_from\_root}}
+\index{dist\_from\_root@{dist\_from\_root}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{dist\_from\_root}{dist\_from\_root}}
+{\footnotesize\ttfamily int AC\+::\+Node\+::dist\+\_\+from\+\_\+root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+distance from the root node. 
+
+This will be used as the value by which the aho corasick search algorithm may \textquotesingle{}skip\textquotesingle{} the pattern forward. \mbox{\Hypertarget{classAC_1_1Node_ae9b5c16831dad477e0c29ed088c41000}\label{classAC_1_1Node_ae9b5c16831dad477e0c29ed088c41000}} 
+\index{AC::Node@{AC::Node}!edges@{edges}}
+\index{edges@{edges}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Edge}{Edge}}$\ast$ AC\+::\+Node\+::edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to first edge object. 
+
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} objects may be used to construct a forward linked list. Each edge object has an attribute label which stores the char representing the labe from the current node to the next node. \mbox{\Hypertarget{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}\label{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}} 
+\index{AC::Node@{AC::Node}!out\_link@{out\_link}}
+\index{out\_link@{out\_link}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{out\_link}{out\_link}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}}$\ast$ AC\+::\+Node\+::out\+\_\+link\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the node reachable by the fewest failure links, if one exists. 
+
+Default constructor should set this to nullptr. \mbox{\Hypertarget{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}\label{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}} 
+\index{AC::Node@{AC::Node}!pattern@{pattern}}
+\index{pattern@{pattern}!AC::Node@{AC::Node}}
+\doxysubsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily int AC\+::\+Node\+::pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+an int representing one of the input patterns in the Trie. 
+
+Default constructor should set this to zero, indicating a given \mbox{\hyperlink{classAC_1_1Node}{Node}} does not represent an input pattern. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+h\end{DoxyCompactItemize}

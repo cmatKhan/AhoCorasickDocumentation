@@ -1,0 +1,192 @@
+\hypertarget{classAC_1_1Edge}{}\doxysection{AC\+::Edge Class Reference}
+\label{classAC_1_1Edge}\index{AC::Edge@{AC::Edge}}
+
+
+list of edges out of a trie node.  
+
+
+
+
+{\ttfamily \#include $<$aho\+\_\+corasick.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}{Edge}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{set\+Next\+Edge}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object with attributes filled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ \mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{next\+Edge}} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer stored in attribute next\+\_\+edge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}{set\+Edge\+Label}} (char l)
+\begin{DoxyCompactList}\small\item\em Set the the label attribute. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}} ()
+\begin{DoxyCompactList}\small\item\em get the label attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}{set\+Trie\+Node}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$tn)
+\begin{DoxyCompactList}\small\item\em Set the trie\+\_\+node attribute. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}\label{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries trie\+Node} ()
+\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Edge_ae7d622345a1abcd816d9638a46d0a5fb}{search}} (char c)
+\begin{DoxyCompactList}\small\item\em Insert another \mbox{\hyperlink{classAC_1_1Edge}{Edge}} in the forward linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\+\_\+edge}}
+\begin{DoxyCompactList}\small\item\em pointer to next edge in list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}\label{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries trie\+\_\+node}
+\begin{DoxyCompactList}\small\item\em pointer to a Trie\+Node ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}\label{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}} 
+char {\bfseries edge\+\_\+label}
+\begin{DoxyCompactList}\small\item\em label of the edge between parent and next node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+list of edges out of a trie node. 
+
+A forward linked list which will store edges out of a given trie node.
+
+cite\+: c++ crash course by Josh Lospinoso 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}\label{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}} 
+\index{AC::Edge@{AC::Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily AC\+::\+Edge\+::\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. 
+
+next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}\label{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}} 
+\index{AC::Edge@{AC::Edge}!label@{label}}
+\index{label@{label}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily char AC\+::\+Edge\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the label attribute. 
+
+\begin{DoxyReturn}{Returns}
+the char in the label attribute. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}\label{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}} 
+\index{AC::Edge@{AC::Edge}!nextEdge@{nextEdge}}
+\index{nextEdge@{nextEdge}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{nextEdge()}{nextEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ AC\+::\+Edge\+::next\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pointer stored in attribute next\+\_\+edge. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAC_1_1Edge}{Edge}} pointer stored in this-\/\texorpdfstring{$>$}{>}next\+\_\+edge. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Edge_ae7d622345a1abcd816d9638a46d0a5fb}\label{classAC_1_1Edge_ae7d622345a1abcd816d9638a46d0a5fb}} 
+\index{AC::Edge@{AC::Edge}!search@{search}}
+\index{search@{search}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Edge\+::search (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert another \mbox{\hyperlink{classAC_1_1Edge}{Edge}} in the forward linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & insert a new node into the edge list with label char c.\\
+\hline
+\end{DoxyParams}
+Search the edge list for a given character. If an edge with a given char label exists, return the pointer to that node in the Trie. NOTE\+: a reference will always be returned. Make sure the final edge in the Edgelist stores the trie\+\_\+node reference to the \textquotesingle{}failure link\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a character with which to search the labels of the edge list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to a \mbox{\hyperlink{classAC_1_1Node}{Node}}. NOTE\+: a reference to a \mbox{\hyperlink{classAC_1_1Node}{Node}} will always be returned. Make sure the last node in the edge list points to the \textquotesingle{}failure link\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}\label{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}} 
+\index{AC::Edge@{AC::Edge}!setEdgeLabel@{setEdgeLabel}}
+\index{setEdgeLabel@{setEdgeLabel}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{setEdgeLabel()}{setEdgeLabel()}}
+{\footnotesize\ttfamily void AC\+::\+Edge\+::set\+Edge\+Label (\begin{DoxyParamCaption}\item[{char}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the the label attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & a char representing the edge label \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}\label{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}} 
+\index{AC::Edge@{AC::Edge}!setNextEdge@{setNextEdge}}
+\index{setNextEdge@{setNextEdge}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{setNextEdge()}{setNextEdge()}}
+{\footnotesize\ttfamily void AC\+::\+Edge\+::set\+Next\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object with attributes filled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \\
+\hline
+{\em l} & a char label for the edge. \\
+\hline
+{\em n} & pointer to a \mbox{\hyperlink{classAC_1_1Node}{Node}} object.\\
+\hline
+\end{DoxyParams}
+Set the next\+\_\+edge attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}\label{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}} 
+\index{AC::Edge@{AC::Edge}!setTrieNode@{setTrieNode}}
+\index{setTrieNode@{setTrieNode}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{setTrieNode()}{setTrieNode()}}
+{\footnotesize\ttfamily void AC\+::\+Edge\+::set\+Trie\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the trie\+\_\+node attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tn} & a pointer to a trie node ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}\label{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}} 
+\index{AC::Edge@{AC::Edge}!next\_edge@{next\_edge}}
+\index{next\_edge@{next\_edge}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{next\_edge}{next\_edge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Edge}{Edge}}$\ast$ AC\+::\+Edge\+::next\+\_\+edge\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to next edge in list. 
+
+Default constructor should initialize this to nullptr. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{classAC_1_1AhoCorasickTri}{}\doxysection{AC\+::Aho\+Corasick\+Tri Class Reference}
+\label{classAC_1_1AhoCorasickTri}\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+
+
+test docs for my\+\_\+class.  
+
+
+
+
+{\ttfamily \#include $<$aho\+\_\+corasick.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1AhoCorasickTri_a808c7bb4fd9adc1231ecbcab17a5567f}{Aho\+Corasick\+Trie}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Aho\+Corasick\+Trie object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a4b21c380890bd5541dbea561c62f9238}{get\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Get the Root object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a0dbfd1fa7a8ace9c5530000d7698db06}{insert}} (char pattern\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Insert a pattern into the tri. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a6459cd0f03887c16a373af7d63530f1f}{find\+Nv}} ()
+\begin{DoxyCompactList}\small\item\em Set the failure\+\_\+links and output\+\_\+links. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a37a5e59317424dfde86f3d42b2dc9e75}{search}} (char target\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Using the tri, search a target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a271e3557a6132aa41021167d7d79374d}\label{classAC_1_1AhoCorasickTri_a271e3557a6132aa41021167d7d79374d}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries root}
+\begin{DoxyCompactList}\small\item\em pointer to a \mbox{\hyperlink{classAC_1_1Node}{Node}} object to use as the root of the Trie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+test docs for my\+\_\+class. 
+
+extended docs for my\+\_\+class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a808c7bb4fd9adc1231ecbcab17a5567f}\label{classAC_1_1AhoCorasickTri_a808c7bb4fd9adc1231ecbcab17a5567f}} 
+\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}!AhoCorasickTrie@{AhoCorasickTrie}}
+\index{AhoCorasickTrie@{AhoCorasickTrie}!AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+\doxysubsubsection{\texorpdfstring{AhoCorasickTrie()}{AhoCorasickTrie()}}
+{\footnotesize\ttfamily AC\+::\+Aho\+Corasick\+Tri\+::\+Aho\+Corasick\+Trie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Aho\+Corasick\+Trie object. 
+
+Initiate the ACT with a root node. \mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a6459cd0f03887c16a373af7d63530f1f}\label{classAC_1_1AhoCorasickTri_a6459cd0f03887c16a373af7d63530f1f}} 
+\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}!findNv@{findNv}}
+\index{findNv@{findNv}!AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+\doxysubsubsection{\texorpdfstring{findNv()}{findNv()}}
+{\footnotesize\ttfamily void AC\+::\+Aho\+Corasick\+Tri\+::find\+Nv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the failure\+\_\+links and output\+\_\+links. 
+
+Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a37a5e59317424dfde86f3d42b2dc9e75}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classAC_1_1AhoCorasickTri_a37a5e59317424dfde86f3d42b2dc9e75}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. ~\newline
+ \mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a4b21c380890bd5541dbea561c62f9238}\label{classAC_1_1AhoCorasickTri_a4b21c380890bd5541dbea561c62f9238}} 
+\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Aho\+Corasick\+Tri\+::get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Root object. 
+
+\begin{DoxyReturn}{Returns}
+Node$\ast$ reference to root node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a0dbfd1fa7a8ace9c5530000d7698db06}\label{classAC_1_1AhoCorasickTri_a0dbfd1fa7a8ace9c5530000d7698db06}} 
+\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}!insert@{insert}}
+\index{insert@{insert}!AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void AC\+::\+Aho\+Corasick\+Tri\+::insert (\begin{DoxyParamCaption}\item[{char}]{pattern\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Insert a pattern into the tri. 
+
+This function inserts both the input pattern as well as its reverse complement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pattern} & a string to enter into the tri \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1AhoCorasickTri_a37a5e59317424dfde86f3d42b2dc9e75}\label{classAC_1_1AhoCorasickTri_a37a5e59317424dfde86f3d42b2dc9e75}} 
+\index{AC::AhoCorasickTri@{AC::AhoCorasickTri}!search@{search}}
+\index{search@{search}!AC::AhoCorasickTri@{AC::AhoCorasickTri}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void AC\+::\+Aho\+Corasick\+Tri\+::search (\begin{DoxyParamCaption}\item[{char}]{target\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Using the tri, search a target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & a target string to search \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+h\end{DoxyCompactItemize}

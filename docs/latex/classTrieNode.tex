@@ -1,0 +1,248 @@
+\hypertarget{classTrieNode}{}\doxysection{Trie\+Node Class Reference}
+\label{classTrieNode}\index{TrieNode@{TrieNode}}
+
+
+Implement the Node interface.  
+
+
+Inheritance diagram for Trie\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTrieNode}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTrieNode_a3c44872f26b52fa29a38c91e69b22103}\label{classTrieNode_a3c44872f26b52fa29a38c91e69b22103}} 
+{\bfseries Trie\+Node} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Trie Node object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrieNode_abb9f30724cc0ebc7ec152c64660559fe}{set\+Out\+Link}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$n) override
+\begin{DoxyCompactList}\small\item\em Set the out\+\_\+link attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrieNode_a0093b28beb6844e77c085acc7a98abd4}{set\+Edges}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e) override
+\begin{DoxyCompactList}\small\item\em Set the edges attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrieNode_af214877250b1a7b85c420c9988e0ddfb}{set\+Dist\+From\+Root}} (int d) override
+\begin{DoxyCompactList}\small\item\em Set the value of attribute dist\+\_\+from\+\_\+root. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrieNode_af19ace322b1c604dbf9b4dbf38257507}{set\+Pattern\+Indicator}} (int i) override
+\begin{DoxyCompactList}\small\item\em Set the pattern\+\_\+indicator attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTrieNode_a0182e58784f52e82155ea15a5a8faaf4}{pattern\+Indicator}} () override
+\begin{DoxyCompactList}\small\item\em Get the pattern\+\_\+indicator attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTrieNode_aa15564d5281aeddf5b7a95cfd4ac51e0}{dist\+From\+Root}} () override
+\begin{DoxyCompactList}\small\item\em getter for the attribute dist\+\_\+from\+\_\+root. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classTrieNode_a51282fcdba0e8a575858df91191c2750}{out\+Link}} () override
+\begin{DoxyCompactList}\small\item\em get attribute out\+\_\+link \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classTrieNode_ace7f8fbc968758881b3f0c70199fa3a6}{failure\+Link}} () override
+\begin{DoxyCompactList}\small\item\em get pointer to node at which search() should resume at mismatch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classTrieNode_ae4b916435493f4a9403e20e97897f45a}{out\+\_\+link}}
+\begin{DoxyCompactList}\small\item\em pointer to the node reachable by the fewest failure links, if one exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ \mbox{\hyperlink{classTrieNode_a00cbb3379439453ca1be36c41ff9229b}{edges}}
+\begin{DoxyCompactList}\small\item\em pointer to first edge object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTrieNode_a346d24a7edf7fb4c9aab755fa820f3a5}{pattern\+\_\+indicator}}
+\begin{DoxyCompactList}\small\item\em an int representing one of the input patterns in the Trie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTrieNode_a6163e185344093f934bc187202a74664}{dist\+\_\+from\+\_\+root}}
+\begin{DoxyCompactList}\small\item\em distance from the root node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implement the Node interface. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrieNode_aa15564d5281aeddf5b7a95cfd4ac51e0}\label{classTrieNode_aa15564d5281aeddf5b7a95cfd4ac51e0}} 
+\index{TrieNode@{TrieNode}!distFromRoot@{distFromRoot}}
+\index{distFromRoot@{distFromRoot}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{distFromRoot()}{distFromRoot()}}
+{\footnotesize\ttfamily int Trie\+Node\+::dist\+From\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+getter for the attribute dist\+\_\+from\+\_\+root. 
+
+\begin{DoxyReturn}{Returns}
+int representing the distance from the root node. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_a091ec256a7a67108a0e34ad47d33dfe5}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_ace7f8fbc968758881b3f0c70199fa3a6}\label{classTrieNode_ace7f8fbc968758881b3f0c70199fa3a6}} 
+\index{TrieNode@{TrieNode}!failureLink@{failureLink}}
+\index{failureLink@{failureLink}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{failureLink()}{failureLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ Trie\+Node\+::failure\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+get pointer to node at which search() should resume at mismatch. 
+
+The final edge object in edges will point to the node at which search() should resume. The default value of next is nullptr, which should be used to signify search() should resume at root.
+
+\begin{DoxyReturn}{Returns}
+The Node pointer found in the final edge object in edges 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_afce8376fd1ce9d680c95cacdbb33cb3e}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_a51282fcdba0e8a575858df91191c2750}\label{classTrieNode_a51282fcdba0e8a575858df91191c2750}} 
+\index{TrieNode@{TrieNode}!outLink@{outLink}}
+\index{outLink@{outLink}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{outLink()}{outLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ Trie\+Node\+::out\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+get attribute out\+\_\+link 
+
+\begin{DoxyReturn}{Returns}
+pointer to the out\+\_\+link node. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_a92be37bbdbb64b8d2779f22774b7ef09}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_a0182e58784f52e82155ea15a5a8faaf4}\label{classTrieNode_a0182e58784f52e82155ea15a5a8faaf4}} 
+\index{TrieNode@{TrieNode}!patternIndicator@{patternIndicator}}
+\index{patternIndicator@{patternIndicator}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{patternIndicator()}{patternIndicator()}}
+{\footnotesize\ttfamily int Trie\+Node\+::pattern\+Indicator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the pattern\+\_\+indicator attribute. 
+
+\begin{DoxyReturn}{Returns}
+an int signifying the index of the pattern 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_a3f0a71f2de4cf8206b606cd6c3211383}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_af214877250b1a7b85c420c9988e0ddfb}\label{classTrieNode_af214877250b1a7b85c420c9988e0ddfb}} 
+\index{TrieNode@{TrieNode}!setDistFromRoot@{setDistFromRoot}}
+\index{setDistFromRoot@{setDistFromRoot}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{setDistFromRoot()}{setDistFromRoot()}}
+{\footnotesize\ttfamily void Trie\+Node\+::set\+Dist\+From\+Root (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the value of attribute dist\+\_\+from\+\_\+root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & an int representing the dist from root. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_a39369c9d544cf66af080d7b98c21396f}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_a0093b28beb6844e77c085acc7a98abd4}\label{classTrieNode_a0093b28beb6844e77c085acc7a98abd4}} 
+\index{TrieNode@{TrieNode}!setEdges@{setEdges}}
+\index{setEdges@{setEdges}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{setEdges()}{setEdges()}}
+{\footnotesize\ttfamily void Trie\+Node\+::set\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the edges attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a pointer to an Edge object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_a5ad1adc8eab253d0050bd58d0b8d0ef7}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_abb9f30724cc0ebc7ec152c64660559fe}\label{classTrieNode_abb9f30724cc0ebc7ec152c64660559fe}} 
+\index{TrieNode@{TrieNode}!setOutLink@{setOutLink}}
+\index{setOutLink@{setOutLink}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{setOutLink()}{setOutLink()}}
+{\footnotesize\ttfamily void Trie\+Node\+::set\+Out\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the out\+\_\+link attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & a pointer to a Node in the trie. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_aadfb96e64961c6f040d830ce8e0a90f7}{AC\+::\+Node}}.
+
+\mbox{\Hypertarget{classTrieNode_af19ace322b1c604dbf9b4dbf38257507}\label{classTrieNode_af19ace322b1c604dbf9b4dbf38257507}} 
+\index{TrieNode@{TrieNode}!setPatternIndicator@{setPatternIndicator}}
+\index{setPatternIndicator@{setPatternIndicator}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{setPatternIndicator()}{setPatternIndicator()}}
+{\footnotesize\ttfamily void Trie\+Node\+::set\+Pattern\+Indicator (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the pattern\+\_\+indicator attribute. 
+
+pattern\+\_\+indicator is default 0, indicating no pattern.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & an integer representing the pattern label in the Trie. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1Node_af0104ced8816952144578f4255408820}{AC\+::\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTrieNode_a6163e185344093f934bc187202a74664}\label{classTrieNode_a6163e185344093f934bc187202a74664}} 
+\index{TrieNode@{TrieNode}!dist\_from\_root@{dist\_from\_root}}
+\index{dist\_from\_root@{dist\_from\_root}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{dist\_from\_root}{dist\_from\_root}}
+{\footnotesize\ttfamily int Trie\+Node\+::dist\+\_\+from\+\_\+root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+distance from the root node. 
+
+This will be used as the value by which the aho corasick search algorithm may \textquotesingle{}skip\textquotesingle{} the pattern forward. \mbox{\Hypertarget{classTrieNode_a00cbb3379439453ca1be36c41ff9229b}\label{classTrieNode_a00cbb3379439453ca1be36c41ff9229b}} 
+\index{TrieNode@{TrieNode}!edges@{edges}}
+\index{edges@{edges}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Edge}{Edge}}$\ast$ Trie\+Node\+::edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to first edge object. 
+
+Edge objects may be used to construct a forward linked list. Each edge object has an attribute label which stores the char representing the labe from the current node to the next node. \mbox{\Hypertarget{classTrieNode_ae4b916435493f4a9403e20e97897f45a}\label{classTrieNode_ae4b916435493f4a9403e20e97897f45a}} 
+\index{TrieNode@{TrieNode}!out\_link@{out\_link}}
+\index{out\_link@{out\_link}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{out\_link}{out\_link}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}}$\ast$ Trie\+Node\+::out\+\_\+link\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the node reachable by the fewest failure links, if one exists. 
+
+Default constructor should set this to nullptr. \mbox{\Hypertarget{classTrieNode_a346d24a7edf7fb4c9aab755fa820f3a5}\label{classTrieNode_a346d24a7edf7fb4c9aab755fa820f3a5}} 
+\index{TrieNode@{TrieNode}!pattern\_indicator@{pattern\_indicator}}
+\index{pattern\_indicator@{pattern\_indicator}!TrieNode@{TrieNode}}
+\doxysubsubsection{\texorpdfstring{pattern\_indicator}{pattern\_indicator}}
+{\footnotesize\ttfamily int Trie\+Node\+::pattern\+\_\+indicator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+an int representing one of the input patterns in the Trie. 
+
+Default constructor should set this to zero, indicating a given Node does not represent an input pattern. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+cpp\end{DoxyCompactItemize}
