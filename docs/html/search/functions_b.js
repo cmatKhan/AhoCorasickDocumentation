@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatefinaltrienode_0',['updateFinalTrieNode',['../classAC_1_1AhoCorasickTrie.html#a1cafb1dea034130cbc2f77f89c838542',1,'AC::AhoCorasickTrie']]]
+  ['trienode_0',['trieNode',['../classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2',1,'AC::Edge']]]
 ];

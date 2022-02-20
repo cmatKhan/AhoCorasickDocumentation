@@ -16,8 +16,8 @@ namespace AC
     class Edge;
 
     /**
-     * @brief list of edges out of a trie node. A forward linked list 
-     * which will store edges out of a given trie node. 
+     * @brief list of edge_head out of a trie node. A forward linked list 
+     * which will store edge_head out of a given trie node. 
      * 
      * cite: c++ crash course by Josh Lospinoso 
      */
@@ -61,13 +61,13 @@ namespace AC
            * @param l a char label for the edge.
            * @param n pointer to a Node object.
            */
-        //   Edge(Edge* e, char l, Node* n){
-        //       // set attributes
-        //       next_edge = e;
-        //       trie_node = n;
-        //       edge_label = l;
+          Edge(Edge* e, char l, Node* n){
+              // set attributes
+              next_edge = e;
+              trie_node = n;
+              edge_label = l;
               
-        //   }
+          }
 
           /**
            * @brief Set the next_edge attribute.
@@ -113,46 +113,15 @@ namespace AC
           void setTrieNode(Node* tn){
               trie_node = tn;
           }
-
+          /**
+           * @brief getter for the trie_node attribute. 
+           * 
+           * @return a Node pointer. 
+           */
           Node* trieNode(){
-              return(this->trie_node);
+              return(trie_node);
           }
 
-          /**
-           * @brief Insert another Edge in the forward linked list.
-           * 
-           * @param l insert a new node into the edge list with label char c.
-           */
-        //   void insert(char l, Node* n){
-            //   Edge e(nextEdge(), l, n);
-              // set the current edge to point to the new edge
-            //   setNextEdge(&e);
-        //   }
-
-          /**
-           * @brief Search the edge list for a given character.
-           * If an edge with a given char label exists, return the pointer 
-           * to that node in the Trie. NOTE: a reference will always be returned. 
-           * Make sure the final edge in the Edgelist stores the trie_node 
-           * reference to the 'failure link'.
-           * 
-           * @param c a character with which to search the labels of the edge 
-           * list
-           * 
-           * @return a reference to a Node. NOTE: a reference to a Node will 
-           * always be returned. Make sure the last node in the edge list points 
-           * to the 'failure link'.
-           */
-          Node* search(char c){
-              Edge* e = this;
-              while (e->nextEdge() && c != e->label())
-              {
-                  e = e->nextEdge();
-              }
-              
-              return(e->trieNode());
-              
-          }
     };
 
     /** A Tri Node. This is intended to be used in the 
@@ -173,7 +142,7 @@ namespace AC
          * node to the next node. 
          * 
          */
-        Edge* edges;
+        Edge* edge_head;
         /**
          * @brief an int representing one of the input patterns in the Trie. 
          * Default constructor should set this to zero, indicating a given Node 
@@ -189,53 +158,113 @@ namespace AC
          */
         int dist_from_root;
 
+        /**
+         * @brief iterate over edge list to find final edge. Use public 
+         *   functions failureLink() and setFailureLink() to set the trie_node 
+         *   attribute of the final edge 
+         * 
+         * @return a pointer to the final edge 
+         */
+        Edge* finalEdge(){
+              Edge* e = edge_head;
+              while (e->nextEdge()){
+                  // update e
+                  e = e->nextEdge();
+              }
+              return(e);
+        }
+
         public:
           /**
            * @brief Construct a new null Node object.
            * pattern and dist_from_root are initialized to 0.
            * 
+           * @param e a pointer to an Edge object to which edge_head is set. 
+           *   Should be a edge with next set to nullptr
            */
-          Node(){
-              Edge e;
+          Node(Edge* e){
               out_link = nullptr;
-              edges = &e;
-              pattern = 0;
-              dist_from_root = 0;
+              edge_head = e;
+              pattern = -1;
+              dist_from_root = -1;
           }
           /**
            * @brief Construct a new Node with pattern and dist_from_root set.
            * 
+           * @param e a pointer to an Edge object
            * @param p an int, numeric pattern identifier
            * @param d an int, the number of nodes from root.
            */
-          Node(int p, int d){
-              Edge e;
+          Node(Edge* e, int p, int d){
               out_link = nullptr;
-              edges = &e;
+              edge_head = e;
               pattern = p;
               dist_from_root = d;
           }
+
+          /**
+           * @brief add new edge to the beginning of the list  
+           * 
+           * @param e 
+           */
+          void insertEdge(Edge* e){
+              //TODO: error check that e.next_edge is nullptr and that e.label 
+              //   is not == '\0'
+              e->setNextEdge(edge_head);
+              edge_head = e;
+          }
           
+
           /**
            * @brief get pointer to node at which search() should resume at 
            *   mismatch. 
-           * The final edge object in edges will point to the node at which 
+           * The final edge object in edge_head will point to the node at which 
            * search() should resume. The default value of next is nullptr, which 
            * should be used to signify search() should resume at root.
            * 
-           * @return The Node pointer found in the final edge object in edges
+           * @return The Node pointer found in the final edge object in edge_head
            */
           Node* failureLink(){
-              // pointer to first edge node
-              Edge e = *edges;
-              // while e.next is not nullptr
-              while (e.nextEdge()){
-                  // update e
-                  e = *e.nextEdge();
-              }
-              return(e.trieNode());
+              Edge* e = finalEdge();
+              return(e->trieNode());
+          }
+
+          /**
+           * @brief Set the the failure link. The final edge in the edge_list 
+           *   stores either trie_node nullptr or a pointer to the node where a 
+           *   search of the Trie should resume.
+           * 
+           * @param tn a Node pointer. 
+           */
+          void setFailureLink(Node* tn){
+              Edge* e = finalEdge();
+              e->setTrieNode(tn);
           }
           
+          /**
+           * @brief Search the edge list for a given character.
+           * If an edge with a given char label exists, return the pointer 
+           * to that node in the Trie. NOTE: a reference will always be returned. 
+           * Make sure the final edge in the Edgelist stores the trie_node 
+           * reference to the 'failure link'.
+           * 
+           * @param c a character with which to search the labels of the edge 
+           * list
+           * 
+           * @return a reference to a Node. NOTE: a reference to a Node will 
+           * always be returned. Make sure the last node in the edge list points 
+           * to the 'failure link'.
+           */
+          Node* edgeSearch(char c){
+              Edge* e = edge_head;
+              while (e->nextEdge() && c != e->label())
+              {
+                  e = e->nextEdge();
+              }
+              
+              return(e->trieNode()); 
+          }
+
           /**
            * @brief Set the Dist From Root object
            * 

@@ -1,5 +1,0 @@
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:117: warning: Member trieNode() (function) of class AC::Edge is not documented.
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:133: warning: argument 'l' of command @param is not found in the argument list of AC::Edge::search(char c)
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'l' of command @param is not found in the argument list of AC::Edge::setNextEdge(Edge *e)
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'n' of command @param is not found in the argument list of AC::Edge::setNextEdge(Edge *e)
-/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:73: warning: argument 'e' from the argument list of AC::Edge::setNextEdge has multiple @param documentation sections
