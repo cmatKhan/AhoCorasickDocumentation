@@ -1,0 +1,129 @@
+\hypertarget{classACTrie}{}\doxysection{ACTrie Class Reference}
+\label{classACTrie}\index{ACTrie@{ACTrie}}
+Inheritance diagram for ACTrie\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classACTrie}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classACTrie_a8b575ec3d36353660bc39574e016f75c}{get\+Root}} () override
+\begin{DoxyCompactList}\small\item\em Get the reference to the root node of the Trie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}{insert}} (char pattern\mbox{[}$\,$\mbox{]}, int label) override
+\begin{DoxyCompactList}\small\item\em Insert a pattern into the tri. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classACTrie_a423e41463a72270b604f104e8efcfdae}{update\+Final\+Trie\+Node}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$n) override
+\begin{DoxyCompactList}\small\item\em Update the final edge\textquotesingle{}s next attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classACTrie_a6e6c527e9b1664903267c1ddcd915223}{find\+Nv}} () override
+\begin{DoxyCompactList}\small\item\em Set the failure\+\_\+links and output\+\_\+links. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search}} (char t\mbox{[}$\,$\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em Using the tri, search a target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}\label{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}} 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries root}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classACTrie_a6e6c527e9b1664903267c1ddcd915223}\label{classACTrie_a6e6c527e9b1664903267c1ddcd915223}} 
+\index{ACTrie@{ACTrie}!findNv@{findNv}}
+\index{findNv@{findNv}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{findNv()}{findNv()}}
+{\footnotesize\ttfamily void ACTrie\+::find\+Nv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the failure\+\_\+links and output\+\_\+links. 
+
+Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. 
+
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_aa10d2d2a6f63b9e5f11fd3f4dfcb4236}{AC\+::\+Aho\+Corasick\+Trie}}.
+
+\mbox{\Hypertarget{classACTrie_a8b575ec3d36353660bc39574e016f75c}\label{classACTrie_a8b575ec3d36353660bc39574e016f75c}} 
+\index{ACTrie@{ACTrie}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ ACTrie\+::get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the reference to the root node of the Trie. 
+
+\begin{DoxyReturn}{Returns}
+Node$\ast$ reference to root node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_ae73b6cff49262f5d2dd2fbfea812bf9c}{AC\+::\+Aho\+Corasick\+Trie}}.
+
+\mbox{\Hypertarget{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}\label{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}} 
+\index{ACTrie@{ACTrie}!insert@{insert}}
+\index{insert@{insert}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void ACTrie\+::insert (\begin{DoxyParamCaption}\item[{char}]{pattern\mbox{[}$\,$\mbox{]},  }\item[{int}]{pattern\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Insert a pattern into the tri. 
+
+This function inserts both the input pattern as well as its reverse complement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pattern} & a string to enter into the trie. \\
+\hline
+{\em pattern\+\_\+index} & the pattern identifier. This is what will be emitted when match is found. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a312081cf52e9b81f89910d8ba14519ba}{AC\+::\+Aho\+Corasick\+Trie}}.
+
+\mbox{\Hypertarget{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}\label{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}} 
+\index{ACTrie@{ACTrie}!search@{search}}
+\index{search@{search}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void ACTrie\+::search (\begin{DoxyParamCaption}\item[{char}]{target\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Using the tri, search a target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & a target string to search \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7e555b3a36d6223024891ff7a7cce546}{AC\+::\+Aho\+Corasick\+Trie}}.
+
+\mbox{\Hypertarget{classACTrie_a423e41463a72270b604f104e8efcfdae}\label{classACTrie_a423e41463a72270b604f104e8efcfdae}} 
+\index{ACTrie@{ACTrie}!updateFinalTrieNode@{updateFinalTrieNode}}
+\index{updateFinalTrieNode@{updateFinalTrieNode}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{updateFinalTrieNode()}{updateFinalTrieNode()}}
+{\footnotesize\ttfamily void ACTrie\+::update\+Final\+Trie\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{nv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the final edge\textquotesingle{}s next attribute. 
+
+This is intended to be used to update the final node.\+next to point to the node in the Trie where the search algorithm should resume
+
+
+\begin{DoxyParams}{Parameters}
+{\em nv} & a pointer to another node in the Trie \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a267b7002a011f7dc408b2077def96798}{AC\+::\+Aho\+Corasick\+Trie}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hw1\+\_\+4/aho\+\_\+corasick.\+cpp\end{DoxyCompactItemize}

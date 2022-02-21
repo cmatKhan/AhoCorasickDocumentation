@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ahocorasicktrie_0',['AhoCorasickTrie',['../classAC_1_1AhoCorasickTrie.html#acea76988970bce9c0e842b08b14f5160',1,'AC::AhoCorasickTrie']]]
+  ['distfromroot_0',['distFromRoot',['../classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388',1,'AC::Node']]]
 ];

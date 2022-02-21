@@ -12,18 +12,19 @@ A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAC_1_1Node_a3c87cc780a8e46178e7bdecebf006418}{Node}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e)
-\begin{DoxyCompactList}\small\item\em Construct a new null \mbox{\hyperlink{classAC_1_1Node}{Node}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classAC_1_1Node_adf91f2ed8b671290ef462e4215d05a69}{Node}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e, int p, int d)
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Node}{Node}} with pattern and dist\+\_\+from\+\_\+root set. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classAC_1_1Node_a6c8be8c86e807863e9c0e0794ec88cc5}{insert\+Edge}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e)
-\begin{DoxyCompactList}\small\item\em add new edge to the beginning of the list ~\newline
- \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAC_1_1Node_a240dfcd042a908749d206bee281e04dd}\label{classAC_1_1Node_a240dfcd042a908749d206bee281e04dd}} 
+{\bfseries Node} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$$\ast$e)
+\item 
+\mbox{\Hypertarget{classAC_1_1Node_a6051835cec2f2ef0323013de06a0d7b7}\label{classAC_1_1Node_a6051835cec2f2ef0323013de06a0d7b7}} 
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ {\bfseries edge\+Head} ()
+\item 
+\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_ac27861240cb2614319281a4e3534cac0}{insert\+Edge}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$trie\+\_\+node, char l)
+\begin{DoxyCompactList}\small\item\em add new edge to the beginning of the list \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failure\+Link}} ()
 \begin{DoxyCompactList}\small\item\em get pointer to node at which search() should resume at mismatch. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classAC_1_1Node_ae1c37bce41824e8bc3f83f472b453d5c}{set\+Failure\+Link}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$tn)
+void \mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{set\+Failure\+Link}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$tn)
 \begin{DoxyCompactList}\small\item\em Set the the failure link. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a85bb0905a93836c87d1502b646897088}{edge\+Search}} (char c)
+\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ \mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edge\+Search}} (char c)
 \begin{DoxyCompactList}\small\item\em Search the edge list for a given character. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}{set\+Dist\+From\+Root}} (int d)
 \begin{DoxyCompactList}\small\item\em Set the Dist From Root object. \end{DoxyCompactList}\item 
@@ -60,45 +61,6 @@ A Tri \mbox{\hyperlink{classAC_1_1Node}{Node}}.
 
 This is intended to be used in the Aho\+Corasick Tri structure. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAC_1_1Node_a3c87cc780a8e46178e7bdecebf006418}\label{classAC_1_1Node_a3c87cc780a8e46178e7bdecebf006418}} 
-\index{AC::Node@{AC::Node}!Node@{Node}}
-\index{Node@{Node}!AC::Node@{AC::Node}}
-\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily AC\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Construct a new null \mbox{\hyperlink{classAC_1_1Node}{Node}} object. 
-
-pattern and dist\+\_\+from\+\_\+root are initialized to 0.
-
-
-\begin{DoxyParams}{Parameters}
-{\em e} & a pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object to which edge\+\_\+head is set. Should be a edge with next set to nullptr \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classAC_1_1Node_adf91f2ed8b671290ef462e4215d05a69}\label{classAC_1_1Node_adf91f2ed8b671290ef462e4215d05a69}} 
-\index{AC::Node@{AC::Node}!Node@{Node}}
-\index{Node@{Node}!AC::Node@{AC::Node}}
-\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily AC\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e,  }\item[{int}]{p,  }\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Construct a new \mbox{\hyperlink{classAC_1_1Node}{Node}} with pattern and dist\+\_\+from\+\_\+root set. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em e} & a pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object \\
-\hline
-{\em p} & an int, numeric pattern identifier \\
-\hline
-{\em d} & an int, the number of nodes from root. \\
-\hline
-\end{DoxyParams}
-
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}\label{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}} 
 \index{AC::Node@{AC::Node}!distFromRoot@{distFromRoot}}
@@ -113,11 +75,11 @@ getter for dist\+\_\+from\+\_\+root.
 \begin{DoxyReturn}{Returns}
 an integer representing the number of nodes from root. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAC_1_1Node_a85bb0905a93836c87d1502b646897088}\label{classAC_1_1Node_a85bb0905a93836c87d1502b646897088}} 
+\mbox{\Hypertarget{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}\label{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}} 
 \index{AC::Node@{AC::Node}!edgeSearch@{edgeSearch}}
 \index{edgeSearch@{edgeSearch}!AC::Node@{AC::Node}}
 \doxysubsubsection{\texorpdfstring{edgeSearch()}{edgeSearch()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Node\+::edge\+Search (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$ AC\+::\+Node\+::edge\+Search (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -158,27 +120,31 @@ The \mbox{\hyperlink{classAC_1_1Node}{Node}} pointer found in the final edge obj
 
 iterate over edge list to find final edge. 
 
-Use public functions \mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failure\+Link()}} and \mbox{\hyperlink{classAC_1_1Node_ae1c37bce41824e8bc3f83f472b453d5c}{set\+Failure\+Link()}} to set the trie\+\_\+node attribute of the final edge
+Use public functions \mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failure\+Link()}} and \mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{set\+Failure\+Link()}} to set the trie\+\_\+node attribute of the final edge
 
 \begin{DoxyReturn}{Returns}
 a pointer to the final edge 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAC_1_1Node_a6c8be8c86e807863e9c0e0794ec88cc5}\label{classAC_1_1Node_a6c8be8c86e807863e9c0e0794ec88cc5}} 
+\mbox{\Hypertarget{classAC_1_1Node_ac27861240cb2614319281a4e3534cac0}\label{classAC_1_1Node_ac27861240cb2614319281a4e3534cac0}} 
 \index{AC::Node@{AC::Node}!insertEdge@{insertEdge}}
 \index{insertEdge@{insertEdge}!AC::Node@{AC::Node}}
 \doxysubsubsection{\texorpdfstring{insertEdge()}{insertEdge()}}
-{\footnotesize\ttfamily void AC\+::\+Node\+::insert\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ AC\+::\+Node\+::insert\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{trie\+\_\+node,  }\item[{char}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-add new edge to the beginning of the list ~\newline
- 
+add new edge to the beginning of the list 
 
 
 \begin{DoxyParams}{Parameters}
-{\em e} & \\
+{\em trie\+\_\+node} & a double ptr to a new \mbox{\hyperlink{classAC_1_1Node}{Node}} object. This will be used to set the trie\+\_\+node pointer attribute in the new edge. \\
+\hline
+{\em l} & a character with which to label the new edge.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the trie\+\_\+node of the new edge 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}\label{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}} 
 \index{AC::Node@{AC::Node}!outLink@{outLink}}
 \index{outLink@{outLink}!AC::Node@{AC::Node}}
@@ -220,11 +186,11 @@ Set the Dist From Root object.
 {\em d} & an integer representing the number of nodes from root. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAC_1_1Node_ae1c37bce41824e8bc3f83f472b453d5c}\label{classAC_1_1Node_ae1c37bce41824e8bc3f83f472b453d5c}} 
+\mbox{\Hypertarget{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}\label{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}} 
 \index{AC::Node@{AC::Node}!setFailureLink@{setFailureLink}}
 \index{setFailureLink@{setFailureLink}!AC::Node@{AC::Node}}
 \doxysubsubsection{\texorpdfstring{setFailureLink()}{setFailureLink()}}
-{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Failure\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void AC\+::\+Node\+::set\+Failure\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

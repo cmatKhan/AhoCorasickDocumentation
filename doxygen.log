@@ -1,0 +1,4 @@
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.cpp:6: warning: Compound ACTrie is not documented.
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.cpp:8: warning: Member root (variable) of class ACTrie is not documented.
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:200: warning: Member Node(Edge **e) (function) of class AC::Node is not documented.
+/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/hw1_4/aho_corasick.h:208: warning: Member edgeHead() (function) of class AC::Node is not documented.

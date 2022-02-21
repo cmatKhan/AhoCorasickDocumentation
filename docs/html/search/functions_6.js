@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['label_0',['label',['../classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a',1,'AC::Edge']]]
+  ['nextedge_0',['nextEdge',['../classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465',1,'AC::Edge']]]
 ];

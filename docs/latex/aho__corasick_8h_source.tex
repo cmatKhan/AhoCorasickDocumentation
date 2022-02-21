@@ -13,156 +13,189 @@
 \DoxyCodeLine{17 }
 \DoxyCodeLine{24     \textcolor{keyword}{class }\mbox{\hyperlink{classAC_1_1Edge}{Edge}}}
 \DoxyCodeLine{25     \{}
-\DoxyCodeLine{31         \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}};}
-\DoxyCodeLine{32         }
-\DoxyCodeLine{37         \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}};}
-\DoxyCodeLine{38         }
+\DoxyCodeLine{31         \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *\mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}};}
+\DoxyCodeLine{38 }
 \DoxyCodeLine{43         \textcolor{keywordtype}{char} \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}};}
 \DoxyCodeLine{44 }
-\DoxyCodeLine{45         \textcolor{keyword}{public}:}
-\DoxyCodeLine{51           \mbox{\hyperlink{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}{Edge}}()\{}
-\DoxyCodeLine{52               \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{53               \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{54               \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{55           \}}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{64           \mbox{\hyperlink{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}{Edge}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e, \textcolor{keywordtype}{char} l, \mbox{\hyperlink{classAC_1_1Node}{Node}}* n)\{}
-\DoxyCodeLine{65               \textcolor{comment}{// set attributes}}
-\DoxyCodeLine{66               \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e;}
-\DoxyCodeLine{67               \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = n;}
-\DoxyCodeLine{68               \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l;}
-\DoxyCodeLine{69               }
-\DoxyCodeLine{70           \}}
+\DoxyCodeLine{45     \textcolor{keyword}{public}:}
+\DoxyCodeLine{51         \mbox{\hyperlink{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}{Edge}}()}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{54             \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{55             \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{65         \mbox{\hyperlink{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}{Edge}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} **n)}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{68             \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = *n;}
+\DoxyCodeLine{69             \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{70         \}}
 \DoxyCodeLine{71 }
-\DoxyCodeLine{77           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{setNextEdge}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e)\{}
-\DoxyCodeLine{78               \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e;}
-\DoxyCodeLine{79           \}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{86           \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* \mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}()\{}
-\DoxyCodeLine{87               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}}); }
-\DoxyCodeLine{88           \}}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{95           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}{setEdgeLabel}}(\textcolor{keywordtype}{char} l)\{}
-\DoxyCodeLine{96               \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l;}
-\DoxyCodeLine{97           \}}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{104           \textcolor{keywordtype}{char} \mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}()\{}
-\DoxyCodeLine{105               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}});}
-\DoxyCodeLine{106           \}}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{113           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}{setTrieNode}}(\mbox{\hyperlink{classAC_1_1Node}{Node}}* tn)\{}
-\DoxyCodeLine{114               \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = tn;}
-\DoxyCodeLine{115           \}}
-\DoxyCodeLine{121           \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()\{}
-\DoxyCodeLine{122               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}});}
-\DoxyCodeLine{123           \}}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125     \};}
+\DoxyCodeLine{79         \mbox{\hyperlink{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}{Edge}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e, \textcolor{keywordtype}{char} l, \mbox{\hyperlink{classAC_1_1Node}{Node}} *n)}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             \textcolor{comment}{// set attributes}}
+\DoxyCodeLine{82             \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e;}
+\DoxyCodeLine{83             \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = n;}
+\DoxyCodeLine{84             \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l;}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{setNextEdge}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e)}
+\DoxyCodeLine{93         \{}
+\DoxyCodeLine{94             \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e;}
+\DoxyCodeLine{95         \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102         \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}()}
+\DoxyCodeLine{103         \{}
+\DoxyCodeLine{104             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}});}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}{setEdgeLabel}}(\textcolor{keywordtype}{char} l)}
+\DoxyCodeLine{113         \{}
+\DoxyCodeLine{114             \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l;}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122         \textcolor{keywordtype}{char} \mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}()}
+\DoxyCodeLine{123         \{}
+\DoxyCodeLine{124             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}});}
+\DoxyCodeLine{125         \}}
 \DoxyCodeLine{126 }
-\DoxyCodeLine{131     \textcolor{keyword}{class }\mbox{\hyperlink{classAC_1_1Node}{Node}}}
-\DoxyCodeLine{132     \{}
-\DoxyCodeLine{137         \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}};}
-\DoxyCodeLine{145         \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
-\DoxyCodeLine{152         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}};}
-\DoxyCodeLine{159         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}};}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{168         \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* \mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}()\{}
-\DoxyCodeLine{169               \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e = \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
-\DoxyCodeLine{170               \textcolor{keywordflow}{while} (e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}())\{}
-\DoxyCodeLine{171                   \textcolor{comment}{// update e}}
-\DoxyCodeLine{172                   e = e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}();}
-\DoxyCodeLine{173               \}}
-\DoxyCodeLine{174               \textcolor{keywordflow}{return}(e);}
-\DoxyCodeLine{175         \}}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177         \textcolor{keyword}{public}:}
-\DoxyCodeLine{185           \mbox{\hyperlink{classAC_1_1Node_a3c87cc780a8e46178e7bdecebf006418}{Node}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e)\{}
-\DoxyCodeLine{186               \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}} = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{187               \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}} = e;}
-\DoxyCodeLine{188               \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}} = -\/1;}
-\DoxyCodeLine{189               \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}} = -\/1;}
-\DoxyCodeLine{190           \}}
-\DoxyCodeLine{198           \mbox{\hyperlink{classAC_1_1Node_adf91f2ed8b671290ef462e4215d05a69}{Node}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e, \textcolor{keywordtype}{int} p, \textcolor{keywordtype}{int} d)\{}
-\DoxyCodeLine{199               \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}} = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{200               \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}} = e;}
-\DoxyCodeLine{201               \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}} = p;}
-\DoxyCodeLine{202               \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}} = d;}
-\DoxyCodeLine{203           \}}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{210           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a6c8be8c86e807863e9c0e0794ec88cc5}{insertEdge}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e)\{}
-\DoxyCodeLine{211               \textcolor{comment}{//TODO: error check that e.next\_edge is nullptr and that e.label }}
-\DoxyCodeLine{212               \textcolor{comment}{//   is not == '\(\backslash\)0'}}
-\DoxyCodeLine{213               e-\/>\mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{setNextEdge}}(\mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}});}
-\DoxyCodeLine{214               \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}} = e;}
-\DoxyCodeLine{215           \}}
-\DoxyCodeLine{216           }
-\DoxyCodeLine{217 }
-\DoxyCodeLine{227           \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}()\{}
-\DoxyCodeLine{228               \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e = \mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}();}
-\DoxyCodeLine{229               \textcolor{keywordflow}{return}(e-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}());}
-\DoxyCodeLine{230           \}}
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}{setTrieNode}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} **tn)}
+\DoxyCodeLine{133         \{}
+\DoxyCodeLine{134             \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = *tn;}
+\DoxyCodeLine{135         \}}
+\DoxyCodeLine{141         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()}
+\DoxyCodeLine{142         \{}
+\DoxyCodeLine{143             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}});}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145     \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{151     \textcolor{keyword}{class }\mbox{\hyperlink{classAC_1_1Node}{Node}}}
+\DoxyCodeLine{152     \{}
+\DoxyCodeLine{157         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}};}
+\DoxyCodeLine{165         \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *\mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
+\DoxyCodeLine{172         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}};}
+\DoxyCodeLine{179         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{188         \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *\mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}()}
+\DoxyCodeLine{189         \{}
+\DoxyCodeLine{190             \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e = \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
+\DoxyCodeLine{191             \textcolor{keywordflow}{while} (e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}())}
+\DoxyCodeLine{192             \{}
+\DoxyCodeLine{193                 \textcolor{comment}{// update e}}
+\DoxyCodeLine{194                 e = e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}();}
+\DoxyCodeLine{195             \}}
+\DoxyCodeLine{196             \textcolor{keywordflow}{return} (e);}
+\DoxyCodeLine{197         \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{keyword}{public}:}
+\DoxyCodeLine{200         \mbox{\hyperlink{classAC_1_1Node}{Node}}(\mbox{\hyperlink{classAC_1_1Edge}{Edge}} **e)}
+\DoxyCodeLine{201         \{}
+\DoxyCodeLine{202             \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{203             \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}} = *e;}
+\DoxyCodeLine{204             \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}} = -\/1;}
+\DoxyCodeLine{205             \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}} = -\/1;}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208         Edge* edgeHead()}
+\DoxyCodeLine{209         \{}
+\DoxyCodeLine{210             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}});}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{222         \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Node_ac27861240cb2614319281a4e3534cac0}{insertEdge}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} **trie\_node, \textcolor{keywordtype}{char} l)}
+\DoxyCodeLine{223         \{}
+\DoxyCodeLine{224             \textcolor{comment}{// I had such a hard time figuring this out. The solution to this }}
+\DoxyCodeLine{225             \textcolor{comment}{// mess of a namespace was to use double pointers}}
+\DoxyCodeLine{226             \textcolor{comment}{// from https://www.geeksforgeeks.org/linked-\/list-\/set-\/2-\/inserting-\/a-\/node/}}
+\DoxyCodeLine{227             \textcolor{comment}{// push()}}
+\DoxyCodeLine{228             \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *new\_edge = \textcolor{keyword}{new} \mbox{\hyperlink{classAC_1_1Edge}{Edge}}\{\};}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230             new\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}{setTrieNode}}(trie\_node);}
 \DoxyCodeLine{231 }
-\DoxyCodeLine{239           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_ae1c37bce41824e8bc3f83f472b453d5c}{setFailureLink}}(\mbox{\hyperlink{classAC_1_1Node}{Node}}* tn)\{}
-\DoxyCodeLine{240               \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e = \mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}();}
-\DoxyCodeLine{241               e-\/>\mbox{\hyperlink{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}{setTrieNode}}(tn);}
-\DoxyCodeLine{242           \}}
-\DoxyCodeLine{243           }
-\DoxyCodeLine{258           \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Node_a85bb0905a93836c87d1502b646897088}{edgeSearch}}(\textcolor{keywordtype}{char} c)\{}
-\DoxyCodeLine{259               \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* e = \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
-\DoxyCodeLine{260               \textcolor{keywordflow}{while} (e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}() \&\& c != e-\/>\mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}())}
-\DoxyCodeLine{261               \{}
-\DoxyCodeLine{262                   e = e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}();}
-\DoxyCodeLine{263               \}}
-\DoxyCodeLine{264               }
-\DoxyCodeLine{265               \textcolor{keywordflow}{return}(e-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()); }
-\DoxyCodeLine{266           \}}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{274           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}{setDistFromRoot}}(\textcolor{keywordtype}{int} d)\{}
-\DoxyCodeLine{275               \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}} = d;}
-\DoxyCodeLine{276           \}}
-\DoxyCodeLine{277 }
-\DoxyCodeLine{283           \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}{distFromRoot}}()\{}
-\DoxyCodeLine{284               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}});}
-\DoxyCodeLine{285           \}}
-\DoxyCodeLine{286 }
-\DoxyCodeLine{293           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}{setPatternIndicator}}(\textcolor{keywordtype}{int} p)\{}
-\DoxyCodeLine{294               \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}} = p;}
-\DoxyCodeLine{295           \}}
-\DoxyCodeLine{296 }
-\DoxyCodeLine{302           \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}()\{}
-\DoxyCodeLine{303               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}});}
-\DoxyCodeLine{304           \}}
-\DoxyCodeLine{305           }
-\DoxyCodeLine{311           \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_ab7249cee93f754f8f2030560c834ac5c}{setOutLink}}(\mbox{\hyperlink{classAC_1_1Node}{Node}}* n)\{}
-\DoxyCodeLine{312               \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}} = n;}
-\DoxyCodeLine{313           \}}
-\DoxyCodeLine{314           }
-\DoxyCodeLine{320           \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{outLink}}()\{}
-\DoxyCodeLine{321               \textcolor{keywordflow}{return}(\mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}});}
-\DoxyCodeLine{322           \}}
-\DoxyCodeLine{323     \};}
-\DoxyCodeLine{324 }
+\DoxyCodeLine{232             new\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{setNextEdge}}(\mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}});}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234             new\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}{setEdgeLabel}}(l);}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236             \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}} = new\_edge;}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238             \textcolor{keywordflow}{return}(new\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}());}
+\DoxyCodeLine{239         \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{250         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}()}
+\DoxyCodeLine{251         \{}
+\DoxyCodeLine{252             \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e = \mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}();}
+\DoxyCodeLine{253             \textcolor{keywordflow}{return} (e-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}());}
+\DoxyCodeLine{254         \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{263         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{setFailureLink}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} **tn)}
+\DoxyCodeLine{264         \{}
+\DoxyCodeLine{265             \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e = \mbox{\hyperlink{classAC_1_1Node_a4f01a6fac10516fecf75e2eb67bb366a}{finalEdge}}();}
+\DoxyCodeLine{266             e-\/>\mbox{\hyperlink{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}{setTrieNode}}(tn);}
+\DoxyCodeLine{267         \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{283         \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(\textcolor{keywordtype}{char} c)}
+\DoxyCodeLine{284         \{}
+\DoxyCodeLine{285             \mbox{\hyperlink{classAC_1_1Edge}{Edge}} *e = \mbox{\hyperlink{classAC_1_1Node_a6b7e56f70b095557ade399e182922a27}{edge\_head}};}
+\DoxyCodeLine{286             \textcolor{keywordflow}{while} (e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}() \&\& c != e-\/>\mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}())}
+\DoxyCodeLine{287             \{}
+\DoxyCodeLine{288                 e = e-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}();}
+\DoxyCodeLine{289             \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291             \textcolor{keywordflow}{return} (e);}
+\DoxyCodeLine{292         \}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{300         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}{setDistFromRoot}}(\textcolor{keywordtype}{int} d)}
+\DoxyCodeLine{301         \{}
+\DoxyCodeLine{302             \mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}} = d;}
+\DoxyCodeLine{303         \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{310         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}{distFromRoot}}()}
+\DoxyCodeLine{311         \{}
+\DoxyCodeLine{312             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Node_a221c84c30abb5b7717c304210e39d1cf}{dist\_from\_root}});}
+\DoxyCodeLine{313         \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{321         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}{setPatternIndicator}}(\textcolor{keywordtype}{int} p)}
+\DoxyCodeLine{322         \{}
+\DoxyCodeLine{323             \mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}} = p;}
+\DoxyCodeLine{324         \}}
 \DoxyCodeLine{325 }
-\DoxyCodeLine{330     \textcolor{keyword}{class }\mbox{\hyperlink{classAC_1_1AhoCorasickTrie}{AhoCorasickTrie}}}
-\DoxyCodeLine{331     \{}
-\DoxyCodeLine{336         \mbox{\hyperlink{classAC_1_1Node}{Node}}* \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a88776ccbc94d7d14665c270aceb891eb}{root}};}
-\DoxyCodeLine{337 }
-\DoxyCodeLine{338     \textcolor{keyword}{public}:}
-\DoxyCodeLine{344         \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_acea76988970bce9c0e842b08b14f5160}{AhoCorasickTrie}}();}
+\DoxyCodeLine{331         \textcolor{keywordtype}{int} \mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}()}
+\DoxyCodeLine{332         \{}
+\DoxyCodeLine{333             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Node_a12422e5e2b8b703ef429119d1b638f8f}{pattern}});}
+\DoxyCodeLine{334         \}}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{341         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1Node_ab7249cee93f754f8f2030560c834ac5c}{setOutLink}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} *n)}
+\DoxyCodeLine{342         \{}
+\DoxyCodeLine{343             \mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}} = n;}
+\DoxyCodeLine{344         \}}
 \DoxyCodeLine{345 }
-\DoxyCodeLine{351         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a53cae8c3cc84586778860d589af116e5}{getRoot}}();}
-\DoxyCodeLine{352 }
-\DoxyCodeLine{362         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_abc37f32fb8ff9ba07a40214a14be0987}{insert}}(\textcolor{keywordtype}{char} pattern[], \textcolor{keywordtype}{int} pattern\_index);}
+\DoxyCodeLine{351         \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{outLink}}()}
+\DoxyCodeLine{352         \{}
+\DoxyCodeLine{353             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Node_a3cb46c1d08307522d92d68e8f7976f44}{out\_link}});}
+\DoxyCodeLine{354         \}}
+\DoxyCodeLine{355     \};}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{361     \textcolor{keyword}{class }\mbox{\hyperlink{classAC_1_1AhoCorasickTrie}{AhoCorasickTrie}}}
+\DoxyCodeLine{362     \{}
 \DoxyCodeLine{363 }
-\DoxyCodeLine{372         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a1cafb1dea034130cbc2f77f89c838542}{updateFinalTrieNode}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} *nv);}
+\DoxyCodeLine{364     \textcolor{keyword}{public}:}
+\DoxyCodeLine{365         \textcolor{keyword}{virtual} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie}{\string~AhoCorasickTrie}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{372         \textcolor{keyword}{virtual} \mbox{\hyperlink{classAC_1_1Node}{Node}} *\mbox{\hyperlink{classAC_1_1AhoCorasickTrie_ae73b6cff49262f5d2dd2fbfea812bf9c}{getRoot}}() = 0;}
 \DoxyCodeLine{373 }
-\DoxyCodeLine{384         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_afb85e4b5b18854050bfa224fca11c743}{findNv}}();}
-\DoxyCodeLine{385 }
-\DoxyCodeLine{391         \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a24898765422d641c8540a2fbf7da677d}{search}}(\textcolor{keywordtype}{char} target[]);}
-\DoxyCodeLine{392     \};}
-\DoxyCodeLine{393 }
-\DoxyCodeLine{394 \}}
-\DoxyCodeLine{395 }
-\DoxyCodeLine{396 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ac\_h */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{383         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a312081cf52e9b81f89910d8ba14519ba}{insert}}(\textcolor{keywordtype}{char} pattern[], \textcolor{keywordtype}{int} pattern\_index) = 0;}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{393         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a267b7002a011f7dc408b2077def96798}{updateFinalTrieNode}}(\mbox{\hyperlink{classAC_1_1Node}{Node}} **nv) = 0;}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{405         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_aa10d2d2a6f63b9e5f11fd3f4dfcb4236}{findNv}}() = 0;}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{412         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7e555b3a36d6223024891ff7a7cce546}{search}}(\textcolor{keywordtype}{char} target[]) = 0;}
+\DoxyCodeLine{413     \};}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ac\_h */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

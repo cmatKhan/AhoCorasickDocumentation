@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['edge_0',['Edge',['../classAC_1_1Edge.html#a0ab4008802b4938155c39dc874033b19',1,'AC::Edge::Edge()'],['../classAC_1_1Edge.html#aaf11200c88eb5b1d1c8f4c0127efbbfa',1,'AC::Edge::Edge(Edge *e, char l, Node *n)']]],
-  ['edgesearch_1',['edgeSearch',['../classAC_1_1Node.html#a85bb0905a93836c87d1502b646897088',1,'AC::Node']]]
+  ['failurelink_0',['failureLink',['../classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd',1,'AC::Node']]],
+  ['finaledge_1',['finalEdge',['../classAC_1_1Node.html#a4f01a6fac10516fecf75e2eb67bb366a',1,'AC::Node']]],
+  ['findnv_2',['findNv',['../classACTrie.html#a6e6c527e9b1664903267c1ddcd915223',1,'ACTrie::findNv()'],['../classAC_1_1AhoCorasickTrie.html#aa10d2d2a6f63b9e5f11fd3f4dfcb4236',1,'AC::AhoCorasickTrie::findNv()']]]
 ];

@@ -14,6 +14,8 @@ list of edge\+\_\+head out of a trie node.
 \item 
 \mbox{\hyperlink{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}{Edge}} ()
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}{Edge}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$n)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}{Edge}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e, char l, \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$n)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object with attributes filled. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}{set\+Next\+Edge}} (\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$e)
@@ -24,7 +26,7 @@ void \mbox{\hyperlink{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}{set\+Ed
 \begin{DoxyCompactList}\small\item\em Set the the label attribute. \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}} ()
 \begin{DoxyCompactList}\small\item\em get the label attribute. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}{set\+Trie\+Node}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$tn)
+void \mbox{\hyperlink{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}{set\+Trie\+Node}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$tn)
 \begin{DoxyCompactList}\small\item\em Set the trie\+\_\+node attribute. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trie\+Node}} ()
 \begin{DoxyCompactList}\small\item\em getter for the trie\+\_\+node attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -35,8 +37,7 @@ void \mbox{\hyperlink{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}{set\+Tr
 \begin{DoxyCompactList}\small\item\em pointer to next edge in list. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}\label{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}} 
 \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries trie\+\_\+node}
-\begin{DoxyCompactList}\small\item\em pointer to a Trie\+Node ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em pointer to a Trie\+Node \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}\label{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}} 
 char {\bfseries edge\+\_\+label}
 \begin{DoxyCompactList}\small\item\em label of the edge between parent and next node. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -53,17 +54,34 @@ cite\+: c++ crash course by Josh Lospinoso
 \mbox{\Hypertarget{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}\label{classAC_1_1Edge_a0ab4008802b4938155c39dc874033b19}} 
 \index{AC::Edge@{AC::Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!AC::Edge@{AC::Edge}}
-\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily AC\+::\+Edge\+::\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. 
 
-next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string \mbox{\Hypertarget{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}\label{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}} 
+next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string \mbox{\Hypertarget{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}\label{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}} 
 \index{AC::Edge@{AC::Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!AC::Edge@{AC::Edge}}
-\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily AC\+::\+Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. 
+
+next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & a double ptr to a node obj. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}\label{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}} 
+\index{AC::Edge@{AC::Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!AC::Edge@{AC::Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily AC\+::\+Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Edge}{Edge}} $\ast$}]{e,  }\item[{char}]{l,  }\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -138,11 +156,11 @@ Set the next\+\_\+edge attribute.
 {\em e} & a pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}\label{classAC_1_1Edge_aa6c7bfcf72af3894274c8bdbe3a748b4}} 
+\mbox{\Hypertarget{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}\label{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}} 
 \index{AC::Edge@{AC::Edge}!setTrieNode@{setTrieNode}}
 \index{setTrieNode@{setTrieNode}!AC::Edge@{AC::Edge}}
 \doxysubsubsection{\texorpdfstring{setTrieNode()}{setTrieNode()}}
-{\footnotesize\ttfamily void AC\+::\+Edge\+::set\+Trie\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void AC\+::\+Edge\+::set\+Trie\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -150,8 +168,7 @@ Set the trie\+\_\+node attribute.
 
 
 \begin{DoxyParams}{Parameters}
-{\em tn} & a pointer to a trie node ~\newline
- \\
+{\em tn} & a pointer to a trie node \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}\label{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}} 
