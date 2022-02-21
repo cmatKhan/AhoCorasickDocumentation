@@ -1,13 +1,13 @@
 #ifndef ac_h
 #define ac_h
 
-/** Namespace of Aho Corasick implementation for HW1_4. 
- *  This contains the class aho_corasick, an implementation of 
- *  the Aho Corasick algorithm described in Dan Gusfield's 
- *  "Algorithms on Strings, Trees and Sequences". This note serves as a 
- *  general citation: a good deal of the code in this project is copied 
+/** Namespace of Aho Corasick implementation for HW1_4.
+ *  This contains the class aho_corasick, an implementation of
+ *  the Aho Corasick algorithm described in Dan Gusfield's
+ *  "Algorithms on Strings, Trees and Sequences". This note serves as a
+ *  general citation: a good deal of the code in this project is copied
  *  from Gusfield.
- * 
+ *
  */
 namespace AC
 {
@@ -16,379 +16,400 @@ namespace AC
     class Edge;
 
     /**
-     * @brief list of edge_head out of a trie node. A forward linked list 
-     * which will store edge_head out of a given trie node. 
-     * 
-     * cite: c++ crash course by Josh Lospinoso 
+     * @brief list of edge_head out of a trie node. A forward linked list
+     * which will store edge_head out of a given trie node.
+     *
+     * cite: c++ crash course by Josh Lospinoso
      */
     class Edge
     {
         /**
-         * @brief pointer to next edge in list. 
-         * Default constructor should initialize this to nullptr. 
-         * 
+         * @brief pointer to next edge in list.
+         * Default constructor should initialize this to nullptr.
+         *
          */
-        Edge* next_edge;
-        
+        Edge *next_edge;
+
         /**
-         * @brief pointer to a TrieNode  
-         * 
+         * @brief pointer to a TrieNode
+         *
          */
-        Node* trie_node;
-        
+        Node *trie_node;
+
         /**
-         * @brief label of the edge between parent and next node. 
-         * 
+         * @brief label of the edge between parent and next node.
+         *
          */
         char edge_label;
 
-        public:
-          /**
-           * @brief Construct a new Edge object. 
-           * next_edge and trie_node are set to nullptr. label is set to '\0', 
-           * a character not intended to match anything in string
-           */
-          Edge(){
-              next_edge = nullptr;
-              trie_node = nullptr;
-              edge_label = '\0';
-          }
+    public:
+        /**
+         * @brief Construct a new Edge object.
+         * next_edge and trie_node are set to nullptr. label is set to '\0',
+         * a character not intended to match anything in string
+         */
+        Edge()
+        {
+            next_edge = nullptr;
+            trie_node = nullptr;
+            edge_label = '\0';
+        }
 
-          /**
-           * @brief Construct a new Edge object with attributes filled.
-           * 
-           * @param e pointer to an Edge object.
-           * @param l a char label for the edge.
-           * @param n pointer to a Node object.
-           */
-          Edge(Edge* e, char l, Node* n){
-              // set attributes
-              next_edge = e;
-              trie_node = n;
-              edge_label = l;
-              
-          }
+        /**
+         * @brief Construct a new Edge object.
+         * next_edge and trie_node are set to nullptr. label is set to '\0',
+         * a character not intended to match anything in string
+         *
+         * @param n a double ptr to a node obj.
+         */
+        Edge(Node **n)
+        {
+            next_edge = nullptr;
+            trie_node = *n;
+            edge_label = '\0';
+        }
 
-          /**
-           * @brief Set the next_edge attribute.
-           * 
-           * @param e a pointer to an Edge object. 
-           */
-          void setNextEdge(Edge* e){
-              next_edge = e;
-          }
+        /**
+         * @brief Construct a new Edge object with attributes filled.
+         *
+         * @param e pointer to an Edge object.
+         * @param l a char label for the edge.
+         * @param n pointer to a Node object.
+         */
+        Edge(Edge *e, char l, Node *n)
+        {
+            // set attributes
+            next_edge = e;
+            trie_node = n;
+            edge_label = l;
+        }
 
-          /**
-           * @brief Get the pointer stored in attribute next_edge.
-           * 
-           * @return the Edge pointer stored in this->next_edge. 
-           */
-          Edge* nextEdge(){
-              return(next_edge); 
-          }
+        /**
+         * @brief Set the next_edge attribute.
+         *
+         * @param e a pointer to an Edge object.
+         */
+        void setNextEdge(Edge *e)
+        {
+            next_edge = e;
+        }
 
-          /**
-           * @brief Set the the label attribute
-           * 
-           * @param l a char representing the edge label 
-           */
-          void setEdgeLabel(char l){
-              edge_label = l;
-          }
+        /**
+         * @brief Get the pointer stored in attribute next_edge.
+         *
+         * @return the Edge pointer stored in this->next_edge.
+         */
+        Edge *nextEdge()
+        {
+            return (next_edge);
+        }
 
-          /**
-           * @brief get the label attribute. 
-           * 
-           * @return the char in the label attribute. 
-           */
-          char label(){
-              return(edge_label);
-          }
+        /**
+         * @brief Set the the label attribute
+         *
+         * @param l a char representing the edge label
+         */
+        void setEdgeLabel(char l)
+        {
+            edge_label = l;
+        }
 
-          /**
-           * @brief Set the trie_node attribute
-           * 
-           * @param tn a pointer to a trie node  
-           */
-          void setTrieNode(Node* tn){
-              trie_node = tn;
-          }
-          /**
-           * @brief getter for the trie_node attribute. 
-           * 
-           * @return a Node pointer. 
-           */
-          Node* trieNode(){
-              return(trie_node);
-          }
+        /**
+         * @brief get the label attribute.
+         *
+         * @return the char in the label attribute.
+         */
+        char label()
+        {
+            return (edge_label);
+        }
 
+        /**
+         * @brief Set the trie_node attribute
+         *
+         * @param tn a pointer to a trie node
+         */
+        void setTrieNode(Node **tn)
+        {
+            trie_node = *tn;
+        }
+        /**
+         * @brief getter for the trie_node attribute.
+         *
+         * @return a Node pointer.
+         */
+        Node *trieNode()
+        {
+            return (trie_node);
+        }
     };
 
-    /** A Tri Node. This is intended to be used in the 
+    /** A Tri Node. This is intended to be used in the
      *  AhoCorasick Tri structure.
-     *  
+     *
      */
     class Node
     {
         /**
-         * @brief pointer to the node reachable by the fewest failure links, if 
+         * @brief pointer to the node reachable by the fewest failure links, if
          *   one exists. Default constructor should set this to nullptr.
          */
-        Node* out_link;
+        Node *out_link;
         /**
-         * @brief pointer to first edge object. Edge objects may be used to 
-         * construct a forward linked list. Each edge object has an attribute 
-         * label which stores the char representing the labe from the current 
-         * node to the next node. 
-         * 
+         * @brief pointer to first edge object. Edge objects may be used to
+         * construct a forward linked list. Each edge object has an attribute
+         * label which stores the char representing the labe from the current
+         * node to the next node.
+         *
          */
-        Edge* edge_head;
+        Edge *edge_head;
         /**
-         * @brief an int representing one of the input patterns in the Trie. 
-         * Default constructor should set this to zero, indicating a given Node 
-         * does not represent an input pattern. 
-         * 
+         * @brief an int representing one of the input patterns in the Trie.
+         * Default constructor should set this to zero, indicating a given Node
+         * does not represent an input pattern.
+         *
          */
         int pattern;
         /**
-         * @brief distance from the root node. 
-         * This will be used as the value by which the aho corasick search 
-         * algorithm may 'skip' the pattern forward. 
-         * 
+         * @brief distance from the root node.
+         * This will be used as the value by which the aho corasick search
+         * algorithm may 'skip' the pattern forward.
+         *
          */
         int dist_from_root;
 
         /**
-         * @brief iterate over edge list to find final edge. Use public 
-         *   functions failureLink() and setFailureLink() to set the trie_node 
-         *   attribute of the final edge 
-         * 
-         * @return a pointer to the final edge 
+         * @brief iterate over edge list to find final edge. Use public
+         *   functions failureLink() and setFailureLink() to set the trie_node
+         *   attribute of the final edge
+         *
+         * @return a pointer to the final edge
          */
-        Edge* finalEdge(){
-              Edge* e = edge_head;
-              while (e->nextEdge()){
-                  // update e
-                  e = e->nextEdge();
-              }
-              return(e);
+        Edge *finalEdge()
+        {
+            Edge *e = edge_head;
+            while (e->nextEdge())
+            {
+                // update e
+                e = e->nextEdge();
+            }
+            return (e);
         }
 
-        public:
-          /**
-           * @brief Construct a new null Node object.
-           * pattern and dist_from_root are initialized to 0.
-           * 
-           * @param e a pointer to an Edge object to which edge_head is set. 
-           *   Should be a edge with next set to nullptr
-           */
-          Node(Edge* e){
-              out_link = nullptr;
-              edge_head = e;
-              pattern = -1;
-              dist_from_root = -1;
-          }
-          /**
-           * @brief Construct a new Node with pattern and dist_from_root set.
-           * 
-           * @param e a pointer to an Edge object
-           * @param p an int, numeric pattern identifier
-           * @param d an int, the number of nodes from root.
-           */
-          Node(Edge* e, int p, int d){
-              out_link = nullptr;
-              edge_head = e;
-              pattern = p;
-              dist_from_root = d;
-          }
+    public:
+        Node(Edge **e)
+        {
+            out_link = nullptr;
+            edge_head = *e;
+            pattern = -1;
+            dist_from_root = -1;
+        }
 
-          /**
-           * @brief add new edge to the beginning of the list  
-           * 
-           * @param e 
-           */
-          void insertEdge(Edge* e){
-              //TODO: error check that e.next_edge is nullptr and that e.label 
-              //   is not == '\0'
-              e->setNextEdge(edge_head);
-              edge_head = e;
-          }
-          
+        Edge* edgeHead()
+        {
+            return (edge_head);
+        }
 
-          /**
-           * @brief get pointer to node at which search() should resume at 
-           *   mismatch. 
-           * The final edge object in edge_head will point to the node at which 
-           * search() should resume. The default value of next is nullptr, which 
-           * should be used to signify search() should resume at root.
-           * 
-           * @return The Node pointer found in the final edge object in edge_head
-           */
-          Node* failureLink(){
-              Edge* e = finalEdge();
-              return(e->trieNode());
-          }
+        /**
+         * @brief add new edge to the beginning of the list
+         *
+         * @param trie_node a double ptr to a new Node object. This will be 
+         *   used to set the trie_node pointer attribute in the new edge.
+         * @param l a character with which to label the new edge.
+         * 
+         * @return a pointer to the trie_node of the new edge
+         */
+        Node* insertEdge(Node **trie_node, char l)
+        {
+            // I had such a hard time figuring this out. The solution to this 
+            // mess of a namespace was to use double pointers
+            // from https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+            // push()
+            Edge *new_edge = new Edge{};
 
-          /**
-           * @brief Set the the failure link. The final edge in the edge_list 
-           *   stores either trie_node nullptr or a pointer to the node where a 
-           *   search of the Trie should resume.
-           * 
-           * @param tn a Node pointer. 
-           */
-          void setFailureLink(Node* tn){
-              Edge* e = finalEdge();
-              e->setTrieNode(tn);
-          }
-          
-          /**
-           * @brief Search the edge list for a given character.
-           * If an edge with a given char label exists, return the pointer 
-           * to that node in the Trie. NOTE: a reference will always be returned. 
-           * Make sure the final edge in the Edgelist stores the trie_node 
-           * reference to the 'failure link'.
-           * 
-           * @param c a character with which to search the labels of the edge 
-           * list
-           * 
-           * @return a reference to a Node. NOTE: a reference to a Node will 
-           * always be returned. Make sure the last node in the edge list points 
-           * to the 'failure link'.
-           */
-          Node* edgeSearch(char c){
-              Edge* e = edge_head;
-              while (e->nextEdge() && c != e->label())
-              {
-                  e = e->nextEdge();
-              }
-              
-              return(e->trieNode()); 
-          }
+            new_edge->setTrieNode(trie_node);
 
-          /**
-           * @brief Set the Dist From Root object
-           * 
-           * @param d an integer representing the number of nodes from root.
-           * 
-           */
-          void setDistFromRoot(int d){
-              dist_from_root = d;
-          }
+            new_edge->setNextEdge(edge_head);
 
-          /**
-           * @brief getter for dist_from_root. 
-           * 
-           * @return an integer representing the number of nodes from root. 
-           */
-          int distFromRoot(){
-              return(dist_from_root);
-          }
+            new_edge->setEdgeLabel(l);
 
-          /**
-           * @brief Set the pattern_indicator attribute.
-           * pattern_indicator is default 0, indicating no pattern.
-           * 
-           * @param p the integer used to refer to a given pattern
-           */
-          void setPatternIndicator(int p){
-              pattern = p;
-          }
+            edge_head = new_edge;
 
-          /**
-           * @brief Get the pattern_indicator attribute
-           * 
-           * @return an int signifying the index of the pattern
-           */
-          int patternIndicator(){
-              return(pattern);
-          }
-          
-          /**
-           * @brief Set the out_link attribute
-           * 
-           * @param n a pointer to a Node
-           */
-          void setOutLink(Node* n){
-              out_link = n;
-          }
-          
-          /**
-           * @brief get attribute out_link
-           * 
-           * @return pointer to the out_link node 
-           */
-          Node* outLink(){
-              return(out_link);
-          }
+            return(new_edge->trieNode());
+        }
+
+        /**
+         * @brief get pointer to node at which search() should resume at
+         *   mismatch.
+         * The final edge object in edge_head will point to the node at which
+         * search() should resume. The default value of next is nullptr, which
+         * should be used to signify search() should resume at root.
+         *
+         * @return The Node pointer found in the final edge object in edge_head
+         */
+        Node *failureLink()
+        {
+            Edge *e = finalEdge();
+            return (e->trieNode());
+        }
+
+        /**
+         * @brief Set the the failure link. The final edge in the edge_list
+         *   stores either trie_node nullptr or a pointer to the node where a
+         *   search of the Trie should resume.
+         *
+         * @param tn a Node pointer.
+         */
+        void setFailureLink(Node **tn)
+        {
+            Edge *e = finalEdge();
+            e->setTrieNode(tn);
+        }
+
+        /**
+         * @brief Search the edge list for a given character.
+         * If an edge with a given char label exists, return the pointer
+         * to that node in the Trie. NOTE: a reference will always be returned.
+         * Make sure the final edge in the Edgelist stores the trie_node
+         * reference to the 'failure link'.
+         *
+         * @param c a character with which to search the labels of the edge
+         * list
+         *
+         * @return a reference to a Node. NOTE: a reference to a Node will
+         * always be returned. Make sure the last node in the edge list points
+         * to the 'failure link'.
+         */
+        Edge *edgeSearch(char c)
+        {
+            Edge *e = edge_head;
+            while (e->nextEdge() && c != e->label())
+            {
+                e = e->nextEdge();
+            }
+
+            return (e);
+        }
+
+        /**
+         * @brief Set the Dist From Root object
+         *
+         * @param d an integer representing the number of nodes from root.
+         *
+         */
+        void setDistFromRoot(int d)
+        {
+            dist_from_root = d;
+        }
+
+        /**
+         * @brief getter for dist_from_root.
+         *
+         * @return an integer representing the number of nodes from root.
+         */
+        int distFromRoot()
+        {
+            return (dist_from_root);
+        }
+
+        /**
+         * @brief Set the pattern_indicator attribute.
+         * pattern_indicator is default 0, indicating no pattern.
+         *
+         * @param p the integer used to refer to a given pattern
+         */
+        void setPatternIndicator(int p)
+        {
+            pattern = p;
+        }
+
+        /**
+         * @brief Get the pattern_indicator attribute
+         *
+         * @return an int signifying the index of the pattern
+         */
+        int patternIndicator()
+        {
+            return (pattern);
+        }
+
+        /**
+         * @brief Set the out_link attribute
+         *
+         * @param n a pointer to a Node
+         */
+        void setOutLink(Node *n)
+        {
+            out_link = n;
+        }
+
+        /**
+         * @brief get attribute out_link
+         *
+         * @return pointer to the out_link node
+         */
+        Node *outLink()
+        {
+            return (out_link);
+        }
     };
 
-
     /**
-     * @brief AhoCorasick Trie algorithm implementation. 
-     * 
+     * @brief AhoCorasick Trie algorithm implementation.
+     *
      */
     class AhoCorasickTrie
     {
-        /**
-         * @brief pointer to a Node object to use as the root of the Trie. 
-         * 
-         */
-        Node* root;
 
     public:
-        /**
-         * @brief Construct a new AhoCorasickTrie object. 
-         * Initiate the ACT with a root node.
-         * 
-         */
-        AhoCorasickTrie();
+        virtual ~AhoCorasickTrie() = default;
 
         /**
          * @brief Get the reference to the root node of the Trie.
-         * 
+         *
          * @return Node* reference to root node
          */
-        Node *getRoot();
+        virtual Node *getRoot() = 0;
 
         /**
-         * @brief Insert a pattern into the tri. 
-         * This function inserts both the input pattern as well as its reverse 
+         * @brief Insert a pattern into the tri.
+         * This function inserts both the input pattern as well as its reverse
          * complement.
-         * 
+         *
          * @param pattern a string to enter into the trie.
-         * @param pattern_index the pattern identifier. This is what will be 
+         * @param pattern_index the pattern identifier. This is what will be
          *   emitted when match is found.
          */
-        void insert(char pattern[], int pattern_index);
+        virtual void insert(char pattern[], int pattern_index) = 0;
 
         /**
-         * @brief Update the final edge's next attribute. 
-         * This is intended to be used to update the final node.next to point 
+         * @brief Update the final edge's next attribute.
+         * This is intended to be used to update the final node.next to point
          * to the node in the Trie where the search algorithm should resume
-         * 
-         * @param nv a pointer to another node in the Trie  
-         * 
+         *
+         * @param nv a pointer to another node in the Trie
+         *
          */
-        void updateFinalTrieNode(Node *nv);
+        virtual void updateFinalTrieNode(Node **nv) = 0;
 
         /**
-         * @brief Set the failure_links and output_links. 
-         * 
-         * Conduct a breadth first traversal over the nodes in the Trie. The 
-         * final node in the edge list will hold the pointer to the node which 
-         * the search() algorithm moves to when no match is found. nullptr 
-         * signifies that search() should resume at root. Otherwise, update the 
-         * final node.next to point to the appropriate node in the trie.   
-         *  
+         * @brief Set the failure_links and output_links.
+         *
+         * Conduct a breadth first traversal over the nodes in the Trie. The
+         * final node in the edge list will hold the pointer to the node which
+         * the search() algorithm moves to when no match is found. nullptr
+         * signifies that search() should resume at root. Otherwise, update the
+         * final node.next to point to the appropriate node in the trie.
+         *
          */
-        void findNv();
+        virtual void findNv() = 0;
 
         /**
-         * @brief Using the tri, search a target. 
-         *  
-         * @param target a target string to search 
+         * @brief Using the tri, search a target.
+         *
+         * @param target a target string to search
          */
-        void search(char target[]);
+        virtual void search(char target[]) = 0;
     };
 
 }
