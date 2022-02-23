@@ -84,7 +84,7 @@ Inheritance diagram for AC::AhoCorasickTrie:</div>
  <div class="center">
   <img src="classAC_1_1AhoCorasickTrie.png" usemap="#AC::AhoCorasickTrie_map" alt=""/>
   <map id="AC::AhoCorasickTrie_map" name="AC::AhoCorasickTrie_map">
-<area href="classACTrie.html" alt="ACTrie" shape="rect" coords="0,56,131,80"/>
+<area href="classACTrie.html" title="implement the AhoCorasick Trie interface" alt="ACTrie" shape="rect" coords="0,56,131,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -93,18 +93,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae73b6cff49262f5d2dd2fbfea812bf9c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classAC_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#ae73b6cff49262f5d2dd2fbfea812bf9c">getRoot</a> ()=0</td></tr>
 <tr class="memdesc:ae73b6cff49262f5d2dd2fbfea812bf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference to the root node of the Trie.  <a href="classAC_1_1AhoCorasickTrie.html#ae73b6cff49262f5d2dd2fbfea812bf9c">More...</a><br /></td></tr>
 <tr class="separator:ae73b6cff49262f5d2dd2fbfea812bf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a312081cf52e9b81f89910d8ba14519ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#a312081cf52e9b81f89910d8ba14519ba">insert</a> (char pattern[], int pattern_index)=0</td></tr>
-<tr class="memdesc:a312081cf52e9b81f89910d8ba14519ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a pattern into the tri.  <a href="classAC_1_1AhoCorasickTrie.html#a312081cf52e9b81f89910d8ba14519ba">More...</a><br /></td></tr>
-<tr class="separator:a312081cf52e9b81f89910d8ba14519ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267b7002a011f7dc408b2077def96798"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#a267b7002a011f7dc408b2077def96798">updateFinalTrieNode</a> (<a class="el" href="classAC_1_1Node.html">Node</a> **nv)=0</td></tr>
-<tr class="memdesc:a267b7002a011f7dc408b2077def96798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the final edge's next attribute.  <a href="classAC_1_1AhoCorasickTrie.html#a267b7002a011f7dc408b2077def96798">More...</a><br /></td></tr>
-<tr class="separator:a267b7002a011f7dc408b2077def96798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdda77915dc8ac16c3dbc78261ded5ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#afdda77915dc8ac16c3dbc78261ded5ea">insert</a> (string pattern, int pattern_index, int strand)=0</td></tr>
+<tr class="memdesc:afdda77915dc8ac16c3dbc78261ded5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a pattern into the tri.  <a href="classAC_1_1AhoCorasickTrie.html#afdda77915dc8ac16c3dbc78261ded5ea">More...</a><br /></td></tr>
+<tr class="separator:afdda77915dc8ac16c3dbc78261ded5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10d2d2a6f63b9e5f11fd3f4dfcb4236"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#aa10d2d2a6f63b9e5f11fd3f4dfcb4236">findNv</a> ()=0</td></tr>
 <tr class="memdesc:aa10d2d2a6f63b9e5f11fd3f4dfcb4236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the failure_links and output_links.  <a href="classAC_1_1AhoCorasickTrie.html#aa10d2d2a6f63b9e5f11fd3f4dfcb4236">More...</a><br /></td></tr>
 <tr class="separator:aa10d2d2a6f63b9e5f11fd3f4dfcb4236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e555b3a36d6223024891ff7a7cce546"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#a7e555b3a36d6223024891ff7a7cce546">search</a> (char target[])=0</td></tr>
-<tr class="memdesc:a7e555b3a36d6223024891ff7a7cce546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the tri, search a target.  <a href="classAC_1_1AhoCorasickTrie.html#a7e555b3a36d6223024891ff7a7cce546">More...</a><br /></td></tr>
-<tr class="separator:a7e555b3a36d6223024891ff7a7cce546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc543e54a96ebc66d7a560c8970c6ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee">search</a> (string target_filepath)=0</td></tr>
+<tr class="memdesc:a7dc543e54a96ebc66d7a560c8970c6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the tri, search a target.  <a href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee">More...</a><br /></td></tr>
+<tr class="separator:a7dc543e54a96ebc66d7a560c8970c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >AhoCorasick Trie algorithm implementation. </p>
@@ -133,7 +130,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the failure_links and output_links. </p>
-<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7e555b3a36d6223024891ff7a7cce546" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. nullptr signifies that <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7e555b3a36d6223024891ff7a7cce546" title="Using the tri, search a target.">search()</a> should resume at root. Otherwise, update the final node.next to point to the appropriate node in the trie. </p>
+<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. nullptr signifies that <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee" title="Using the tri, search a target.">search()</a> should resume at root. Otherwise, update the final node.next to point to the appropriate node in the trie. </p>
 
 <p>Implemented in <a class="el" href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223">ACTrie</a>.</p>
 
@@ -169,8 +166,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a312081cf52e9b81f89910d8ba14519ba" name="a312081cf52e9b81f89910d8ba14519ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a312081cf52e9b81f89910d8ba14519ba">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="afdda77915dc8ac16c3dbc78261ded5ea" name="afdda77915dc8ac16c3dbc78261ded5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdda77915dc8ac16c3dbc78261ded5ea">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,14 +178,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void AC::AhoCorasickTrie::insert </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>pattern</em>[], </td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pattern</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pattern_index</em>&#160;</td>
+          <td class="paramname"><em>pattern_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>strand</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,16 +212,17 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">pattern</td><td>a string to enter into the trie. </td></tr>
     <tr><td class="paramname">pattern_index</td><td>the pattern identifier. This is what will be emitted when match is found. </td></tr>
+    <tr><td class="paramname">strand</td><td>1 for forward (or the same direction as in the pattern file and 2 for reverse complement) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classACTrie.html#ab086bccb1cb0ddd3736be81f5baea93a">ACTrie</a>.</p>
+<p>Implemented in <a class="el" href="classACTrie.html#ad6aa4730ba51cf2ebbb0992271a58fae">ACTrie</a>.</p>
 
 </div>
 </div>
-<a id="a7e555b3a36d6223024891ff7a7cce546" name="a7e555b3a36d6223024891ff7a7cce546"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e555b3a36d6223024891ff7a7cce546">&#9670;&nbsp;</a></span>search()</h2>
+<a id="a7dc543e54a96ebc66d7a560c8970c6ee" name="a7dc543e54a96ebc66d7a560c8970c6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc543e54a96ebc66d7a560c8970c6ee">&#9670;&nbsp;</a></span>search()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,8 +233,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void AC::AhoCorasickTrie::search </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>target</em>[]</td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>target_filepath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -244,49 +248,12 @@ Public Member Functions</h2></td></tr>
 <p>Using the tri, search a target. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">target</td><td>a target string to search </td></tr>
+    <tr><td class="paramname">target_filepath</td><td>a path to a file containing a string </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classACTrie.html#af99bf3d3e8f77150b1a4ca169f819fc4">ACTrie</a>.</p>
-
-</div>
-</div>
-<a id="a267b7002a011f7dc408b2077def96798" name="a267b7002a011f7dc408b2077def96798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267b7002a011f7dc408b2077def96798">&#9670;&nbsp;</a></span>updateFinalTrieNode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AC::AhoCorasickTrie::updateFinalTrieNode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classAC_1_1Node.html">Node</a> **&#160;</td>
-          <td class="paramname"><em>nv</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Update the final edge's next attribute. </p>
-<p >This is intended to be used to update the final node.next to point to the node in the Trie where the search algorithm should resume</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nv</td><td>a pointer to another node in the Trie </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classACTrie.html#a423e41463a72270b604f104e8efcfdae">ACTrie</a>.</p>
+<p>Implemented in <a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3">ACTrie</a>.</p>
 
 </div>
 </div>

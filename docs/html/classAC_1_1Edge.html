@@ -154,7 +154,15 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
 
 <p>Construct a new <a class="el" href="classAC_1_1Edge.html" title="list of edge_head out of a trie node.">Edge</a> object. </p>
 <p >next_edge and trie_node are set to nullptr. label is set to '\0', a character not intended to match anything in string </p>
-
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">next_edge</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">trie_node</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">edge_label</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="ttc" id="aclassAC_1_1Edge_html_a02a60f872be6527dc4b7907627aa4f0b"><div class="ttname"><a href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">AC::Edge::next_edge</a></div><div class="ttdeci">Edge * next_edge</div><div class="ttdoc">pointer to next edge in list.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:32</div></div>
+<div class="ttc" id="aclassAC_1_1Edge_html_a2bd63c991c59fb2097c249ffac548c9e"><div class="ttname"><a href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">AC::Edge::trie_node</a></div><div class="ttdeci">Node * trie_node</div><div class="ttdoc">pointer to a TrieNode</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:38</div></div>
+<div class="ttc" id="aclassAC_1_1Edge_html_a9749e914731d7d7c0924d67bdd394d7d"><div class="ttname"><a href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">AC::Edge::edge_label</a></div><div class="ttdeci">char edge_label</div><div class="ttdoc">label of the edge between parent and next node.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:44</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad866d0b7d4681878a56fa68a39b53ee8" name="ad866d0b7d4681878a56fa68a39b53ee8"></a>
@@ -189,7 +197,12 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">next_edge</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">trie_node</a> = *n;</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">edge_label</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaf11200c88eb5b1d1c8f4c0127efbbfa" name="aaf11200c88eb5b1d1c8f4c0127efbbfa"></a>
@@ -241,7 +254,13 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">// set attributes</span></div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">next_edge</a> = e;</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">trie_node</a> = n;</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">edge_label</a> = l;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -270,7 +289,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
 
 <p>get the label attribute. </p>
 <dl class="section return"><dt>Returns</dt><dd>the char in the label attribute. </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">edge_label</a>); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab47db3fd28d86106e0bb81c3d0f9b465" name="ab47db3fd28d86106e0bb81c3d0f9b465"></a>
@@ -298,7 +318,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
 
 <p>Get the pointer stored in attribute next_edge. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classAC_1_1Edge.html" title="list of edge_head out of a trie node.">Edge</a> pointer stored in this-&gt;next_edge. </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">next_edge</a>); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4a29d7d3d33ca4c106d6152302b5790e" name="a4a29d7d3d33ca4c106d6152302b5790e"></a>
@@ -332,7 +353,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{ <a class="code hl_variable" href="classAC_1_1Edge.html#a9749e914731d7d7c0924d67bdd394d7d">edge_label</a> = l; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a070c9a61c8398002ec08052d06b6c69c" name="a070c9a61c8398002ec08052d06b6c69c"></a>
@@ -366,7 +388,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{ <a class="code hl_variable" href="classAC_1_1Edge.html#a02a60f872be6527dc4b7907627aa4f0b">next_edge</a> = e; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30bc89227770fed46872b1033c6e0feb" name="a30bc89227770fed46872b1033c6e0feb"></a>
@@ -396,11 +419,12 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
 <p>Set the trie_node attribute. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tn</td><td>a pointer to a trie node </td></tr>
+    <tr><td class="paramname">tn</td><td>a double pointer to a trie node </td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{ <a class="code hl_variable" href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">trie_node</a> = *tn; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5a6eb1dc72b2018bd34215ee47f066b2" name="a5a6eb1dc72b2018bd34215ee47f066b2"></a>
@@ -428,7 +452,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>edge_label</b></td></
 
 <p>getter for the trie_node attribute. </p>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classAC_1_1Node.html" title="A Tri Node.">Node</a> pointer. </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e">trie_node</a>); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>

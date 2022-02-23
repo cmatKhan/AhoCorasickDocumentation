@@ -61,7 +61,16 @@ cite\+: c++ crash course by Josh Lospinoso
 
 Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. 
 
-next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string \mbox{\Hypertarget{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}\label{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}} 
+next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquotesingle{}\textbackslash{}0\textquotesingle{}, a character not intended to match anything in string 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{55         \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{56         \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{57     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}\label{classAC_1_1Edge_ad866d0b7d4681878a56fa68a39b53ee8}} 
 \index{AC::Edge@{AC::Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!AC::Edge@{AC::Edge}}
 \doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -78,6 +87,15 @@ next\+\_\+edge and trie\+\_\+node are set to nullptr. label is set to \textquote
 {\em n} & a double ptr to a node obj. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{69         \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = *n;}
+\DoxyCodeLine{70         \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{71     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}\label{classAC_1_1Edge_aaf11200c88eb5b1d1c8f4c0127efbbfa}} 
 \index{AC::Edge@{AC::Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!AC::Edge@{AC::Edge}}
@@ -98,6 +116,16 @@ Construct a new \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object with attributes 
 \hline
 \end{DoxyParams}
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82         \textcolor{comment}{// set attributes}}
+\DoxyCodeLine{83         \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e;}
+\DoxyCodeLine{84         \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = n;}
+\DoxyCodeLine{85         \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l;}
+\DoxyCodeLine{86     \}}
+
+\end{DoxyCode}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}\label{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}} 
@@ -113,6 +141,11 @@ get the label attribute.
 \begin{DoxyReturn}{Returns}
 the char in the label attribute. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114 \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}}); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}\label{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}} 
 \index{AC::Edge@{AC::Edge}!nextEdge@{nextEdge}}
 \index{nextEdge@{nextEdge}!AC::Edge@{AC::Edge}}
@@ -126,6 +159,11 @@ Get the pointer stored in attribute next\+\_\+edge.
 \begin{DoxyReturn}{Returns}
 the \mbox{\hyperlink{classAC_1_1Edge}{Edge}} pointer stored in this-\/\texorpdfstring{$>$}{>}next\+\_\+edge. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100 \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}}); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}\label{classAC_1_1Edge_a4a29d7d3d33ca4c106d6152302b5790e}} 
 \index{AC::Edge@{AC::Edge}!setEdgeLabel@{setEdgeLabel}}
 \index{setEdgeLabel@{setEdgeLabel}!AC::Edge@{AC::Edge}}
@@ -141,6 +179,11 @@ Set the the label attribute.
 {\em l} & a char representing the edge label \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107 \{ \mbox{\hyperlink{classAC_1_1Edge_a9749e914731d7d7c0924d67bdd394d7d}{edge\_label}} = l; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}\label{classAC_1_1Edge_a070c9a61c8398002ec08052d06b6c69c}} 
 \index{AC::Edge@{AC::Edge}!setNextEdge@{setNextEdge}}
 \index{setNextEdge@{setNextEdge}!AC::Edge@{AC::Edge}}
@@ -156,6 +199,11 @@ Set the next\+\_\+edge attribute.
 {\em e} & a pointer to an \mbox{\hyperlink{classAC_1_1Edge}{Edge}} object. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93 \{ \mbox{\hyperlink{classAC_1_1Edge_a02a60f872be6527dc4b7907627aa4f0b}{next\_edge}} = e; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}\label{classAC_1_1Edge_a30bc89227770fed46872b1033c6e0feb}} 
 \index{AC::Edge@{AC::Edge}!setTrieNode@{setTrieNode}}
 \index{setTrieNode@{setTrieNode}!AC::Edge@{AC::Edge}}
@@ -168,9 +216,14 @@ Set the trie\+\_\+node attribute.
 
 
 \begin{DoxyParams}{Parameters}
-{\em tn} & a pointer to a trie node \\
+{\em tn} & a double pointer to a trie node \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{121 \{ \mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}} = *tn; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}\label{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}} 
 \index{AC::Edge@{AC::Edge}!trieNode@{trieNode}}
 \index{trieNode@{trieNode}!AC::Edge@{AC::Edge}}
@@ -184,6 +237,11 @@ getter for the trie\+\_\+node attribute.
 \begin{DoxyReturn}{Returns}
 a \mbox{\hyperlink{classAC_1_1Node}{Node}} pointer. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127 \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classAC_1_1Edge_a2bd63c991c59fb2097c249ffac548c9e}{trie\_node}}); \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}

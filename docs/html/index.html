@@ -66,18 +66,42 @@ $(function() {
   <div class="headertitle"><div class="title">Introduction </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_mainpage"></a> I made a somewhat large blunder. This is the first time I have programmed in c++, and it went <b>very</b> <b>very</b> badly. I had working Node and Edge objects early on. With those, I had expected the Aho Corasick Trie functions to be somewhat straight forward to implement. However, in doing so, I ran into issues with pointers that I wasn't able to resolve. <br  />
-</p>
-<p >For what it is worth, learning how to write <b>formal</b> tests, and create <b>formal</b> documentation is important to me. I have not written a single line of c++ prior to this assignment, and have not used googletests (the test suite) or Doxygen (the documentation generator) before, either. What the formality is telling me right now is that I have an enormous misunderstanding of namespace and object life cycle that I need to resolve quite quickly. <br  />
-</p>
+<div class="textblock"><p ><a class="anchor" id="md_mainpage"></a> It works! This is the first time I have coded in c++, or used pointers directly. I am still learning about how to to deal with autoconf and whatnot. This compiles on my computer, running ubuntu 20.04 and g++ version 9.3.0.</p>
+<p >There is a test suite which is implemented with googletests. There code is 100% covered by the tests. Documentation is created from appropriately formatted comments by Doxygen.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 How to use this site</h1>
-<p >At the top, you'll notice a navigator bar. More or less, clicking any of the drop downs will bring you to an interface where you can view the objects and their documentation. <br  />
-</p>
-<p >The header file implements the Node and Edge objects, and describes an interface for the Aho Corasick Trie. The .cpp file implements the interface, and this is where my attempts at the Trie algorithms are. As of this writing, those algorithms aren't working due to pointer/object life cycles. <br  />
-</p>
-<p >If possible, I'd appreciate some more time to try to get this right. I want to learn how to do this in C++, and I'd like to learn how to do it well. </p>
-</div></div><!-- PageDoc -->
+<p >At the top, you'll notice a navigator bar. More or less, clicking any of the drop downs will bring you to a page where you can navigate to the object definitions. But, the most interesting is Classes-&gt;Class List. Click on <a class="el" href="classACTrie.html" title="implement the AhoCorasick Trie interface">ACTrie</a>, which is my implementation of Aho Corasick. The code for the functions <a class="el" href="classACTrie.html#ad6aa4730ba51cf2ebbb0992271a58fae" title="Insert a pattern into the tri.">ACTrie::insert()</a>, <a class="el" href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223" title="Set the failure_links and output_links.">ACTrie::findNv()</a> and <a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3" title="Using the tri, search a target.">ACTrie::search()</a> is included in the documentation, in addition to a description of the input/output.</p>
+<p ><a class="el" href="aho__corasick_8h_source.html">aho_corasick.h</a> implements the Node and Edge objects, and describes an interface for the Aho Corasick Trie. The aho_corasick.cpp file implements the interface and includes the main method. aho_corasick.test.cpp is the test suite (note that I comment out the main method of the .cpp file to run this. Not great, but I'm still learning how to deal with the compiling, etc.)</p>
+<p >Once compiled, run the code like this:</p>
+<div class="fragment"><div class="line">./aho_corasick pattern_file.txt target.fa</div>
+</div><!-- fragment --><p >Output will look like this (<b>NOTE</b> this is not the output of the assignment files, only a short test):</p>
+<div class="fragment"><div class="line">&gt; ./aho_corasick data/pattern_test4.txt data/test4.fa</div>
+<div class="line">creating Trie...</div>
+<div class="line">inserting pattern: cag</div>
+<div class="line">and its reverse complement: gtc</div>
+<div class="line">inserting pattern: ag</div>
+<div class="line">and its reverse complement: tc</div>
+<div class="line">inserting pattern: gca</div>
+<div class="line">and its reverse complement: cgt</div>
+<div class="line">inserting pattern: ca</div>
+<div class="line">and its reverse complement: gt</div>
+<div class="line">Setting failure links and out links...</div>
+<div class="line">Searching the target for pattern matches...</div>
+<div class="line">target_location, pattern, strand</div>
+<div class="line">1,2,1</div>
+<div class="line">2,4,2</div>
+<div class="line">2,1,2</div>
+<div class="line">3,2,2</div>
+<div class="line">5,2,2</div>
+<div class="line">7,4,1</div>
+<div class="line">7,1,1</div>
+<div class="line">8,2,1</div>
+<div class="line">14,2,2</div>
+<div class="line">16,3,1</div>
+<div class="line">17,4,1</div>
+<div class="line">20,3,1</div>
+<div class="line">21,4,1</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

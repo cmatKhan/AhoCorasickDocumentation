@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trie_5fnode_0',['trie_node',['../classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e',1,'AC::Edge']]]
+  ['root_0',['root',['../classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9',1,'ACTrie']]]
 ];

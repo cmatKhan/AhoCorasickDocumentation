@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updatefinaltrienode_0',['updateFinalTrieNode',['../classACTrie.html#a423e41463a72270b604f104e8efcfdae',1,'ACTrie::updateFinalTrieNode()'],['../classAC_1_1AhoCorasickTrie.html#a267b7002a011f7dc408b2077def96798',1,'AC::AhoCorasickTrie::updateFinalTrieNode()']]]
+  ['trie_5fnode_0',['trie_node',['../classAC_1_1Edge.html#a2bd63c991c59fb2097c249ffac548c9e',1,'AC::Edge']]],
+  ['trienode_1',['trieNode',['../classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2',1,'AC::Edge']]]
 ];

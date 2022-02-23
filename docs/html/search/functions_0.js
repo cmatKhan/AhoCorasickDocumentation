@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['distfromroot_0',['distFromRoot',['../classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388',1,'AC::Node']]]
+  ['actrie_0',['ACTrie',['../classACTrie.html#ae20935704c72e80721b00e797b491ee5',1,'ACTrie']]]
 ];

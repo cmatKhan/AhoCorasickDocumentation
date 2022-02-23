@@ -1,28 +1,63 @@
 # Introduction
 
-I made a somewhat large blunder. This is the first time I have programmed 
-in c++, and it went __very__ __very__ badly. I had working Node and Edge 
-objects early on. With those, I had expected the Aho Corasick Trie 
-functions to be somewhat straight forward to implement. However, in 
-doing so, I ran into issues with pointers that I wasn't able to resolve.  
+It works! This is the first time I have coded in c++, or used pointers directly.
+I am still learning about how to to deal with autoconf and whatnot. This compiles
+on my computer, running ubuntu 20.04 and g++ version 9.3.0.
 
-For what it is worth, learning how to write __formal__ tests, and create 
-__formal__ documentation is important to me. I have not written a single line 
-of c++ prior to this assignment, and have not used googletests (the test 
-suite) or Doxygen (the documentation generator) before, either. What the 
-formality is telling me right now is that I have an enormous misunderstanding 
-of namespace and object life cycle that I need to resolve quite quickly.  
+There is a test suite which is implemented with googletests. There code is
+100% covered by the tests. Documentation is created from appropriately formatted
+comments by Doxygen.
 
-# How to use this site
+## How to use this site
 
-At the top, you'll notice a navigator bar. More or less, clicking any of the 
-drop downs will bring you to an interface where you can view the objects 
-and their documentation.  
+At the top, you'll notice a navigator bar. More or less, clicking any of the
+drop downs will bring you to a page where you can navigate to the object
+definitions. But, the most interesting is Classes->Class List. Click on
+ACTrie, which is my implementation of Aho Corasick. The code for the functions
+ACTrie::insert(), ACTrie::findNv() and ACTrie::search() is included in the
+documentation, in addition to a description of the input/output.
 
-The header file implements the Node and Edge objects, and describes an 
-interface for the Aho Corasick Trie. The .cpp file implements the interface, 
-and this is where my attempts at the Trie algorithms are. As of this writing, 
-those algorithms aren't working due to pointer/object life cycles.  
+aho_corasick.h implements the Node and Edge objects, and describes an
+interface for the Aho Corasick Trie. The aho_corasick.cpp file implements the
+interface and includes the main method. aho_corasick.test.cpp is the test
+suite (note that I comment out the main method of the .cpp file to run this.
+Not great, but I'm still learning how to deal with the compiling, etc.)
 
-If possible, I'd appreciate some more time to try to get this right. I want to 
-learn how to do this in C++, and I'd like to learn how to do it well.
+Once compiled, run the code like this:
+
+```{bash}
+./aho_corasick pattern_file.txt target.fa
+```
+
+Output will look like this (__NOTE__ this is not the output of the assignment
+files, only a short test):
+
+```{bash}
+> ./aho_corasick data/pattern_test4.txt data/test4.fa
+creating Trie...
+inserting pattern: cag
+and its reverse complement: gtc
+inserting pattern: ag
+and its reverse complement: tc
+inserting pattern: gca
+and its reverse complement: cgt
+inserting pattern: ca
+and its reverse complement: gt
+Setting failure links and out links...
+Searching the target for pattern matches...
+target_location, pattern, strand
+1,2,1
+2,4,2
+2,1,2
+3,2,2
+5,2,2
+7,4,1
+7,1,1
+8,2,1
+14,2,2
+16,3,1
+17,4,1
+20,3,1
+21,4,1
+
+```

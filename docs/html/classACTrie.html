@@ -70,6 +70,9 @@ $(function() {
   <div class="headertitle"><div class="title">ACTrie Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>implement the AhoCorasick Trie interface  
+ <a href="classACTrie.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ACTrie:</div>
 <div class="dyncontent">
@@ -82,28 +85,70 @@ Inheritance diagram for ACTrie:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae20935704c72e80721b00e797b491ee5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#ae20935704c72e80721b00e797b491ee5">ACTrie</a> ()</td></tr>
+<tr class="memdesc:ae20935704c72e80721b00e797b491ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classACTrie.html" title="implement the AhoCorasick Trie interface">ACTrie</a> object.  <a href="classACTrie.html#ae20935704c72e80721b00e797b491ee5">More...</a><br /></td></tr>
+<tr class="separator:ae20935704c72e80721b00e797b491ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b575ec3d36353660bc39574e016f75c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAC_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#a8b575ec3d36353660bc39574e016f75c">getRoot</a> () override</td></tr>
 <tr class="memdesc:a8b575ec3d36353660bc39574e016f75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference to the root node of the Trie.  <a href="classACTrie.html#a8b575ec3d36353660bc39574e016f75c">More...</a><br /></td></tr>
 <tr class="separator:a8b575ec3d36353660bc39574e016f75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab086bccb1cb0ddd3736be81f5baea93a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#ab086bccb1cb0ddd3736be81f5baea93a">insert</a> (char pattern[], int label) override</td></tr>
-<tr class="memdesc:ab086bccb1cb0ddd3736be81f5baea93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a pattern into the tri.  <a href="classACTrie.html#ab086bccb1cb0ddd3736be81f5baea93a">More...</a><br /></td></tr>
-<tr class="separator:ab086bccb1cb0ddd3736be81f5baea93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a423e41463a72270b604f104e8efcfdae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#a423e41463a72270b604f104e8efcfdae">updateFinalTrieNode</a> (<a class="el" href="classAC_1_1Node.html">Node</a> **n) override</td></tr>
-<tr class="memdesc:a423e41463a72270b604f104e8efcfdae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the final edge's next attribute.  <a href="classACTrie.html#a423e41463a72270b604f104e8efcfdae">More...</a><br /></td></tr>
-<tr class="separator:a423e41463a72270b604f104e8efcfdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6aa4730ba51cf2ebbb0992271a58fae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#ad6aa4730ba51cf2ebbb0992271a58fae">insert</a> (string pattern, int label, int strand) override</td></tr>
+<tr class="memdesc:ad6aa4730ba51cf2ebbb0992271a58fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a pattern into the tri.  <a href="classACTrie.html#ad6aa4730ba51cf2ebbb0992271a58fae">More...</a><br /></td></tr>
+<tr class="separator:ad6aa4730ba51cf2ebbb0992271a58fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e6c527e9b1664903267c1ddcd915223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223">findNv</a> () override</td></tr>
 <tr class="memdesc:a6e6c527e9b1664903267c1ddcd915223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the failure_links and output_links.  <a href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223">More...</a><br /></td></tr>
 <tr class="separator:a6e6c527e9b1664903267c1ddcd915223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af99bf3d3e8f77150b1a4ca169f819fc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#af99bf3d3e8f77150b1a4ca169f819fc4">search</a> (char t[]) override</td></tr>
-<tr class="memdesc:af99bf3d3e8f77150b1a4ca169f819fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the tri, search a target.  <a href="classACTrie.html#af99bf3d3e8f77150b1a4ca169f819fc4">More...</a><br /></td></tr>
-<tr class="separator:af99bf3d3e8f77150b1a4ca169f819fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2343de45b49c8b05a85d8077b97951c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3">search</a> (string target_filepath) override</td></tr>
+<tr class="memdesc:a2343de45b49c8b05a85d8077b97951c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the tri, search a target.  <a href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3">More...</a><br /></td></tr>
+<tr class="separator:a2343de45b49c8b05a85d8077b97951c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac4e077b3a5e258f62953c5ff9bb6b2b9"><td class="memItemLeft" align="right" valign="top"><a id="ac4e077b3a5e258f62953c5ff9bb6b2b9" name="ac4e077b3a5e258f62953c5ff9bb6b2b9"></a>
 <a class="el" href="classAC_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>root</b></td></tr>
+<tr class="memdesc:ac4e077b3a5e258f62953c5ff9bb6b2b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to a Node obj; the root of the Trie <br /></td></tr>
 <tr class="separator:ac4e077b3a5e258f62953c5ff9bb6b2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >implement the AhoCorasick Trie interface </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae20935704c72e80721b00e797b491ee5" name="ae20935704c72e80721b00e797b491ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20935704c72e80721b00e797b491ee5">&#9670;&nbsp;</a></span>ACTrie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ACTrie::ACTrie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classACTrie.html" title="implement the AhoCorasick Trie interface">ACTrie</a> object. </p>
+<p >There is a Edge object instantiated and set such that root has an attribute pointer edge_head that points to it. </p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>    { <span class="comment">// instantiate new edge object</span></div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a>* new_edge = <span class="keyword">new</span> <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a> {};</div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">// instantiate node with edge_head pointing to edge obj</span></div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* n1 = <span class="keyword">new</span> <a class="code hl_class" href="classAC_1_1Node.html">Node</a> { &amp;new_edge };</div>
+<div class="line"><span class="lineno">   47</span>        <span class="comment">// set root to point at node obj</span></div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> = n1;</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="ttc" id="aclassACTrie_html_ac4e077b3a5e258f62953c5ff9bb6b2b9"><div class="ttname"><a href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">ACTrie::root</a></div><div class="ttdeci">Node * root</div><div class="ttdoc">pointer to a Node obj; the root of the Trie</div><div class="ttdef"><b>Definition:</b> aho_corasick.cpp:33</div></div>
+<div class="ttc" id="aclassAC_1_1Edge_html"><div class="ttname"><a href="classAC_1_1Edge.html">AC::Edge</a></div><div class="ttdoc">list of edge_head out of a trie node.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:26</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html"><div class="ttname"><a href="classAC_1_1Node.html">AC::Node</a></div><div class="ttdoc">A Tri Node.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:134</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6e6c527e9b1664903267c1ddcd915223" name="a6e6c527e9b1664903267c1ddcd915223"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e6c527e9b1664903267c1ddcd915223">&#9670;&nbsp;</a></span>findNv()</h2>
@@ -129,10 +174,114 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the failure_links and output_links. </p>
-<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classACTrie.html#af99bf3d3e8f77150b1a4ca169f819fc4" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. nullptr signifies that <a class="el" href="classACTrie.html#af99bf3d3e8f77150b1a4ca169f819fc4" title="Using the tri, search a target.">search()</a> should resume at root. Otherwise, update the final node.next to point to the appropriate node in the trie. </p>
+<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. nullptr signifies that <a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3" title="Using the tri, search a target.">search()</a> should resume at root. Otherwise, update the final node.next to point to the appropriate node in the trie. </p>
 
 <p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#aa10d2d2a6f63b9e5f11fd3f4dfcb4236">AC::AhoCorasickTrie</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   88</span>    {</div>
+<div class="line"><span class="lineno">   89</span>        <span class="comment">// instantiate pointers l1 and l2 to forward_list which will store</span></div>
+<div class="line"><span class="lineno">   90</span>        <span class="comment">// TrieNode pointers</span></div>
+<div class="line"><span class="lineno">   91</span>        std::forward_list&lt;Node*&gt;* l1 = <span class="keyword">new</span> std::forward_list&lt;Node*&gt;;</div>
+<div class="line"><span class="lineno">   92</span>        std::forward_list&lt;Node*&gt;* l2 = <span class="keyword">new</span> std::forward_list&lt;Node*&gt;;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        <span class="comment">// instantiate pointers to use to walk along the Trie</span></div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* parent;</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a>* current_edge;</div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* child;</div>
+<div class="line"><span class="lineno">   98</span>        <span class="comment">// pointer to a failure link</span></div>
+<div class="line"><span class="lineno">   99</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* fl;</div>
+<div class="line"><span class="lineno">  100</span>        <span class="comment">// pointer to an out_link</span></div>
+<div class="line"><span class="lineno">  101</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordtype">char</span> current_edge_label;</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>        <span class="comment">// while edgeList is not next --&gt; nullptr</span></div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// while (edge_list-&gt;nextEdge()) {</span></div>
+<div class="line"><span class="lineno">  107</span>        <span class="comment">//     // set failure link from root to root</span></div>
+<div class="line"><span class="lineno">  108</span>        <span class="comment">//     parent-&gt;setFailureLink(&amp;root);</span></div>
+<div class="line"><span class="lineno">  109</span>        <span class="comment">//     l1-&gt;push_front({ edge_list-&gt;trieNode() });</span></div>
+<div class="line"><span class="lineno">  110</span>        <span class="comment">//     edge_list = edge_list-&gt;nextEdge();</span></div>
+<div class="line"><span class="lineno">  111</span>        <span class="comment">// }</span></div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
+<div class="line"><span class="lineno">  113</span>        l1-&gt;push_front({ <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> });</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        <span class="comment">// the main algorithm starts at level 2</span></div>
+<div class="line"><span class="lineno">  116</span>        <span class="comment">// while l1 is not empty</span></div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">while</span> (!l1-&gt;empty()) {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="comment">// iterate over l1</span></div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">for</span> (; !l1-&gt;empty(); l1-&gt;pop_front()) {</div>
+<div class="line"><span class="lineno">  120</span>                <span class="comment">// pop the front node and set parent to point at it</span></div>
+<div class="line"><span class="lineno">  121</span>                parent = l1-&gt;front();</div>
+<div class="line"><span class="lineno">  122</span>                current_edge = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6051835cec2f2ef0323013de06a0d7b7">edgeHead</a>();</div>
+<div class="line"><span class="lineno">  123</span>                <span class="comment">// iterate over the children while they exist</span></div>
+<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">while</span> (current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>()) {</div>
+<div class="line"><span class="lineno">  125</span>                    <span class="comment">// parent&#39;s failure link</span></div>
+<div class="line"><span class="lineno">  126</span>                    fl = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  127</span>                    <span class="comment">// set x to char on edge</span></div>
+<div class="line"><span class="lineno">  128</span>                    current_edge_label = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>();</div>
+<div class="line"><span class="lineno">  129</span>                    <span class="comment">// get the child along along a given labelled path</span></div>
+<div class="line"><span class="lineno">  130</span>                    child = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  131</span>                    <span class="comment">// while fl doesn&#39;t have an edge with char x and</span></div>
+<div class="line"><span class="lineno">  132</span>                    <span class="comment">// fl isn&#39;t the root, walk back up the tree via failure</span></div>
+<div class="line"><span class="lineno">  133</span>                    <span class="comment">// links</span></div>
+<div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">while</span> (</div>
+<div class="line"><span class="lineno">  135</span>                        !fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label) &amp;&amp; fl != <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>) {</div>
+<div class="line"><span class="lineno">  136</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  137</span>                    }</div>
+<div class="line"><span class="lineno">  138</span>                    <span class="comment">// fl can&#39;t be equal to the parent -- this should only be</span></div>
+<div class="line"><span class="lineno">  139</span>                    <span class="comment">// the case for level 2. TODO check this</span></div>
+<div class="line"><span class="lineno">  140</span>                    <span class="keywordflow">if</span> (fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label)</div>
+<div class="line"><span class="lineno">  141</span>                        &amp;&amp; fl != parent) {</div>
+<div class="line"><span class="lineno">  142</span>                        <span class="comment">// if the failure link found above has an edge labelled</span></div>
+<div class="line"><span class="lineno">  143</span>                        <span class="comment">// x, then set the corresponding node to the failure</span></div>
+<div class="line"><span class="lineno">  144</span>                        <span class="comment">// link</span></div>
+<div class="line"><span class="lineno">  145</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(current_edge_label)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  146</span>                        <span class="comment">// set the child&#39;s failure link to the fl described</span></div>
+<div class="line"><span class="lineno">  147</span>                        <span class="comment">// above</span></div>
+<div class="line"><span class="lineno">  148</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;fl);</div>
+<div class="line"><span class="lineno">  149</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  150</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
+<div class="line"><span class="lineno">  151</span>                    }</div>
+<div class="line"><span class="lineno">  152</span>                    <span class="comment">// if the failure link is a node with a pattern,</span></div>
+<div class="line"><span class="lineno">  153</span>                    <span class="comment">// set it as the out_link of the node in question</span></div>
+<div class="line"><span class="lineno">  154</span>                    <span class="keywordflow">if</span> (child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
+<div class="line"><span class="lineno">  155</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  156</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
+<div class="line"><span class="lineno">  157</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  158</span>                        <span class="comment">// else set the current node out_link to the</span></div>
+<div class="line"><span class="lineno">  159</span>                        <span class="comment">// outlink of the failure link, which is either</span></div>
+<div class="line"><span class="lineno">  160</span>                        <span class="comment">// nullptr or a pointer to another node which is</span></div>
+<div class="line"><span class="lineno">  161</span>                        <span class="comment">// labelled with a pattern</span></div>
+<div class="line"><span class="lineno">  162</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  163</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
+<div class="line"><span class="lineno">  164</span>                    }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>                    <span class="comment">// add the child to l2</span></div>
+<div class="line"><span class="lineno">  167</span>                    <span class="comment">// if (edge_list-&gt;trieNode()) {</span></div>
+<div class="line"><span class="lineno">  168</span>                    l2-&gt;push_front({ child });</div>
+<div class="line"><span class="lineno">  169</span>                    <span class="comment">// }</span></div>
+<div class="line"><span class="lineno">  170</span>                    <span class="comment">// move onto parent&#39;s next edge (which is the &#39;next edge&#39;</span></div>
+<div class="line"><span class="lineno">  171</span>                    <span class="comment">// of the child edge obj)</span></div>
+<div class="line"><span class="lineno">  172</span>                    current_edge = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>();</div>
+<div class="line"><span class="lineno">  173</span>                }</div>
+<div class="line"><span class="lineno">  174</span>            }</div>
+<div class="line"><span class="lineno">  175</span>            <span class="comment">// set l1 to point to l2</span></div>
+<div class="line"><span class="lineno">  176</span>            l1 = l2;</div>
+<div class="line"><span class="lineno">  177</span>            <span class="comment">// set l2 to point at a new forward linked list</span></div>
+<div class="line"><span class="lineno">  178</span>            l2 = <span class="keyword">new</span> std::forward_list&lt;Node*&gt;;</div>
+<div class="line"><span class="lineno">  179</span>        }</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="ttc" id="aclassAC_1_1Edge_html_a466467554b8e155b46321f6646c35a9a"><div class="ttname"><a href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">AC::Edge::label</a></div><div class="ttdeci">char label()</div><div class="ttdoc">get the label attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:114</div></div>
+<div class="ttc" id="aclassAC_1_1Edge_html_a5a6eb1dc72b2018bd34215ee47f066b2"><div class="ttname"><a href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">AC::Edge::trieNode</a></div><div class="ttdeci">Node * trieNode()</div><div class="ttdoc">getter for the trie_node attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:127</div></div>
+<div class="ttc" id="aclassAC_1_1Edge_html_ab47db3fd28d86106e0bb81c3d0f9b465"><div class="ttname"><a href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">AC::Edge::nextEdge</a></div><div class="ttdeci">Edge * nextEdge()</div><div class="ttdoc">Get the pointer stored in attribute next_edge.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:100</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a2248b5b7260618ceb78d66fcb1a8b6cd"><div class="ttname"><a href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">AC::Node::failureLink</a></div><div class="ttdeci">Node * failureLink()</div><div class="ttdoc">get pointer to node at which search() should resume at mismatch.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:245</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a6051835cec2f2ef0323013de06a0d7b7"><div class="ttname"><a href="classAC_1_1Node.html#a6051835cec2f2ef0323013de06a0d7b7">AC::Node::edgeHead</a></div><div class="ttdeci">Edge * edgeHead()</div><div class="ttdoc">get the first edge in the edge list</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:205</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a6068c2be8d535cfcc0397107cba7300d"><div class="ttname"><a href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">AC::Node::outLink</a></div><div class="ttdeci">Node * outLink()</div><div class="ttdoc">get attribute out_link</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:375</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a6ab6e68af66e1e33a8a0bcb865bfb80d"><div class="ttname"><a href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">AC::Node::edgeSearchBool</a></div><div class="ttdeci">bool edgeSearchBool(char c)</div><div class="ttdoc">search the edge list for a char, return boolean.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:294</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a8b8138dae39c9f9842236b302bd2f9fe"><div class="ttname"><a href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">AC::Node::patternIndicator</a></div><div class="ttdeci">int patternIndicator()</div><div class="ttdoc">Get the pattern_indicator attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:342</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a901ed45faf4978beb8390b2cbfd16740"><div class="ttname"><a href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">AC::Node::setFailureLink</a></div><div class="ttdeci">void setFailureLink(Node **tn)</div><div class="ttdoc">Set the the failure link.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:258</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a9e6d29b2990615a1cca8c9b5f081f1d9"><div class="ttname"><a href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">AC::Node::edgeSearch</a></div><div class="ttdeci">Edge * edgeSearch(char c)</div><div class="ttdoc">Search the edge list for a given character.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:278</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_ade7560c43b242a4fe8dab48693eec867"><div class="ttname"><a href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">AC::Node::setOutLink</a></div><div class="ttdeci">void setOutLink(Node **n)</div><div class="ttdoc">Set the out_link attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:368</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8b575ec3d36353660bc39574e016f75c" name="a8b575ec3d36353660bc39574e016f75c"></a>
@@ -162,11 +311,12 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Node* reference to root node </dd></dl>
 
 <p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#ae73b6cff49262f5d2dd2fbfea812bf9c">AC::AhoCorasickTrie</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>); }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="ab086bccb1cb0ddd3736be81f5baea93a" name="ab086bccb1cb0ddd3736be81f5baea93a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab086bccb1cb0ddd3736be81f5baea93a">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="ad6aa4730ba51cf2ebbb0992271a58fae" name="ad6aa4730ba51cf2ebbb0992271a58fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6aa4730ba51cf2ebbb0992271a58fae">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,14 +327,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ACTrie::insert </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>pattern</em>[], </td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pattern</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pattern_index</em>&#160;</td>
+          <td class="paramname"><em>pattern_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>strand</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -205,16 +361,53 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">pattern</td><td>a string to enter into the trie. </td></tr>
     <tr><td class="paramname">pattern_index</td><td>the pattern identifier. This is what will be emitted when match is found. </td></tr>
+    <tr><td class="paramname">strand</td><td>1 for forward (or the same direction as in the pattern file and 2 for reverse complement) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#a312081cf52e9b81f89910d8ba14519ba">AC::AhoCorasickTrie</a>.</p>
-
+<p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#afdda77915dc8ac16c3dbc78261ded5ea">AC::AhoCorasickTrie</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="comment">// TODO check uniqueness of pattern (I guess search trie for the</span></div>
+<div class="line"><span class="lineno">   56</span>        <span class="comment">// pattern)</span></div>
+<div class="line"><span class="lineno">   57</span>        <span class="comment">//  first?</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="comment">// set pointer to walk around the trie</span></div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* curr_node = <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>;</div>
+<div class="line"><span class="lineno">   61</span>        <span class="comment">// instantiate int to walk along pattern</span></div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><span class="lineno">   63</span>        <span class="comment">// walk along the pattern</span></div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">while</span> (pattern[i] != NULL) {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="comment">// while there are edges out of curr_node with the appropriate char</span></div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">// go to that node</span></div>
+<div class="line"><span class="lineno">   67</span>            <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a>* curr_edge = curr_node-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(pattern[i]);</div>
+<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span> (curr_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>() == pattern[i]) {</div>
+<div class="line"><span class="lineno">   69</span>                curr_node = curr_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">   70</span>                <span class="comment">// else, start adding nodes and edges</span></div>
+<div class="line"><span class="lineno">   71</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   72</span>                <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a>* new_edge = <span class="keyword">new</span> <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a> {};</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* n = <span class="keyword">new</span> <a class="code hl_class" href="classAC_1_1Node.html">Node</a> { &amp;new_edge };</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>                curr_node = curr_node-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ac27861240cb2614319281a4e3534cac0">insertEdge</a>(&amp;n, pattern[i]);</div>
+<div class="line"><span class="lineno">   76</span>                curr_node-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a237ce24e6f0e638c814b7630166a5ea1">setDistFromRoot</a>(i + 1);</div>
+<div class="line"><span class="lineno">   77</span>            }</div>
+<div class="line"><span class="lineno">   78</span>            <span class="comment">// iterate to the next char in pattern</span></div>
+<div class="line"><span class="lineno">   79</span>            i++;</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>        <span class="comment">// at the final char of pattern, set the curr_node pattern indicator</span></div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">// to the pattern&#39;s label</span></div>
+<div class="line"><span class="lineno">   83</span>        curr_node-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a5ced0761f7773bfd84965cfa51f459d9">setPatternIndicator</a>(label);</div>
+<div class="line"><span class="lineno">   84</span>        curr_node-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9115392a31463e945c1815ba5c492063">setStrand</a>(strand);</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="ttc" id="aclassAC_1_1Node_html_a237ce24e6f0e638c814b7630166a5ea1"><div class="ttname"><a href="classAC_1_1Node.html#a237ce24e6f0e638c814b7630166a5ea1">AC::Node::setDistFromRoot</a></div><div class="ttdeci">void setDistFromRoot(int d)</div><div class="ttdoc">Set the Dist From Root object.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:320</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a5ced0761f7773bfd84965cfa51f459d9"><div class="ttname"><a href="classAC_1_1Node.html#a5ced0761f7773bfd84965cfa51f459d9">AC::Node::setPatternIndicator</a></div><div class="ttdeci">void setPatternIndicator(int p)</div><div class="ttdoc">Set the pattern_indicator attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:335</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_a9115392a31463e945c1815ba5c492063"><div class="ttname"><a href="classAC_1_1Node.html#a9115392a31463e945c1815ba5c492063">AC::Node::setStrand</a></div><div class="ttdeci">void setStrand(int s)</div><div class="ttdoc">Set the strand of the pattern.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:350</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_ac27861240cb2614319281a4e3534cac0"><div class="ttname"><a href="classAC_1_1Node.html#ac27861240cb2614319281a4e3534cac0">AC::Node::insertEdge</a></div><div class="ttdeci">Node * insertEdge(Node **trie_node, char l)</div><div class="ttdoc">add new edge to the beginning of the list</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:216</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="af99bf3d3e8f77150b1a4ca169f819fc4" name="af99bf3d3e8f77150b1a4ca169f819fc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af99bf3d3e8f77150b1a4ca169f819fc4">&#9670;&nbsp;</a></span>search()</h2>
+<a id="a2343de45b49c8b05a85d8077b97951c3" name="a2343de45b49c8b05a85d8077b97951c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2343de45b49c8b05a85d8077b97951c3">&#9670;&nbsp;</a></span>search()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,8 +418,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ACTrie::search </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>target</em>[]</td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>target_filepath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -240,50 +433,80 @@ Private Attributes</h2></td></tr>
 <p>Using the tri, search a target. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">target</td><td>a target string to search </td></tr>
+    <tr><td class="paramname">target_filepath</td><td>a path to a file containing a string </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7e555b3a36d6223024891ff7a7cce546">AC::AhoCorasickTrie</a>.</p>
-
-</div>
-</div>
-<a id="a423e41463a72270b604f104e8efcfdae" name="a423e41463a72270b604f104e8efcfdae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a423e41463a72270b604f104e8efcfdae">&#9670;&nbsp;</a></span>updateFinalTrieNode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ACTrie::updateFinalTrieNode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classAC_1_1Node.html">Node</a> **&#160;</td>
-          <td class="paramname"><em>nv</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Update the final edge's next attribute. </p>
-<p >This is intended to be used to update the final node.next to point to the node in the Trie where the search algorithm should resume</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nv</td><td>a pointer to another node in the Trie </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#a267b7002a011f7dc408b2077def96798">AC::AhoCorasickTrie</a>.</p>
-
+<p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee">AC::AhoCorasickTrie</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
+<div class="line"><span class="lineno">  184</span>        vector&lt;char&gt; bytes;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>        FILE* input_file = fopen(target_filepath.c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span> (input_file == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  188</span>            cout &lt;&lt; <span class="stringliteral">&#39;target_filepath DNE&#39;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  189</span>            exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  190</span>        }</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> t_c = getc(input_file);</div>
+<div class="line"><span class="lineno">  193</span>        <span class="comment">// set t_c to lower</span></div>
+<div class="line"><span class="lineno">  194</span>        t_c = tolower(t_c);</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>        <span class="comment">// instantiate an int to store the number of bases that may be</span></div>
+<div class="line"><span class="lineno">  197</span>        <span class="comment">// skipped when a mismatch or a leaf node is reached</span></div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordtype">int</span> l = 0;</div>
+<div class="line"><span class="lineno">  199</span>        <span class="comment">// instantiate an int to track movement along the target sequence</span></div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordtype">int</span> c = 0;</div>
+<div class="line"><span class="lineno">  201</span>        <span class="comment">// instantiate a node pointer to be used to move around the Trie</span></div>
+<div class="line"><span class="lineno">  202</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* w = <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>;</div>
+<div class="line"><span class="lineno">  203</span>        <span class="comment">// instantiate node pointer to be used to follow out_links</span></div>
+<div class="line"><span class="lineno">  204</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
+<div class="line"><span class="lineno">  205</span>        <span class="comment">// search the target for exact matches to strings in the Trie</span></div>
+<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>            <span class="comment">// while there is an edge (w,w&#39;) labelled t_c</span></div>
+<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">while</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>() == t_c &amp;&amp; t_c != NULL) {</div>
+<div class="line"><span class="lineno">  210</span>                <span class="comment">// if w&#39; is numbered by a pattern</span></div>
+<div class="line"><span class="lineno">  211</span>                <span class="keywordflow">if</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
+<div class="line"><span class="lineno">  212</span>                    std::cout</div>
+<div class="line"><span class="lineno">  213</span>                        &lt;&lt; (c + 1)</div>
+<div class="line"><span class="lineno">  214</span>                            - (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>()</div>
+<div class="line"><span class="lineno">  215</span>                                - 1)</div>
+<div class="line"><span class="lineno">  216</span>                        &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  217</span>                        &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>()</div>
+<div class="line"><span class="lineno">  218</span>                        &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>()</div>
+<div class="line"><span class="lineno">  219</span>                        &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  220</span>                }</div>
+<div class="line"><span class="lineno">  221</span>                <span class="comment">// report also if there is a directed path of failure links</span></div>
+<div class="line"><span class="lineno">  222</span>                <span class="comment">// from w&#39; to a numbered node</span></div>
+<div class="line"><span class="lineno">  223</span>                out_link = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">while</span> (out_link) {</div>
+<div class="line"><span class="lineno">  225</span>                    std::cout &lt;&lt; (c + 1) - (out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>() - 1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  226</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() &lt;&lt; <span class="charliteral">&#39;,&#39;</span></div>
+<div class="line"><span class="lineno">  227</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  228</span>                    out_link = out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  229</span>                }</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>                <span class="comment">// the final edge in the edge list for each node has a</span></div>
+<div class="line"><span class="lineno">  232</span>                <span class="comment">// pointer to which trie node at which the search for</span></div>
+<div class="line"><span class="lineno">  233</span>                <span class="comment">// matches should resume</span></div>
+<div class="line"><span class="lineno">  234</span>                w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  235</span>                <span class="comment">// increment the counter to the next char</span></div>
+<div class="line"><span class="lineno">  236</span>                c++;</div>
+<div class="line"><span class="lineno">  237</span>                t_c = getc(input_file);</div>
+<div class="line"><span class="lineno">  238</span>            }</div>
+<div class="line"><span class="lineno">  239</span>            w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  240</span>            <span class="comment">// if t_c does not have a edge out of root, go to the next char</span></div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">if</span> (w == <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> &amp;&amp; !w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(t_c)) {</div>
+<div class="line"><span class="lineno">  242</span>                c++;</div>
+<div class="line"><span class="lineno">  243</span>                t_c = getc(input_file);</div>
+<div class="line"><span class="lineno">  244</span>            }</div>
+<div class="line"><span class="lineno">  245</span>            <span class="comment">// continue until the target string is exhausted</span></div>
+<div class="line"><span class="lineno">  246</span>        } <span class="keywordflow">while</span> (!feof(input_file));</div>
+<div class="line"><span class="lineno">  247</span>    }</div>
+<div class="ttc" id="aclassAC_1_1Node_html_a82ebe3d142331427b346c64fc2773388"><div class="ttname"><a href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">AC::Node::distFromRoot</a></div><div class="ttdeci">int distFromRoot()</div><div class="ttdoc">getter for dist_from_root.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:327</div></div>
+<div class="ttc" id="aclassAC_1_1Node_html_af0bc805078e8507fd5808cf73c7deadd"><div class="ttname"><a href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">AC::Node::strand</a></div><div class="ttdeci">int strand()</div><div class="ttdoc">return the strand of the pattern</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:357</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

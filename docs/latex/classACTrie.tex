@@ -1,5 +1,10 @@
 \hypertarget{classACTrie}{}\doxysection{ACTrie Class Reference}
 \label{classACTrie}\index{ACTrie@{ACTrie}}
+
+
+implement the Aho\+Corasick Trie interface  
+
+
 Inheritance diagram for ACTrie\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,22 +14,49 @@ Inheritance diagram for ACTrie\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classACTrie_ae20935704c72e80721b00e797b491ee5}{ACTrie}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classACTrie}{ACTrie}} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classACTrie_a8b575ec3d36353660bc39574e016f75c}{get\+Root}} () override
 \begin{DoxyCompactList}\small\item\em Get the reference to the root node of the Trie. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}{insert}} (char pattern\mbox{[}$\,$\mbox{]}, int label) override
+void \mbox{\hyperlink{classACTrie_ad6aa4730ba51cf2ebbb0992271a58fae}{insert}} (string pattern, int label, int strand) override
 \begin{DoxyCompactList}\small\item\em Insert a pattern into the tri. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classACTrie_a423e41463a72270b604f104e8efcfdae}{update\+Final\+Trie\+Node}} (\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$n) override
-\begin{DoxyCompactList}\small\item\em Update the final edge\textquotesingle{}s next attribute. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classACTrie_a6e6c527e9b1664903267c1ddcd915223}{find\+Nv}} () override
 \begin{DoxyCompactList}\small\item\em Set the failure\+\_\+links and output\+\_\+links. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search}} (char t\mbox{[}$\,$\mbox{]}) override
+void \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search}} (string target\+\_\+filepath) override
 \begin{DoxyCompactList}\small\item\em Using the tri, search a target. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}\label{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}} 
 \mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$ {\bfseries root}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em pointer to a Node obj; the root of the Trie \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implement the Aho\+Corasick Trie interface 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classACTrie_ae20935704c72e80721b00e797b491ee5}\label{classACTrie_ae20935704c72e80721b00e797b491ee5}} 
+\index{ACTrie@{ACTrie}!ACTrie@{ACTrie}}
+\index{ACTrie@{ACTrie}!ACTrie@{ACTrie}}
+\doxysubsubsection{\texorpdfstring{ACTrie()}{ACTrie()}}
+{\footnotesize\ttfamily ACTrie\+::\+ACTrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classACTrie}{ACTrie}} object. 
+
+There is a Edge object instantiated and set such that root has an attribute pointer edge\+\_\+head that points to it. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43     \{ \textcolor{comment}{// instantiate new edge object}}
+\DoxyCodeLine{44         \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* new\_edge = \textcolor{keyword}{new} \mbox{\hyperlink{classAC_1_1Edge}{Edge}} \{\};}
+\DoxyCodeLine{45         \textcolor{comment}{// instantiate node with edge\_head pointing to edge obj}}
+\DoxyCodeLine{46         \mbox{\hyperlink{classAC_1_1Node}{Node}}* n1 = \textcolor{keyword}{new} \mbox{\hyperlink{classAC_1_1Node}{Node}} \{ \&new\_edge \};}
+\DoxyCodeLine{47         \textcolor{comment}{// set root to point at node obj}}
+\DoxyCodeLine{48         \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}} = n1;}
+\DoxyCodeLine{49     \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -38,10 +70,107 @@ void \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search}} (c
 
 Set the failure\+\_\+links and output\+\_\+links. 
 
-Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. 
+Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. 
 
 Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_aa10d2d2a6f63b9e5f11fd3f4dfcb4236}{AC\+::\+Aho\+Corasick\+Trie}}.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89         \textcolor{comment}{// instantiate pointers l1 and l2 to forward\_list which will store}}
+\DoxyCodeLine{90         \textcolor{comment}{// TrieNode pointers}}
+\DoxyCodeLine{91         std::forward\_list<Node*>* l1 = \textcolor{keyword}{new} std::forward\_list<Node*>;}
+\DoxyCodeLine{92         std::forward\_list<Node*>* l2 = \textcolor{keyword}{new} std::forward\_list<Node*>;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{comment}{// instantiate pointers to use to walk along the Trie}}
+\DoxyCodeLine{95         \mbox{\hyperlink{classAC_1_1Node}{Node}}* parent;}
+\DoxyCodeLine{96         \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* current\_edge;}
+\DoxyCodeLine{97         \mbox{\hyperlink{classAC_1_1Node}{Node}}* child;}
+\DoxyCodeLine{98         \textcolor{comment}{// pointer to a failure link}}
+\DoxyCodeLine{99         \mbox{\hyperlink{classAC_1_1Node}{Node}}* fl;}
+\DoxyCodeLine{100         \textcolor{comment}{// pointer to an out\_link}}
+\DoxyCodeLine{101         \mbox{\hyperlink{classAC_1_1Node}{Node}}* out\_link;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keywordtype}{char} current\_edge\_label;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{comment}{// while edgeList is not next -\/-\/> nullptr}}
+\DoxyCodeLine{106         \textcolor{comment}{// while (edge\_list-\/>nextEdge()) \{}}
+\DoxyCodeLine{107         \textcolor{comment}{//     // set failure link from root to root}}
+\DoxyCodeLine{108         \textcolor{comment}{//     parent-\/>setFailureLink(\&root);}}
+\DoxyCodeLine{109         \textcolor{comment}{//     l1-\/>push\_front(\{ edge\_list-\/>trieNode() \});}}
+\DoxyCodeLine{110         \textcolor{comment}{//     edge\_list = edge\_list-\/>nextEdge();}}
+\DoxyCodeLine{111         \textcolor{comment}{// \}}}
+\DoxyCodeLine{112         \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}}-\/>\mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{setFailureLink}}(\&\mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}});}
+\DoxyCodeLine{113         l1-\/>push\_front(\{ \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}} \});}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{// the main algorithm starts at level 2}}
+\DoxyCodeLine{116         \textcolor{comment}{// while l1 is not empty}}
+\DoxyCodeLine{117         \textcolor{keywordflow}{while} (!l1-\/>empty()) \{}
+\DoxyCodeLine{118             \textcolor{comment}{// iterate over l1}}
+\DoxyCodeLine{119             \textcolor{keywordflow}{for} (; !l1-\/>empty(); l1-\/>pop\_front()) \{}
+\DoxyCodeLine{120                 \textcolor{comment}{// pop the front node and set parent to point at it}}
+\DoxyCodeLine{121                 parent = l1-\/>front();}
+\DoxyCodeLine{122                 current\_edge = parent-\/>\mbox{\hyperlink{classAC_1_1Node_a6051835cec2f2ef0323013de06a0d7b7}{edgeHead}}();}
+\DoxyCodeLine{123                 \textcolor{comment}{// iterate over the children while they exist}}
+\DoxyCodeLine{124                 \textcolor{keywordflow}{while} (current\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}()) \{}
+\DoxyCodeLine{125                     \textcolor{comment}{// parent's failure link}}
+\DoxyCodeLine{126                     fl = parent-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}();}
+\DoxyCodeLine{127                     \textcolor{comment}{// set x to char on edge}}
+\DoxyCodeLine{128                     current\_edge\_label = current\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}();}
+\DoxyCodeLine{129                     \textcolor{comment}{// get the child along along a given labelled path}}
+\DoxyCodeLine{130                     child = current\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}();}
+\DoxyCodeLine{131                     \textcolor{comment}{// while fl doesn't have an edge with char x and}}
+\DoxyCodeLine{132                     \textcolor{comment}{// fl isn't the root, walk back up the tree via failure}}
+\DoxyCodeLine{133                     \textcolor{comment}{// links}}
+\DoxyCodeLine{134                     \textcolor{keywordflow}{while} (}
+\DoxyCodeLine{135                         !fl-\/>\mbox{\hyperlink{classAC_1_1Node_a6ab6e68af66e1e33a8a0bcb865bfb80d}{edgeSearchBool}}(current\_edge\_label) \&\& fl != \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}}) \{}
+\DoxyCodeLine{136                         fl = fl-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}();}
+\DoxyCodeLine{137                     \}}
+\DoxyCodeLine{138                     \textcolor{comment}{// fl can't be equal to the parent -\/-\/ this should only be}}
+\DoxyCodeLine{139                     \textcolor{comment}{// the case for level 2. TODO check this}}
+\DoxyCodeLine{140                     \textcolor{keywordflow}{if} (fl-\/>\mbox{\hyperlink{classAC_1_1Node_a6ab6e68af66e1e33a8a0bcb865bfb80d}{edgeSearchBool}}(current\_edge\_label)}
+\DoxyCodeLine{141                         \&\& fl != parent) \{}
+\DoxyCodeLine{142                         \textcolor{comment}{// if the failure link found above has an edge labelled}}
+\DoxyCodeLine{143                         \textcolor{comment}{// x, then set the corresponding node to the failure}}
+\DoxyCodeLine{144                         \textcolor{comment}{// link}}
+\DoxyCodeLine{145                         fl = fl-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(current\_edge\_label)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}();}
+\DoxyCodeLine{146                         \textcolor{comment}{// set the child's failure link to the fl described}}
+\DoxyCodeLine{147                         \textcolor{comment}{// above}}
+\DoxyCodeLine{148                         child-\/>\mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{setFailureLink}}(\&fl);}
+\DoxyCodeLine{149                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{150                         child-\/>\mbox{\hyperlink{classAC_1_1Node_a901ed45faf4978beb8390b2cbfd16740}{setFailureLink}}(\&\mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}});}
+\DoxyCodeLine{151                     \}}
+\DoxyCodeLine{152                     \textcolor{comment}{// if the failure link is a node with a pattern,}}
+\DoxyCodeLine{153                     \textcolor{comment}{// set it as the out\_link of the node in question}}
+\DoxyCodeLine{154                     \textcolor{keywordflow}{if} (child-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}() != -\/1) \{}
+\DoxyCodeLine{155                         out\_link = child-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}();}
+\DoxyCodeLine{156                         child-\/>\mbox{\hyperlink{classAC_1_1Node_ade7560c43b242a4fe8dab48693eec867}{setOutLink}}(\&out\_link);}
+\DoxyCodeLine{157                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{158                         \textcolor{comment}{// else set the current node out\_link to the}}
+\DoxyCodeLine{159                         \textcolor{comment}{// outlink of the failure link, which is either}}
+\DoxyCodeLine{160                         \textcolor{comment}{// nullptr or a pointer to another node which is}}
+\DoxyCodeLine{161                         \textcolor{comment}{// labelled with a pattern}}
+\DoxyCodeLine{162                         out\_link = child-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{outLink}}();}
+\DoxyCodeLine{163                         child-\/>\mbox{\hyperlink{classAC_1_1Node_ade7560c43b242a4fe8dab48693eec867}{setOutLink}}(\&out\_link);}
+\DoxyCodeLine{164                     \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166                     \textcolor{comment}{// add the child to l2}}
+\DoxyCodeLine{167                     \textcolor{comment}{// if (edge\_list-\/>trieNode()) \{}}
+\DoxyCodeLine{168                     l2-\/>push\_front(\{ child \});}
+\DoxyCodeLine{169                     \textcolor{comment}{// \}}}
+\DoxyCodeLine{170                     \textcolor{comment}{// move onto parent's next edge (which is the 'next edge'}}
+\DoxyCodeLine{171                     \textcolor{comment}{// of the child edge obj)}}
+\DoxyCodeLine{172                     current\_edge = current\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_ab47db3fd28d86106e0bb81c3d0f9b465}{nextEdge}}();}
+\DoxyCodeLine{173                 \}}
+\DoxyCodeLine{174             \}}
+\DoxyCodeLine{175             \textcolor{comment}{// set l1 to point to l2}}
+\DoxyCodeLine{176             l1 = l2;}
+\DoxyCodeLine{177             \textcolor{comment}{// set l2 to point at a new forward linked list}}
+\DoxyCodeLine{178             l2 = \textcolor{keyword}{new} std::forward\_list<Node*>;}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classACTrie_a8b575ec3d36353660bc39574e016f75c}\label{classACTrie_a8b575ec3d36353660bc39574e016f75c}} 
 \index{ACTrie@{ACTrie}!getRoot@{getRoot}}
 \index{getRoot@{getRoot}!ACTrie@{ACTrie}}
@@ -59,11 +188,16 @@ Node$\ast$ reference to root node
 
 Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_ae73b6cff49262f5d2dd2fbfea812bf9c}{AC\+::\+Aho\+Corasick\+Trie}}.
 
-\mbox{\Hypertarget{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}\label{classACTrie_ab086bccb1cb0ddd3736be81f5baea93a}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51 \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classACTrie_ad6aa4730ba51cf2ebbb0992271a58fae}\label{classACTrie_ad6aa4730ba51cf2ebbb0992271a58fae}} 
 \index{ACTrie@{ACTrie}!insert@{insert}}
 \index{insert@{insert}!ACTrie@{ACTrie}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily void ACTrie\+::insert (\begin{DoxyParamCaption}\item[{char}]{pattern\mbox{[}$\,$\mbox{]},  }\item[{int}]{pattern\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void ACTrie\+::insert (\begin{DoxyParamCaption}\item[{string}]{pattern,  }\item[{int}]{pattern\+\_\+index,  }\item[{int}]{strand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -77,16 +211,54 @@ This function inserts both the input pattern as well as its reverse complement.
 \hline
 {\em pattern\+\_\+index} & the pattern identifier. This is what will be emitted when match is found. \\
 \hline
+{\em strand} & 1 for forward (or the same direction as in the pattern file and 2 for reverse complement) \\
+\hline
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a312081cf52e9b81f89910d8ba14519ba}{AC\+::\+Aho\+Corasick\+Trie}}.
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_afdda77915dc8ac16c3dbc78261ded5ea}{AC\+::\+Aho\+Corasick\+Trie}}.
 
-\mbox{\Hypertarget{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}\label{classACTrie_af99bf3d3e8f77150b1a4ca169f819fc4}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54     \{}
+\DoxyCodeLine{55         \textcolor{comment}{// TODO check uniqueness of pattern (I guess search trie for the}}
+\DoxyCodeLine{56         \textcolor{comment}{// pattern)}}
+\DoxyCodeLine{57         \textcolor{comment}{//  first?}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{// set pointer to walk around the trie}}
+\DoxyCodeLine{60         \mbox{\hyperlink{classAC_1_1Node}{Node}}* curr\_node = \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}};}
+\DoxyCodeLine{61         \textcolor{comment}{// instantiate int to walk along pattern}}
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{63         \textcolor{comment}{// walk along the pattern}}
+\DoxyCodeLine{64         \textcolor{keywordflow}{while} (pattern[i] != NULL) \{}
+\DoxyCodeLine{65             \textcolor{comment}{// while there are edges out of curr\_node with the appropriate char}}
+\DoxyCodeLine{66             \textcolor{comment}{// go to that node}}
+\DoxyCodeLine{67             \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* curr\_edge = curr\_node-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(pattern[i]);}
+\DoxyCodeLine{68             \textcolor{keywordflow}{if} (curr\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}() == pattern[i]) \{}
+\DoxyCodeLine{69                 curr\_node = curr\_edge-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}();}
+\DoxyCodeLine{70                 \textcolor{comment}{// else, start adding nodes and edges}}
+\DoxyCodeLine{71             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{72                 \mbox{\hyperlink{classAC_1_1Edge}{Edge}}* new\_edge = \textcolor{keyword}{new} \mbox{\hyperlink{classAC_1_1Edge}{Edge}} \{\};}
+\DoxyCodeLine{73                 \mbox{\hyperlink{classAC_1_1Node}{Node}}* n = \textcolor{keyword}{new} \mbox{\hyperlink{classAC_1_1Node}{Node}} \{ \&new\_edge \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75                 curr\_node = curr\_node-\/>\mbox{\hyperlink{classAC_1_1Node_ac27861240cb2614319281a4e3534cac0}{insertEdge}}(\&n, pattern[i]);}
+\DoxyCodeLine{76                 curr\_node-\/>\mbox{\hyperlink{classAC_1_1Node_a237ce24e6f0e638c814b7630166a5ea1}{setDistFromRoot}}(i + 1);}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78             \textcolor{comment}{// iterate to the next char in pattern}}
+\DoxyCodeLine{79             i++;}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81         \textcolor{comment}{// at the final char of pattern, set the curr\_node pattern indicator}}
+\DoxyCodeLine{82         \textcolor{comment}{// to the pattern's label}}
+\DoxyCodeLine{83         curr\_node-\/>\mbox{\hyperlink{classAC_1_1Node_a5ced0761f7773bfd84965cfa51f459d9}{setPatternIndicator}}(label);}
+\DoxyCodeLine{84         curr\_node-\/>\mbox{\hyperlink{classAC_1_1Node_a9115392a31463e945c1815ba5c492063}{setStrand}}(strand);}
+\DoxyCodeLine{85     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classACTrie_a2343de45b49c8b05a85d8077b97951c3}\label{classACTrie_a2343de45b49c8b05a85d8077b97951c3}} 
 \index{ACTrie@{ACTrie}!search@{search}}
 \index{search@{search}!ACTrie@{ACTrie}}
 \doxysubsubsection{\texorpdfstring{search()}{search()}}
-{\footnotesize\ttfamily void ACTrie\+::search (\begin{DoxyParamCaption}\item[{char}]{target\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void ACTrie\+::search (\begin{DoxyParamCaption}\item[{string}]{target\+\_\+filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -94,34 +266,82 @@ Using the tri, search a target.
 
 
 \begin{DoxyParams}{Parameters}
-{\em target} & a target string to search \\
+{\em target\+\_\+filepath} & a path to a file containing a string \\
 \hline
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7e555b3a36d6223024891ff7a7cce546}{AC\+::\+Aho\+Corasick\+Trie}}.
-
-\mbox{\Hypertarget{classACTrie_a423e41463a72270b604f104e8efcfdae}\label{classACTrie_a423e41463a72270b604f104e8efcfdae}} 
-\index{ACTrie@{ACTrie}!updateFinalTrieNode@{updateFinalTrieNode}}
-\index{updateFinalTrieNode@{updateFinalTrieNode}!ACTrie@{ACTrie}}
-\doxysubsubsection{\texorpdfstring{updateFinalTrieNode()}{updateFinalTrieNode()}}
-{\footnotesize\ttfamily void ACTrie\+::update\+Final\+Trie\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAC_1_1Node}{Node}} $\ast$$\ast$}]{nv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7dc543e54a96ebc66d7a560c8970c6ee}{AC\+::\+Aho\+Corasick\+Trie}}.
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{183     \{}
+\DoxyCodeLine{184         vector<char> bytes;}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186         FILE* input\_file = fopen(target\_filepath.c\_str(), \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{187         \textcolor{keywordflow}{if} (input\_file == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{188             cout << \textcolor{stringliteral}{'target\_filepath DNE'} << std::endl;}
+\DoxyCodeLine{189             exit(EXIT\_FAILURE);}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} t\_c = getc(input\_file);}
+\DoxyCodeLine{193         \textcolor{comment}{// set t\_c to lower}}
+\DoxyCodeLine{194         t\_c = tolower(t\_c);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \textcolor{comment}{// instantiate an int to store the number of bases that may be}}
+\DoxyCodeLine{197         \textcolor{comment}{// skipped when a mismatch or a leaf node is reached}}
+\DoxyCodeLine{198         \textcolor{keywordtype}{int} l = 0;}
+\DoxyCodeLine{199         \textcolor{comment}{// instantiate an int to track movement along the target sequence}}
+\DoxyCodeLine{200         \textcolor{keywordtype}{int} c = 0;}
+\DoxyCodeLine{201         \textcolor{comment}{// instantiate a node pointer to be used to move around the Trie}}
+\DoxyCodeLine{202         \mbox{\hyperlink{classAC_1_1Node}{Node}}* w = \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}};}
+\DoxyCodeLine{203         \textcolor{comment}{// instantiate node pointer to be used to follow out\_links}}
+\DoxyCodeLine{204         \mbox{\hyperlink{classAC_1_1Node}{Node}}* out\_link;}
+\DoxyCodeLine{205         \textcolor{comment}{// search the target for exact matches to strings in the Trie}}
+\DoxyCodeLine{206         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208             \textcolor{comment}{// while there is an edge (w,w') labelled t\_c}}
+\DoxyCodeLine{209             \textcolor{keywordflow}{while} (w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a466467554b8e155b46321f6646c35a9a}{label}}() == t\_c \&\& t\_c != NULL) \{}
+\DoxyCodeLine{210                 \textcolor{comment}{// if w' is numbered by a pattern}}
+\DoxyCodeLine{211                 \textcolor{keywordflow}{if} (w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}() != -\/1) \{}
+\DoxyCodeLine{212                     std::cout}
+\DoxyCodeLine{213                         << (c + 1)}
+\DoxyCodeLine{214                             -\/ (w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}{distFromRoot}}()}
+\DoxyCodeLine{215                                 -\/ 1)}
+\DoxyCodeLine{216                         << \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{217                         << w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}()}
+\DoxyCodeLine{218                         << \textcolor{charliteral}{','} << w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()-\/>\mbox{\hyperlink{classAC_1_1Node_af0bc805078e8507fd5808cf73c7deadd}{strand}}()}
+\DoxyCodeLine{219                         << std::endl;}
+\DoxyCodeLine{220                 \}}
+\DoxyCodeLine{221                 \textcolor{comment}{// report also if there is a directed path of failure links}}
+\DoxyCodeLine{222                 \textcolor{comment}{// from w' to a numbered node}}
+\DoxyCodeLine{223                 out\_link = w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}()-\/>\mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{outLink}}();}
+\DoxyCodeLine{224                 \textcolor{keywordflow}{while} (out\_link) \{}
+\DoxyCodeLine{225                     std::cout << (c + 1) -\/ (out\_link-\/>\mbox{\hyperlink{classAC_1_1Node_a82ebe3d142331427b346c64fc2773388}{distFromRoot}}() -\/ 1) << \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{226                               << out\_link-\/>\mbox{\hyperlink{classAC_1_1Node_a8b8138dae39c9f9842236b302bd2f9fe}{patternIndicator}}() << \textcolor{charliteral}{','}}
+\DoxyCodeLine{227                               << out\_link-\/>\mbox{\hyperlink{classAC_1_1Node_af0bc805078e8507fd5808cf73c7deadd}{strand}}() << std::endl;}
+\DoxyCodeLine{228                     out\_link = out\_link-\/>\mbox{\hyperlink{classAC_1_1Node_a6068c2be8d535cfcc0397107cba7300d}{outLink}}();}
+\DoxyCodeLine{229                 \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231                 \textcolor{comment}{// the final edge in the edge list for each node has a}}
+\DoxyCodeLine{232                 \textcolor{comment}{// pointer to which trie node at which the search for}}
+\DoxyCodeLine{233                 \textcolor{comment}{// matches should resume}}
+\DoxyCodeLine{234                 w = w-\/>\mbox{\hyperlink{classAC_1_1Node_a9e6d29b2990615a1cca8c9b5f081f1d9}{edgeSearch}}(t\_c)-\/>\mbox{\hyperlink{classAC_1_1Edge_a5a6eb1dc72b2018bd34215ee47f066b2}{trieNode}}();}
+\DoxyCodeLine{235                 \textcolor{comment}{// increment the counter to the next char}}
+\DoxyCodeLine{236                 c++;}
+\DoxyCodeLine{237                 t\_c = getc(input\_file);}
+\DoxyCodeLine{238             \}}
+\DoxyCodeLine{239             w = w-\/>\mbox{\hyperlink{classAC_1_1Node_a2248b5b7260618ceb78d66fcb1a8b6cd}{failureLink}}();}
+\DoxyCodeLine{240             \textcolor{comment}{// if t\_c does not have a edge out of root, go to the next char}}
+\DoxyCodeLine{241             \textcolor{keywordflow}{if} (w == \mbox{\hyperlink{classACTrie_ac4e077b3a5e258f62953c5ff9bb6b2b9}{root}} \&\& !w-\/>\mbox{\hyperlink{classAC_1_1Node_a6ab6e68af66e1e33a8a0bcb865bfb80d}{edgeSearchBool}}(t\_c)) \{}
+\DoxyCodeLine{242                 c++;}
+\DoxyCodeLine{243                 t\_c = getc(input\_file);}
+\DoxyCodeLine{244             \}}
+\DoxyCodeLine{245             \textcolor{comment}{// continue until the target string is exhausted}}
+\DoxyCodeLine{246         \} \textcolor{keywordflow}{while} (!feof(input\_file));}
+\DoxyCodeLine{247     \}}
 
-Update the final edge\textquotesingle{}s next attribute. 
-
-This is intended to be used to update the final node.\+next to point to the node in the Trie where the search algorithm should resume
-
-
-\begin{DoxyParams}{Parameters}
-{\em nv} & a pointer to another node in the Trie \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a267b7002a011f7dc408b2077def96798}{AC\+::\+Aho\+Corasick\+Trie}}.
-
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

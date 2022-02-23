@@ -21,8 +21,8 @@ TEST(NodeTests, edgeSearch)
     char p2[] = "temp";
     int p2_label = 2;
 
-    a.insert(p1, p1_label);
-    a.insert(p2, p2_label);
+    a.insert(p1, p1_label,2);
+    a.insert(p2, p2_label,2);
 
     Node* e_node
         = a.getRoot()->edgeSearch('t')->trieNode()->edgeSearch('e')->trieNode();
@@ -57,11 +57,11 @@ TEST(NodeTests, failureLink)
     char p5[] = "mp";
     int p5_label = 5;
 
-    a.insert(p1, p1_label);
+    a.insert(p1, p1_label,2);
 
-    a.insert(p2, p2_label);
+    a.insert(p2, p2_label,2);
 
-    a.insert(p5, p5_label);
+    a.insert(p5, p5_label,2);
 
     Node* first_m_node = a.getRoot()->edgeSearch('m')->trieNode();
 
@@ -113,11 +113,11 @@ TEST(NodeTests, distFromRoot)
     char p5[] = "mp";
     int p5_label = 5;
 
-    a.insert(p1, p1_label);
+    a.insert(p1, p1_label,2);
 
-    a.insert(p2, p2_label);
+    a.insert(p2, p2_label,2);
 
-    a.insert(p5, p5_label);
+    a.insert(p5, p5_label,2);
 
     int p1_t_node_dist = a.getRoot()
                              ->edgeSearch('t')
@@ -175,7 +175,7 @@ TEST(ACTrieTests, insert)
     char p5[] = "mp";
     int p5_label = 5;
 
-    a.insert(p1, p1_label);
+    a.insert(p1, p1_label,2);
 
     int pattern_indicator_check1 = a.getRoot()
                                        ->edgeSearch('t')
@@ -188,7 +188,7 @@ TEST(ACTrieTests, insert)
                                        ->trieNode()
                                        ->patternIndicator();
 
-    a.insert(p2, p2_label);
+    a.insert(p2, p2_label,2);
 
     // TODO: ERROR HANDLING ON SEARCHING FOR A PATTERN THAT DNE
     int pattern_indicator_check2 = a.getRoot()
@@ -202,9 +202,9 @@ TEST(ACTrieTests, insert)
                                        ->trieNode()
                                        ->patternIndicator();
 
-    a.insert(p3, p3_label);
+    a.insert(p3, p3_label,2);
 
-    a.insert(p3, p3_label);
+    a.insert(p3, p3_label,2);
     int pattern_indicator_check3 = a.getRoot()
                                        ->edgeSearch('t')
                                        ->trieNode()
@@ -212,7 +212,7 @@ TEST(ACTrieTests, insert)
                                        ->trieNode()
                                        ->patternIndicator();
 
-    a.insert(p4, p4_label);
+    a.insert(p4, p4_label,2);
 
     int pattern_indicator_check4 = a.getRoot()
                                        ->edgeSearch('e')
@@ -221,7 +221,7 @@ TEST(ACTrieTests, insert)
                                        ->trieNode()
                                        ->patternIndicator();
 
-    a.insert(p5, p5_label);
+    a.insert(p5, p5_label,2);
 
     int pattern_indicator_check5 = a.getRoot()
                                        ->edgeSearch('m')
@@ -237,6 +237,7 @@ TEST(ACTrieTests, insert)
     EXPECT_EQ(pattern_indicator_check5, p5_label);
 }
 
+// cite: https://stackoverflow.com/a/58369622/9708266
 class SearchStreamTest : public ::testing::Test {
 protected:
     SearchStreamTest()
@@ -272,9 +273,97 @@ protected:
     std::streambuf* sbuf;
 };
 
-TEST_F(SearchStreamTest, search)
+TEST(ACTrie, findNv)
 {
     ACTrie a {};
+
+    char p1[] = "potato";
+    int p1_label = 1;
+
+    char p2[] = "tatter";
+    int p2_label = 2;
+
+    char p3[] = "at";
+    int p3_label = 3;
+
+    a.insert(p1, p1_label,2);
+    a.insert(p2, p2_label,2);
+    a.insert(p3, p3_label,2);
+
+    a.findNv();
+
+    Node* potat_node_fl = a.getRoot()
+                              ->edgeSearch('p')
+                              ->trieNode()
+                              ->edgeSearch('o')
+                              ->trieNode()
+                              ->edgeSearch('t')
+                              ->trieNode()
+                              ->edgeSearch('a')
+                              ->trieNode()
+                              ->edgeSearch('t')
+                              ->trieNode()
+                              ->failureLink();
+
+    Node* tat_node = a.getRoot()
+                         ->edgeSearch('t')
+                         ->trieNode()
+                         ->edgeSearch('a')
+                         ->trieNode()
+                         ->edgeSearch('t')
+                         ->trieNode();
+
+    Node* tat_node_fl = tat_node->failureLink();
+
+    Node* at_node
+        = a.getRoot()->edgeSearch('a')->trieNode()->edgeSearch('t')->trieNode();
+
+    EXPECT_EQ(potat_node_fl, tat_node);
+    EXPECT_EQ(tat_node_fl, at_node);
+}
+
+TEST(ACTrie, outLink1)
+{
+
+    ACTrie a{};
+
+    char p1[] = "potato";
+    int p1_label = 1;
+
+    char p2[] = "tatter";
+    int p2_label = 2;
+
+    char p3[] = "at";
+    int p3_label = 3;
+
+    a.insert(p1, p1_label,2);
+    a.insert(p2, p2_label,2);
+    a.insert(p3, p3_label,2);
+
+    a.findNv();
+
+    Node* potat_outlink = a.getRoot()
+                              ->edgeSearch('p')
+                              ->trieNode()
+                              ->edgeSearch('o')
+                              ->trieNode()
+                              ->edgeSearch('t')
+                              ->trieNode()
+                              ->edgeSearch('a')
+                              ->trieNode()
+                              ->edgeSearch('t')
+                              ->trieNode()
+                              ->outLink();
+
+    Node* at_node
+        = a.getRoot()->edgeSearch('a')->trieNode()->edgeSearch('t')->trieNode();
+
+    EXPECT_EQ(potat_outlink, at_node);
+}
+
+TEST(ACTrieTest, outlink2)
+{
+    ACTrie a{};
 
     char p1[] = "test";
     int p1_label = 1;
@@ -291,19 +380,104 @@ TEST_F(SearchStreamTest, search)
     char p5[] = "mp";
     int p5_label = 5;
 
-    a.insert(p1, p1_label);
-    a.insert(p2, p2_label);
-    a.insert(p3, p3_label);
-    a.insert(p4, p4_label);
-    a.insert(p5, p5_label);
+    a.insert(p1, p1_label,2);
+    a.insert(p2, p2_label,2);
+    a.insert(p3, p3_label,2);
+    a.insert(p4, p4_label,2);
+    a.insert(p5, p5_label,2);
 
-    char target[] = "mpxxtestxxmpxxtemp";
-    // char target[] = "mpxxte";
+    // set failure links
+    a.findNv();
 
-    // std::string expected { "1,5,1\n5,3,1\n" };
-    std::string expected { "1,5,1\n5,3,1\n5,1,1\n11,5,1\n15,3,1\n15,2,1\n" };
-    // Use cout as usual
-    a.search(target);
+    Node* temp_outlink = a.getRoot()
+                             ->edgeSearch('t')
+                             ->trieNode()
+                             ->edgeSearch('e')
+                             ->trieNode()
+                             ->edgeSearch('m')
+                             ->trieNode()
+                             ->edgeSearch('p')
+                             ->trieNode()
+                             ->outLink();
+
+    Node* mp_node
+        = a.getRoot()->edgeSearch('m')->trieNode()->edgeSearch('p')->trieNode();
+
+    EXPECT_EQ(temp_outlink, mp_node);
+    EXPECT_EQ(temp_outlink->patternIndicator(), 5);
+}
+
+TEST(ACTrieTest, testpatternindicator)
+{
+    ACTrie a{};
+
+    char p1[] = "test";
+    int p1_label = 1;
+
+    char p2[] = "temp";
+    int p2_label = 2;
+
+    char p3[] = "te";
+    int p3_label = 3;
+
+    char p4[] = "em";
+    int p4_label = 4;
+
+    char p5[] = "mp";
+    int p5_label = 5;
+
+    a.insert(p1, p1_label,2);
+    a.insert(p2, p2_label,2);
+    a.insert(p3, p3_label,2);
+    a.insert(p4, p4_label,2);
+    a.insert(p5, p5_label,2);
+
+    // set failure links
+    a.findNv();
+
+    int mp_pi = a.getRoot()
+                    ->edgeSearch('m')
+                    ->trieNode()
+                    ->edgeSearch('p')
+                    ->trieNode()
+                    ->patternIndicator();
+
+    EXPECT_EQ(mp_pi, 5);
+}
+
+TEST_F(SearchStreamTest, searchWithFile)
+{
+    ACTrie a{};
+
+    char p1[] = "test";
+    int p1_label = 1;
+
+    char p2[] = "temp";
+    int p2_label = 2;
+
+    char p3[] = "te";
+    int p3_label = 3;
+
+    char p4[] = "em";
+    int p4_label = 4;
+
+    char p5[] = "mp";
+    int p5_label = 5;
+
+    a.insert(p1, p1_label,1);
+    a.insert(p2, p2_label,1);
+    a.insert(p3, p3_label,1);
+    a.insert(p4, p4_label,1);
+    a.insert(p5, p5_label,1);
+
+    a.findNv();
+    a.search("/home/oguzkhan/class/bioseq/assignments/hw1/homework-1-problem-4-cmatKhan/data/test3.fa");
+
     std::string actual { buffer.str() };
+    std::string expected {
+        "1,5,1\n5,3,1\n5,1,1\n11,5,1\n15,3,1\n16,4,1\n15,2,1\n17,5,1\n"
+    };
+    
+
     EXPECT_EQ(expected, actual);
 }
