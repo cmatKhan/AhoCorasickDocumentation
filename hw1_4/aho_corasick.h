@@ -409,9 +409,10 @@ public:
      *
      * Conduct a breadth first traversal over the nodes in the Trie. The
      * final node in the edge list will hold the pointer to the node which
-     * the search() algorithm moves to when no match is found. nullptr
-     * signifies that search() should resume at root. Otherwise, update the
-     * final node.next to point to the appropriate node in the trie.
+     * the search() algorithm moves to when no match is found. the out_link 
+     * are pattern matches which are substrings of the current string, which 
+     * are found by following the shortest path of failure links from one 
+     * node to a pattern labelled node, if one exists
      *
      */
     virtual void findNv() = 0;

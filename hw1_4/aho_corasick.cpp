@@ -239,10 +239,6 @@ public:
             // continue until the target string is exhausted
         } while (!feof(input_file));
     }
-    // std::cout << my_character;
-    // if (my_character == '\n') {
-    //     ++number_of_lines;
-    // }
 };
 
 // copied from https://stackoverflow.com/a/33075573/9708266
