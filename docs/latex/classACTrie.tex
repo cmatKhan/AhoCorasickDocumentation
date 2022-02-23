@@ -70,7 +70,7 @@ There is a Edge object instantiated and set such that root has an attribute poin
 
 Set the failure\+\_\+links and output\+\_\+links. 
 
-Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. 
+Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classACTrie_a2343de45b49c8b05a85d8077b97951c3}{search()}} algorithm moves to when no match is found. the out\+\_\+link are pattern matches which are substrings of the current string, which are found by following the shortest path of failure links from one node to a pattern labelled node, if one exists 
 
 Implements \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_aa10d2d2a6f63b9e5f11fd3f4dfcb4236}{AC\+::\+Aho\+Corasick\+Trie}}.
 

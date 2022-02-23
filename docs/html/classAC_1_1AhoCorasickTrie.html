@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the failure_links and output_links. </p>
-<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. nullptr signifies that <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee" title="Using the tri, search a target.">search()</a> should resume at root. Otherwise, update the final node.next to point to the appropriate node in the trie. </p>
+<p >Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee" title="Using the tri, search a target.">search()</a> algorithm moves to when no match is found. the out_link are pattern matches which are substrings of the current string, which are found by following the shortest path of failure links from one node to a pattern labelled node, if one exists </p>
 
 <p>Implemented in <a class="el" href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223">ACTrie</a>.</p>
 

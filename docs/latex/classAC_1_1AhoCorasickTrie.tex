@@ -42,7 +42,7 @@ Aho\+Corasick Trie algorithm implementation.
 
 Set the failure\+\_\+links and output\+\_\+links. 
 
-Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7dc543e54a96ebc66d7a560c8970c6ee}{search()}} algorithm moves to when no match is found. nullptr signifies that \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7dc543e54a96ebc66d7a560c8970c6ee}{search()}} should resume at root. Otherwise, update the final node.\+next to point to the appropriate node in the trie. 
+Conduct a breadth first traversal over the nodes in the Trie. The final node in the edge list will hold the pointer to the node which the \mbox{\hyperlink{classAC_1_1AhoCorasickTrie_a7dc543e54a96ebc66d7a560c8970c6ee}{search()}} algorithm moves to when no match is found. the out\+\_\+link are pattern matches which are substrings of the current string, which are found by following the shortest path of failure links from one node to a pattern labelled node, if one exists 
 
 Implemented in \mbox{\hyperlink{classACTrie_a6e6c527e9b1664903267c1ddcd915223}{ACTrie}}.
 
