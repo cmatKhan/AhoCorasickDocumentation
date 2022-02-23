@@ -187,89 +187,83 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   95</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* parent;</div>
 <div class="line"><span class="lineno">   96</span>        <a class="code hl_class" href="classAC_1_1Edge.html">Edge</a>* current_edge;</div>
 <div class="line"><span class="lineno">   97</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* child;</div>
-<div class="line"><span class="lineno">   98</span>        <span class="comment">// pointer to a failure link</span></div>
-<div class="line"><span class="lineno">   99</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* fl;</div>
-<div class="line"><span class="lineno">  100</span>        <span class="comment">// pointer to an out_link</span></div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>        <span class="keywordtype">char</span> current_edge_label;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>        <span class="comment">// while edgeList is not next --&gt; nullptr</span></div>
-<div class="line"><span class="lineno">  106</span>        <span class="comment">// while (edge_list-&gt;nextEdge()) {</span></div>
-<div class="line"><span class="lineno">  107</span>        <span class="comment">//     // set failure link from root to root</span></div>
-<div class="line"><span class="lineno">  108</span>        <span class="comment">//     parent-&gt;setFailureLink(&amp;root);</span></div>
-<div class="line"><span class="lineno">  109</span>        <span class="comment">//     l1-&gt;push_front({ edge_list-&gt;trieNode() });</span></div>
-<div class="line"><span class="lineno">  110</span>        <span class="comment">//     edge_list = edge_list-&gt;nextEdge();</span></div>
-<div class="line"><span class="lineno">  111</span>        <span class="comment">// }</span></div>
-<div class="line"><span class="lineno">  112</span>        <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
-<div class="line"><span class="lineno">  113</span>        l1-&gt;push_front({ <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> });</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>        <span class="comment">// the main algorithm starts at level 2</span></div>
-<div class="line"><span class="lineno">  116</span>        <span class="comment">// while l1 is not empty</span></div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">while</span> (!l1-&gt;empty()) {</div>
-<div class="line"><span class="lineno">  118</span>            <span class="comment">// iterate over l1</span></div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">for</span> (; !l1-&gt;empty(); l1-&gt;pop_front()) {</div>
-<div class="line"><span class="lineno">  120</span>                <span class="comment">// pop the front node and set parent to point at it</span></div>
-<div class="line"><span class="lineno">  121</span>                parent = l1-&gt;front();</div>
-<div class="line"><span class="lineno">  122</span>                current_edge = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6051835cec2f2ef0323013de06a0d7b7">edgeHead</a>();</div>
-<div class="line"><span class="lineno">  123</span>                <span class="comment">// iterate over the children while they exist</span></div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">while</span> (current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>()) {</div>
-<div class="line"><span class="lineno">  125</span>                    <span class="comment">// parent&#39;s failure link</span></div>
-<div class="line"><span class="lineno">  126</span>                    fl = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
-<div class="line"><span class="lineno">  127</span>                    <span class="comment">// set x to char on edge</span></div>
-<div class="line"><span class="lineno">  128</span>                    current_edge_label = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>();</div>
-<div class="line"><span class="lineno">  129</span>                    <span class="comment">// get the child along along a given labelled path</span></div>
-<div class="line"><span class="lineno">  130</span>                    child = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
-<div class="line"><span class="lineno">  131</span>                    <span class="comment">// while fl doesn&#39;t have an edge with char x and</span></div>
-<div class="line"><span class="lineno">  132</span>                    <span class="comment">// fl isn&#39;t the root, walk back up the tree via failure</span></div>
-<div class="line"><span class="lineno">  133</span>                    <span class="comment">// links</span></div>
-<div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">while</span> (</div>
-<div class="line"><span class="lineno">  135</span>                        !fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label) &amp;&amp; fl != <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>) {</div>
-<div class="line"><span class="lineno">  136</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
-<div class="line"><span class="lineno">  137</span>                    }</div>
-<div class="line"><span class="lineno">  138</span>                    <span class="comment">// fl can&#39;t be equal to the parent -- this should only be</span></div>
-<div class="line"><span class="lineno">  139</span>                    <span class="comment">// the case for level 2. TODO check this</span></div>
-<div class="line"><span class="lineno">  140</span>                    <span class="keywordflow">if</span> (fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label)</div>
-<div class="line"><span class="lineno">  141</span>                        &amp;&amp; fl != parent) {</div>
-<div class="line"><span class="lineno">  142</span>                        <span class="comment">// if the failure link found above has an edge labelled</span></div>
-<div class="line"><span class="lineno">  143</span>                        <span class="comment">// x, then set the corresponding node to the failure</span></div>
-<div class="line"><span class="lineno">  144</span>                        <span class="comment">// link</span></div>
-<div class="line"><span class="lineno">  145</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(current_edge_label)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
-<div class="line"><span class="lineno">  146</span>                        <span class="comment">// set the child&#39;s failure link to the fl described</span></div>
-<div class="line"><span class="lineno">  147</span>                        <span class="comment">// above</span></div>
-<div class="line"><span class="lineno">  148</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;fl);</div>
-<div class="line"><span class="lineno">  149</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  150</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
-<div class="line"><span class="lineno">  151</span>                    }</div>
-<div class="line"><span class="lineno">  152</span>                    <span class="comment">// if the failure link is a node with a pattern,</span></div>
-<div class="line"><span class="lineno">  153</span>                    <span class="comment">// set it as the out_link of the node in question</span></div>
-<div class="line"><span class="lineno">  154</span>                    <span class="keywordflow">if</span> (child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
-<div class="line"><span class="lineno">  155</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
-<div class="line"><span class="lineno">  156</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
-<div class="line"><span class="lineno">  157</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  158</span>                        <span class="comment">// else set the current node out_link to the</span></div>
-<div class="line"><span class="lineno">  159</span>                        <span class="comment">// outlink of the failure link, which is either</span></div>
-<div class="line"><span class="lineno">  160</span>                        <span class="comment">// nullptr or a pointer to another node which is</span></div>
-<div class="line"><span class="lineno">  161</span>                        <span class="comment">// labelled with a pattern</span></div>
-<div class="line"><span class="lineno">  162</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
-<div class="line"><span class="lineno">  163</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
-<div class="line"><span class="lineno">  164</span>                    }</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>                    <span class="comment">// add the child to l2</span></div>
-<div class="line"><span class="lineno">  167</span>                    <span class="comment">// if (edge_list-&gt;trieNode()) {</span></div>
-<div class="line"><span class="lineno">  168</span>                    l2-&gt;push_front({ child });</div>
-<div class="line"><span class="lineno">  169</span>                    <span class="comment">// }</span></div>
-<div class="line"><span class="lineno">  170</span>                    <span class="comment">// move onto parent&#39;s next edge (which is the &#39;next edge&#39;</span></div>
-<div class="line"><span class="lineno">  171</span>                    <span class="comment">// of the child edge obj)</span></div>
-<div class="line"><span class="lineno">  172</span>                    current_edge = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>();</div>
-<div class="line"><span class="lineno">  173</span>                }</div>
-<div class="line"><span class="lineno">  174</span>            }</div>
-<div class="line"><span class="lineno">  175</span>            <span class="comment">// set l1 to point to l2</span></div>
-<div class="line"><span class="lineno">  176</span>            l1 = l2;</div>
-<div class="line"><span class="lineno">  177</span>            <span class="comment">// set l2 to point at a new forward linked list</span></div>
-<div class="line"><span class="lineno">  178</span>            l2 = <span class="keyword">new</span> std::forward_list&lt;Node*&gt;;</div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordtype">char</span> current_edge_label;</div>
+<div class="line"><span class="lineno">   99</span>        <span class="comment">// pointer to a failure link</span></div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* fl;</div>
+<div class="line"><span class="lineno">  101</span>        <span class="comment">// pointer to an out_link</span></div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment">// set root failure link to itself</span></div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// push root onto l1</span></div>
+<div class="line"><span class="lineno">  107</span>        l1-&gt;push_front({ <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> });</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        <span class="comment">// the main algorithm starts at level 2</span></div>
+<div class="line"><span class="lineno">  110</span>        <span class="comment">// while l1 is not empty</span></div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">while</span> (!l1-&gt;empty()) {</div>
+<div class="line"><span class="lineno">  112</span>            <span class="comment">// iterate over l1</span></div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">for</span> (; !l1-&gt;empty(); l1-&gt;pop_front()) {</div>
+<div class="line"><span class="lineno">  114</span>                <span class="comment">// pop the front node and set parent to point at it</span></div>
+<div class="line"><span class="lineno">  115</span>                parent = l1-&gt;front();</div>
+<div class="line"><span class="lineno">  116</span>                current_edge = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6051835cec2f2ef0323013de06a0d7b7">edgeHead</a>();</div>
+<div class="line"><span class="lineno">  117</span>                <span class="comment">// iterate over the children while they exist</span></div>
+<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">while</span> (current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>()) {</div>
+<div class="line"><span class="lineno">  119</span>                    <span class="comment">// parent&#39;s failure link</span></div>
+<div class="line"><span class="lineno">  120</span>                    fl = parent-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  121</span>                    <span class="comment">// set x to char on edge</span></div>
+<div class="line"><span class="lineno">  122</span>                    current_edge_label = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>();</div>
+<div class="line"><span class="lineno">  123</span>                    <span class="comment">// get the child along along a given labelled path</span></div>
+<div class="line"><span class="lineno">  124</span>                    child = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  125</span>                    <span class="comment">// while fl doesn&#39;t have an edge with char x and</span></div>
+<div class="line"><span class="lineno">  126</span>                    <span class="comment">// fl isn&#39;t the root, walk back up the tree via failure</span></div>
+<div class="line"><span class="lineno">  127</span>                    <span class="comment">// links</span></div>
+<div class="line"><span class="lineno">  128</span>                    <span class="keywordflow">while</span> (</div>
+<div class="line"><span class="lineno">  129</span>                        !fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label) &amp;&amp; fl != <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>) {</div>
+<div class="line"><span class="lineno">  130</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  131</span>                    }</div>
+<div class="line"><span class="lineno">  132</span>                    <span class="comment">// fl can&#39;t be equal to the parent -- this should only be</span></div>
+<div class="line"><span class="lineno">  133</span>                    <span class="comment">// the case for level 2. TODO check this</span></div>
+<div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">if</span> (fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(current_edge_label)</div>
+<div class="line"><span class="lineno">  135</span>                        &amp;&amp; fl != parent) {</div>
+<div class="line"><span class="lineno">  136</span>                        <span class="comment">// if the failure link found above has an edge labelled</span></div>
+<div class="line"><span class="lineno">  137</span>                        <span class="comment">// x, then set the corresponding node to the failure</span></div>
+<div class="line"><span class="lineno">  138</span>                        <span class="comment">// link</span></div>
+<div class="line"><span class="lineno">  139</span>                        fl = fl-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(current_edge_label)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  140</span>                        <span class="comment">// set the child&#39;s failure link to the fl described</span></div>
+<div class="line"><span class="lineno">  141</span>                        <span class="comment">// above</span></div>
+<div class="line"><span class="lineno">  142</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;fl);</div>
+<div class="line"><span class="lineno">  143</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  144</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a901ed45faf4978beb8390b2cbfd16740">setFailureLink</a>(&amp;<a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>);</div>
+<div class="line"><span class="lineno">  145</span>                    }</div>
+<div class="line"><span class="lineno">  146</span>                    <span class="comment">// if the failure link is a node with a pattern,</span></div>
+<div class="line"><span class="lineno">  147</span>                    <span class="comment">// set it as the out_link of the node in question</span></div>
+<div class="line"><span class="lineno">  148</span>                    <span class="keywordflow">if</span> (child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
+<div class="line"><span class="lineno">  149</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  150</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
+<div class="line"><span class="lineno">  151</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  152</span>                        <span class="comment">// else set the current node out_link to the</span></div>
+<div class="line"><span class="lineno">  153</span>                        <span class="comment">// outlink of the failure link, which is either</span></div>
+<div class="line"><span class="lineno">  154</span>                        <span class="comment">// nullptr or a pointer to another node which is</span></div>
+<div class="line"><span class="lineno">  155</span>                        <span class="comment">// labelled with a pattern</span></div>
+<div class="line"><span class="lineno">  156</span>                        out_link = child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  157</span>                        child-&gt;<a class="code hl_function" href="classAC_1_1Node.html#ade7560c43b242a4fe8dab48693eec867">setOutLink</a>(&amp;out_link);</div>
+<div class="line"><span class="lineno">  158</span>                    }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>                    <span class="comment">// add the child to l2</span></div>
+<div class="line"><span class="lineno">  161</span>                    <span class="comment">// if (edge_list-&gt;trieNode()) {</span></div>
+<div class="line"><span class="lineno">  162</span>                    l2-&gt;push_front({ child });</div>
+<div class="line"><span class="lineno">  163</span>                    <span class="comment">// }</span></div>
+<div class="line"><span class="lineno">  164</span>                    <span class="comment">// move onto parent&#39;s next edge (which is the &#39;next edge&#39;</span></div>
+<div class="line"><span class="lineno">  165</span>                    <span class="comment">// of the child edge obj)</span></div>
+<div class="line"><span class="lineno">  166</span>                    current_edge = current_edge-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">nextEdge</a>();</div>
+<div class="line"><span class="lineno">  167</span>                }</div>
+<div class="line"><span class="lineno">  168</span>            }</div>
+<div class="line"><span class="lineno">  169</span>            <span class="comment">// set l1 to point to l2</span></div>
+<div class="line"><span class="lineno">  170</span>            l1 = l2;</div>
+<div class="line"><span class="lineno">  171</span>            <span class="comment">// set l2 to point at a new forward linked list</span></div>
+<div class="line"><span class="lineno">  172</span>            l2 = <span class="keyword">new</span> std::forward_list&lt;Node*&gt;;</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
 <div class="ttc" id="aclassAC_1_1Edge_html_a466467554b8e155b46321f6646c35a9a"><div class="ttname"><a href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">AC::Edge::label</a></div><div class="ttdeci">char label()</div><div class="ttdoc">get the label attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:114</div></div>
 <div class="ttc" id="aclassAC_1_1Edge_html_a5a6eb1dc72b2018bd34215ee47f066b2"><div class="ttname"><a href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">AC::Edge::trieNode</a></div><div class="ttdeci">Node * trieNode()</div><div class="ttdoc">getter for the trie_node attribute.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:127</div></div>
 <div class="ttc" id="aclassAC_1_1Edge_html_ab47db3fd28d86106e0bb81c3d0f9b465"><div class="ttname"><a href="classAC_1_1Edge.html#ab47db3fd28d86106e0bb81c3d0f9b465">AC::Edge::nextEdge</a></div><div class="ttdeci">Edge * nextEdge()</div><div class="ttdoc">Get the pointer stored in attribute next_edge.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:100</div></div>
@@ -439,71 +433,71 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classAC_1_1AhoCorasickTrie.html#a7dc543e54a96ebc66d7a560c8970c6ee">AC::AhoCorasickTrie</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
-<div class="line"><span class="lineno">  184</span>        vector&lt;char&gt; bytes;</div>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>    {</div>
+<div class="line"><span class="lineno">  178</span>        vector&lt;char&gt; bytes;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>        FILE* input_file = fopen(target_filepath.c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span> (input_file == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  182</span>            cout &lt;&lt; <span class="stringliteral">&#39;target_filepath DNE&#39;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  183</span>            exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  184</span>        }</div>
 <div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>        FILE* input_file = fopen(target_filepath.c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span> (input_file == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">  188</span>            cout &lt;&lt; <span class="stringliteral">&#39;target_filepath DNE&#39;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  189</span>            exit(EXIT_FAILURE);</div>
-<div class="line"><span class="lineno">  190</span>        }</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> t_c = getc(input_file);</div>
-<div class="line"><span class="lineno">  193</span>        <span class="comment">// set t_c to lower</span></div>
-<div class="line"><span class="lineno">  194</span>        t_c = tolower(t_c);</div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>        <span class="comment">// instantiate an int to store the number of bases that may be</span></div>
-<div class="line"><span class="lineno">  197</span>        <span class="comment">// skipped when a mismatch or a leaf node is reached</span></div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordtype">int</span> l = 0;</div>
-<div class="line"><span class="lineno">  199</span>        <span class="comment">// instantiate an int to track movement along the target sequence</span></div>
-<div class="line"><span class="lineno">  200</span>        <span class="keywordtype">int</span> c = 0;</div>
-<div class="line"><span class="lineno">  201</span>        <span class="comment">// instantiate a node pointer to be used to move around the Trie</span></div>
-<div class="line"><span class="lineno">  202</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* w = <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>;</div>
-<div class="line"><span class="lineno">  203</span>        <span class="comment">// instantiate node pointer to be used to follow out_links</span></div>
-<div class="line"><span class="lineno">  204</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
-<div class="line"><span class="lineno">  205</span>        <span class="comment">// search the target for exact matches to strings in the Trie</span></div>
-<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>            <span class="comment">// while there is an edge (w,w&#39;) labelled t_c</span></div>
-<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">while</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>() == t_c &amp;&amp; t_c != NULL) {</div>
-<div class="line"><span class="lineno">  210</span>                <span class="comment">// if w&#39; is numbered by a pattern</span></div>
-<div class="line"><span class="lineno">  211</span>                <span class="keywordflow">if</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
-<div class="line"><span class="lineno">  212</span>                    std::cout</div>
-<div class="line"><span class="lineno">  213</span>                        &lt;&lt; (c + 1)</div>
-<div class="line"><span class="lineno">  214</span>                            - (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>()</div>
-<div class="line"><span class="lineno">  215</span>                                - 1)</div>
-<div class="line"><span class="lineno">  216</span>                        &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  217</span>                        &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>()</div>
-<div class="line"><span class="lineno">  218</span>                        &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>()</div>
-<div class="line"><span class="lineno">  219</span>                        &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  220</span>                }</div>
-<div class="line"><span class="lineno">  221</span>                <span class="comment">// report also if there is a directed path of failure links</span></div>
-<div class="line"><span class="lineno">  222</span>                <span class="comment">// from w&#39; to a numbered node</span></div>
-<div class="line"><span class="lineno">  223</span>                out_link = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
-<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">while</span> (out_link) {</div>
-<div class="line"><span class="lineno">  225</span>                    std::cout &lt;&lt; (c + 1) - (out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>() - 1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  226</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() &lt;&lt; <span class="charliteral">&#39;,&#39;</span></div>
-<div class="line"><span class="lineno">  227</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  228</span>                    out_link = out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
-<div class="line"><span class="lineno">  229</span>                }</div>
-<div class="line"><span class="lineno">  230</span> </div>
-<div class="line"><span class="lineno">  231</span>                <span class="comment">// the final edge in the edge list for each node has a</span></div>
-<div class="line"><span class="lineno">  232</span>                <span class="comment">// pointer to which trie node at which the search for</span></div>
-<div class="line"><span class="lineno">  233</span>                <span class="comment">// matches should resume</span></div>
-<div class="line"><span class="lineno">  234</span>                w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
-<div class="line"><span class="lineno">  235</span>                <span class="comment">// increment the counter to the next char</span></div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> t_c = getc(input_file);</div>
+<div class="line"><span class="lineno">  187</span>        <span class="comment">// set t_c to lower</span></div>
+<div class="line"><span class="lineno">  188</span>        t_c = tolower(t_c);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        <span class="comment">// instantiate an int to store the number of bases that may be</span></div>
+<div class="line"><span class="lineno">  191</span>        <span class="comment">// skipped when a mismatch or a leaf node is reached</span></div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordtype">int</span> l = 0;</div>
+<div class="line"><span class="lineno">  193</span>        <span class="comment">// instantiate an int to track movement along the target sequence</span></div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordtype">int</span> c = 0;</div>
+<div class="line"><span class="lineno">  195</span>        <span class="comment">// instantiate a node pointer to be used to move around the Trie</span></div>
+<div class="line"><span class="lineno">  196</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* w = <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a>;</div>
+<div class="line"><span class="lineno">  197</span>        <span class="comment">// instantiate node pointer to be used to follow out_links</span></div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_class" href="classAC_1_1Node.html">Node</a>* out_link;</div>
+<div class="line"><span class="lineno">  199</span>        <span class="comment">// search the target for exact matches to strings in the Trie</span></div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>            <span class="comment">// while there is an edge (w,w&#39;) labelled t_c</span></div>
+<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">while</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a466467554b8e155b46321f6646c35a9a">label</a>() == t_c &amp;&amp; t_c != NULL) {</div>
+<div class="line"><span class="lineno">  204</span>                <span class="comment">// if w&#39; is numbered by a pattern</span></div>
+<div class="line"><span class="lineno">  205</span>                <span class="keywordflow">if</span> (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() != -1) {</div>
+<div class="line"><span class="lineno">  206</span>                    std::cout</div>
+<div class="line"><span class="lineno">  207</span>                        &lt;&lt; (c + 1)</div>
+<div class="line"><span class="lineno">  208</span>                            - (w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>()</div>
+<div class="line"><span class="lineno">  209</span>                                - 1)</div>
+<div class="line"><span class="lineno">  210</span>                        &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  211</span>                        &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>()</div>
+<div class="line"><span class="lineno">  212</span>                        &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>()</div>
+<div class="line"><span class="lineno">  213</span>                        &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  214</span>                }</div>
+<div class="line"><span class="lineno">  215</span>                <span class="comment">// report also if there is a directed path of failure links</span></div>
+<div class="line"><span class="lineno">  216</span>                <span class="comment">// from w&#39; to a numbered node</span></div>
+<div class="line"><span class="lineno">  217</span>                out_link = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>()-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  218</span>                <span class="keywordflow">while</span> (out_link) {</div>
+<div class="line"><span class="lineno">  219</span>                    std::cout &lt;&lt; (c + 1) - (out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">distFromRoot</a>() - 1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  220</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a8b8138dae39c9f9842236b302bd2f9fe">patternIndicator</a>() &lt;&lt; <span class="charliteral">&#39;,&#39;</span></div>
+<div class="line"><span class="lineno">  221</span>                              &lt;&lt; out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">strand</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  222</span>                    out_link = out_link-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6068c2be8d535cfcc0397107cba7300d">outLink</a>();</div>
+<div class="line"><span class="lineno">  223</span>                }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>                <span class="comment">// the final edge in the edge list for each node has a</span></div>
+<div class="line"><span class="lineno">  226</span>                <span class="comment">// pointer to which trie node at which the search for</span></div>
+<div class="line"><span class="lineno">  227</span>                <span class="comment">// matches should resume</span></div>
+<div class="line"><span class="lineno">  228</span>                w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a9e6d29b2990615a1cca8c9b5f081f1d9">edgeSearch</a>(t_c)-&gt;<a class="code hl_function" href="classAC_1_1Edge.html#a5a6eb1dc72b2018bd34215ee47f066b2">trieNode</a>();</div>
+<div class="line"><span class="lineno">  229</span>                <span class="comment">// increment the counter to the next char</span></div>
+<div class="line"><span class="lineno">  230</span>                c++;</div>
+<div class="line"><span class="lineno">  231</span>                t_c = getc(input_file);</div>
+<div class="line"><span class="lineno">  232</span>            }</div>
+<div class="line"><span class="lineno">  233</span>            w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
+<div class="line"><span class="lineno">  234</span>            <span class="comment">// if t_c does not have a edge out of root, go to the next char</span></div>
+<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">if</span> (w == <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> &amp;&amp; !w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(t_c)) {</div>
 <div class="line"><span class="lineno">  236</span>                c++;</div>
 <div class="line"><span class="lineno">  237</span>                t_c = getc(input_file);</div>
 <div class="line"><span class="lineno">  238</span>            }</div>
-<div class="line"><span class="lineno">  239</span>            w = w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a2248b5b7260618ceb78d66fcb1a8b6cd">failureLink</a>();</div>
-<div class="line"><span class="lineno">  240</span>            <span class="comment">// if t_c does not have a edge out of root, go to the next char</span></div>
-<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">if</span> (w == <a class="code hl_variable" href="classACTrie.html#ac4e077b3a5e258f62953c5ff9bb6b2b9">root</a> &amp;&amp; !w-&gt;<a class="code hl_function" href="classAC_1_1Node.html#a6ab6e68af66e1e33a8a0bcb865bfb80d">edgeSearchBool</a>(t_c)) {</div>
-<div class="line"><span class="lineno">  242</span>                c++;</div>
-<div class="line"><span class="lineno">  243</span>                t_c = getc(input_file);</div>
-<div class="line"><span class="lineno">  244</span>            }</div>
-<div class="line"><span class="lineno">  245</span>            <span class="comment">// continue until the target string is exhausted</span></div>
-<div class="line"><span class="lineno">  246</span>        } <span class="keywordflow">while</span> (!feof(input_file));</div>
-<div class="line"><span class="lineno">  247</span>    }</div>
+<div class="line"><span class="lineno">  239</span>            <span class="comment">// continue until the target string is exhausted</span></div>
+<div class="line"><span class="lineno">  240</span>        } <span class="keywordflow">while</span> (!feof(input_file));</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
 <div class="ttc" id="aclassAC_1_1Node_html_a82ebe3d142331427b346c64fc2773388"><div class="ttname"><a href="classAC_1_1Node.html#a82ebe3d142331427b346c64fc2773388">AC::Node::distFromRoot</a></div><div class="ttdeci">int distFromRoot()</div><div class="ttdoc">getter for dist_from_root.</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:327</div></div>
 <div class="ttc" id="aclassAC_1_1Node_html_af0bc805078e8507fd5808cf73c7deadd"><div class="ttname"><a href="classAC_1_1Node.html#af0bc805078e8507fd5808cf73c7deadd">AC::Node::strand</a></div><div class="ttdeci">int strand()</div><div class="ttdoc">return the strand of the pattern</div><div class="ttdef"><b>Definition:</b> aho_corasick.h:357</div></div>
 </div><!-- fragment -->
