@@ -310,6 +310,9 @@ int main(int argc, char* argv[])
         while (std::getline(newfile, pattern)) {
             cout << "inserting pattern: " << pattern << std::endl;
             a.insert(pattern, i, 1);
+            // reverse the string
+            reverse(pattern.begin(), pattern.end());
+            // get the complement
             transform(begin(pattern), end(pattern), begin(pattern), complement);
             cout << "and its reverse complement: " << pattern << std::endl;
             a.insert(pattern, i, 2);

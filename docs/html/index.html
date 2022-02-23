@@ -67,7 +67,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_mainpage"></a> It works! This is the first time I have coded in c++, or used pointers directly. I am still learning about how to to deal with autoconf and whatnot. This compiles on my computer, running ubuntu 20.04 and g++ version 9.3.0.</p>
-<p >There is a test suite which is implemented with googletests. There code is 100% covered by the tests. Documentation is created from appropriately formatted comments by Doxygen.</p>
+<p >There is a test suite which is implemented with googletests. The code is 100% covered by the tests. Documentation is created from appropriately formatted comments by Doxygen.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 How to use this site</h1>
 <p >At the top, you'll notice a navigator bar. More or less, clicking any of the drop downs will bring you to a page where you can navigate to the object definitions. But, the most interesting is Classes-&gt;Class List. Click on <a class="el" href="classACTrie.html" title="implement the AhoCorasick Trie interface">ACTrie</a>, which is my implementation of Aho Corasick. The code for the functions <a class="el" href="classACTrie.html#ad6aa4730ba51cf2ebbb0992271a58fae" title="Insert a pattern into the tri.">ACTrie::insert()</a>, <a class="el" href="classACTrie.html#a6e6c527e9b1664903267c1ddcd915223" title="Set the failure_links and output_links.">ACTrie::findNv()</a> and <a class="el" href="classACTrie.html#a2343de45b49c8b05a85d8077b97951c3" title="Using the tri, search a target.">ACTrie::search()</a> is included in the documentation, in addition to a description of the input/output.</p>
@@ -75,30 +75,28 @@ How to use this site</h1>
 <p >Once compiled, run the code like this:</p>
 <div class="fragment"><div class="line">./aho_corasick pattern_file.txt target.fa</div>
 </div><!-- fragment --><p >Output will look like this (<b>NOTE</b> this is not the output of the assignment files, only a short test):</p>
-<div class="fragment"><div class="line">&gt; ./aho_corasick data/pattern_test4.txt data/test4.fa</div>
+<div class="fragment"><div class="line">&gt; ./aho_corasick data/pattern_test4.txt data/test4.fa </div>
 <div class="line">creating Trie...</div>
 <div class="line">inserting pattern: cag</div>
-<div class="line">and its reverse complement: gtc</div>
+<div class="line">and its reverse complement: ctg</div>
 <div class="line">inserting pattern: ag</div>
-<div class="line">and its reverse complement: tc</div>
+<div class="line">and its reverse complement: ct</div>
 <div class="line">inserting pattern: gca</div>
-<div class="line">and its reverse complement: cgt</div>
+<div class="line">and its reverse complement: tgc</div>
 <div class="line">inserting pattern: ca</div>
-<div class="line">and its reverse complement: gt</div>
+<div class="line">and its reverse complement: tg</div>
 <div class="line">Setting failure links and out links...</div>
 <div class="line">Searching the target for pattern matches...</div>
 <div class="line">target_location, pattern, strand</div>
 <div class="line">1,2,1</div>
-<div class="line">2,4,2</div>
-<div class="line">2,1,2</div>
-<div class="line">3,2,2</div>
-<div class="line">5,2,2</div>
+<div class="line">4,2,2</div>
 <div class="line">7,4,1</div>
 <div class="line">7,1,1</div>
 <div class="line">8,2,1</div>
-<div class="line">14,2,2</div>
 <div class="line">16,3,1</div>
 <div class="line">17,4,1</div>
+<div class="line">19,4,2</div>
+<div class="line">19,3,2</div>
 <div class="line">20,3,1</div>
 <div class="line">21,4,1</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->

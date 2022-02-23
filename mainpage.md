@@ -4,7 +4,7 @@ It works! This is the first time I have coded in c++, or used pointers directly.
 I am still learning about how to to deal with autoconf and whatnot. This compiles
 on my computer, running ubuntu 20.04 and g++ version 9.3.0.
 
-There is a test suite which is implemented with googletests. There code is
+There is a test suite which is implemented with googletests. The code is
 100% covered by the tests. Documentation is created from appropriately formatted
 comments by Doxygen.
 
@@ -33,31 +33,28 @@ Output will look like this (__NOTE__ this is not the output of the assignment
 files, only a short test):
 
 ```{bash}
-> ./aho_corasick data/pattern_test4.txt data/test4.fa
+> ./aho_corasick data/pattern_test4.txt data/test4.fa 
 creating Trie...
 inserting pattern: cag
-and its reverse complement: gtc
+and its reverse complement: ctg
 inserting pattern: ag
-and its reverse complement: tc
+and its reverse complement: ct
 inserting pattern: gca
-and its reverse complement: cgt
+and its reverse complement: tgc
 inserting pattern: ca
-and its reverse complement: gt
+and its reverse complement: tg
 Setting failure links and out links...
 Searching the target for pattern matches...
 target_location, pattern, strand
 1,2,1
-2,4,2
-2,1,2
-3,2,2
-5,2,2
+4,2,2
 7,4,1
 7,1,1
 8,2,1
-14,2,2
 16,3,1
 17,4,1
+19,4,2
+19,3,2
 20,3,1
 21,4,1
-
 ```
