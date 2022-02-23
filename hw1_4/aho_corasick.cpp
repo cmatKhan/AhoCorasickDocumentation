@@ -95,21 +95,15 @@ public:
         Node* parent;
         Edge* current_edge;
         Node* child;
+        char current_edge_label;
         // pointer to a failure link
         Node* fl;
         // pointer to an out_link
         Node* out_link;
 
-        char current_edge_label;
-
-        // while edgeList is not next --> nullptr
-        // while (edge_list->nextEdge()) {
-        //     // set failure link from root to root
-        //     parent->setFailureLink(&root);
-        //     l1->push_front({ edge_list->trieNode() });
-        //     edge_list = edge_list->nextEdge();
-        // }
+        // set root failure link to itself
         root->setFailureLink(&root);
+        // push root onto l1
         l1->push_front({ root });
 
         // the main algorithm starts at level 2
